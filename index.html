@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>每日代码学习卡 · Daily Code Learning</title>
+  <style>
+    /* ── Tokens ─────────────────────────────────────────── */
+    :root {
+      --bg:            #16120d;
+      --bg-2:          #1e1912;
+      --surface:       #25201a;
+      --surface-2:     #2f2820;
+      --amber-100:     #fff8e6;
+      --amber-200:     #fde68a;
+      --amber-300:     #fbbf24;
+      --amber-400:     #f59e0b;
+      --amber-500:     #d97706;
+      --amber-600:     #b45309;
+      --text-1:        #f0ebe0;
+      --text-2:        #c0ae90;
+      --text-3:        #7a6d58;
+      --border:        rgba(251,191,36,.12);
+      --border-hi:     rgba(251,191,36,.38);
+      --glow:          rgba(251,191,36,.07);
+      --radius-card:   20px;
+      --radius-sm:     12px;
+      --transition:    0.72s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ── Reset ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ── Base ────────────────────────────────────────────── */
+    body {
+      background: var(--bg);
+      color: var(--text-1);
+      font-family: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',
+                   'Segoe UI',system-ui,-apple-system,sans-serif;
+      min-height: 100vh;
+      padding: 2.5rem 1rem 5rem;
+      /* very faint warm-dot grid */
+      background-image:
+        radial-gradient(ellipse 60% 40% at 15% 15%, rgba(251,191,36,.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 85% 85%, rgba(245,158,11,.05) 0%, transparent 60%),
+        radial-gradient(circle, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: auto, auto, 28px 28px;
+    }
+
+    /* ── Header ──────────────────────────────────────────── */
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .eyebrow {
+      font-size: .7rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--amber-500);
+      margin-bottom: .9rem;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 5.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      background: linear-gradient(135deg, var(--amber-200) 0%, var(--amber-400) 55%, var(--amber-500) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: .55rem;
+    }
+    .subtitle {
+      color: var(--text-3);
+      font-size: .88rem;
+      line-height: 1.6;
+      max-width: 36ch;
+      margin: 0 auto;
+    }
+
+    /* ── Flip card scene ─────────────────────────────────── */
+    .scene {
+      width: min(540px, 94vw);
+      height: 360px;
+      margin: 0 auto 1.4rem;
+      perspective: 1400px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .scene:focus-visible { outline: 2px solid var(--amber-400); outline-offset: 4px; border-radius: var(--radius-card); }
+
+    .card-inner {
+      width: 100%; height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform var(--transition);
+      will-change: transform;
+    }
+    .scene.flipped .card-inner { transform: rotateY(180deg); }
+
+    /* ── Shared face styles ──────────────────────────────── */
+    .face {
+      position: absolute; inset: 0;
+      border-radius: var(--radius-card);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      overflow: hidden;
+    }
+
+    /* golden top stripe shared by both faces */
+    .face::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      border-radius: var(--radius-card) var(--radius-card) 0 0;
+    }
+
+    /* ── Front face ──────────────────────────────────────── */
+    .front {
+      background: linear-gradient(150deg, var(--surface) 0%, var(--surface-2) 100%);
+      border: 1px solid var(--border-hi);
+      box-shadow:
+        0 24px 64px rgba(0,0,0,.55),
+        0  0  0 1px rgba(251,191,36,.04),
+        inset 0 1px 0 rgba(255,255,255,.04);
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 2.2rem;
+    }
+    .front::after { background: linear-gradient(90deg, var(--amber-600), var(--amber-300), var(--amber-500)); }
+
+    .front-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.4rem;
+    }
+    .meta-date {
+      font-size: .7rem;
+      letter-spacing: .1em;
+      color: var(--amber-500);
+      font-weight: 500;
+    }
+    .meta-stars {
+      display: flex; align-items: center; gap: .28rem;
+      font-size: .78rem;
+      color: var(--amber-300);
+      background: rgba(251,191,36,.1);
+      border: 1px solid rgba(251,191,36,.2);
+      padding: .18rem .65rem;
+      border-radius: 20px;
+    }
+    .star-icon { font-size: .9em; }
+
+    .front-repo-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--amber-200);
+      margin-bottom: .3rem;
+      word-break: break-word;
+      line-height: 1.25;
+    }
+    .front-meta-row {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .74rem; color: var(--text-3);
+      margin-bottom: .6rem;
+    }
+    .lang-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--amber-400);
+      flex-shrink: 0;
+    }
+    .repo-link {
+      display: inline-flex; align-items: center; gap: .25rem;
+      font-size: .72rem;
+      color: var(--amber-400);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .repo-link:hover { color: var(--amber-200); }
+
+    .front-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-hi), transparent);
+      margin: 1rem 0;
+    }
+
+    .front-teaser {
+      flex: 1;
+      font-size: .94rem;
+      line-height: 1.65;
+      color: var(--text-2);
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .front-hint {
+      margin-top: .9rem;
+      font-size: .68rem;
+      color: var(--text-3);
+      text-align: center;
+      letter-spacing: .04em;
+      animation: breathe 2.8s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0%,100% { opacity: .45; }
+      50%      { opacity: 1; }
+    }
+
+    /* ── Back face ───────────────────────────────────────── */
+    .back {
+      background: linear-gradient(150deg, #1d190f 0%, #252014 100%);
+      border: 1px solid var(--border-hi);
+      box-shadow:
+        0 24px 64px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.04);
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      padding: 1.6rem 2rem;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(251,191,36,.2) transparent;
+    }
+    .back::after { background: linear-gradient(90deg, var(--amber-500), var(--amber-200), var(--amber-400)); }
+    .back::-webkit-scrollbar { width: 4px; }
+    .back::-webkit-scrollbar-thumb { background: rgba(251,191,36,.2); border-radius: 4px; }
+
+    .back-section { margin-bottom: .9rem; }
+    .back-section:last-of-type { margin-bottom: .4rem; }
+
+    .back-label {
+      font-size: .62rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--amber-500);
+      font-weight: 700;
+      margin-bottom: .28rem;
+    }
+    .back-text {
+      font-size: .82rem;
+      line-height: 1.6;
+      color: var(--text-2);
+    }
+    .back-text.question {
+      color: var(--amber-200);
+      font-style: italic;
+    }
+
+    .back-hint {
+      margin-top: auto;
+      padding-top: .6rem;
+      font-size: .64rem;
+      color: var(--text-3);
+      text-align: center;
+    }
+
+    /* ── Controls ────────────────────────────────────────── */
+    .controls {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3.5rem;
+    }
+    .flip-btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: rgba(251,191,36,.08);
+      border: 1px solid rgba(251,191,36,.25);
+      color: var(--amber-300);
+      padding: .45rem 1.3rem;
+      border-radius: 24px;
+      font-size: .82rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background .2s, border-color .2s, color .2s;
+    }
+    .flip-btn:hover {
+      background: rgba(251,191,36,.16);
+      border-color: rgba(251,191,36,.5);
+      color: var(--amber-200);
+    }
+    .flip-icon {
+      display: inline-block;
+      transition: transform .35s ease;
+    }
+    .scene.flipped ~ .controls .flip-icon { transform: rotate(180deg); }
+
+    /* ── Archive ─────────────────────────────────────────── */
+    .archive { max-width: 880px; margin: 0 auto; }
+    .archive-heading {
+      font-size: .72rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      text-align: center;
+      margin-bottom: 1.3rem;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1rem;
+    }
+
+    .arc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem 1.2rem;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+      text-decoration: none;
+      display: block;
+    }
+    .arc-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--amber-600), var(--amber-400));
+      opacity: .55;
+    }
+    .arc-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-hi);
+      box-shadow: 0 10px 32px rgba(0,0,0,.35), 0 0 0 1px rgba(251,191,36,.08);
+    }
+    .arc-date { font-size: .64rem; color: var(--amber-500); letter-spacing: .08em; margin-bottom: .35rem; }
+    .arc-repo {
+      font-size: .85rem; font-weight: 600; color: var(--amber-200);
+      margin-bottom: .35rem;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .arc-point {
+      font-size: .74rem; color: var(--text-3); line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ── Loading / error ─────────────────────────────────── */
+    .spinner-wrap { text-align: center; padding: 2.5rem; color: var(--text-3); }
+    .spinner {
+      width: 32px; height: 32px;
+      border: 2.5px solid rgba(251,191,36,.15);
+      border-top-color: var(--amber-400);
+      border-radius: 50%;
+      animation: spin .85s linear infinite;
+      margin: 0 auto .9rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 520px) {
+      body { padding: 1.8rem .8rem 4rem; }
+      .scene { height: 320px; }
+      .front, .back { padding: 1.5rem 1.5rem; }
+      .front-repo-name { font-size: 1.1rem; }
+      .archive-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 360px) {
+      .archive-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────── -->
+<header>
+  <p class="eyebrow">✦ Daily Code Learning ✦</p>
+  <h1>每日代码学习卡</h1>
+  <p class="subtitle">从你的 GitHub Star 中，每天发现一个值得深入的技术知识点</p>
+</header>
+
+<!-- ── Main flip card ────────────────────────────────────── -->
+<div class="scene" id="scene" role="button" tabindex="0" aria-label="点击卡片翻转查看详细内容">
+  <div class="card-inner" id="cardInner">
+    <!-- Front -->
+    <div class="face front" id="front">
+      <div class="spinner-wrap">
+        <div class="spinner"></div>
+        <div>加载今日学习卡...</div>
+      </div>
+    </div>
+    <!-- Back -->
+    <div class="face back" id="back">
+      <div class="spinner-wrap"><div>加载中...</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Flip control ──────────────────────────────────────── -->
+<div class="controls">
+  <button class="flip-btn" id="flipBtn" onclick="toggleFlip()">
+    <span class="flip-icon">↺</span> 翻转查看详情
+  </button>
+</div>
+
+<!-- ── Archive ───────────────────────────────────────────── -->
+<section class="archive">
+  <p class="archive-heading">▸ 近期学习记录</p>
+  <div class="archive-grid" id="archiveGrid">
+    <div class="spinner-wrap" style="grid-column:1/-1">
+      <div class="spinner"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  /* ── Fallback sample (shown when JSON files aren't available) ── */
+  const FALLBACK = {
+    date: '2026-08-19',
+    repo_name: 'spring-projects/spring-boot',
+    repo_url: 'https://github.com/spring-projects/spring-boot',
+    repo_description: 'Spring Boot makes it easy to create Spring-powered, production-grade applications.',
+    language: 'Java',
+    stars: 74800,
+    card_content: {
+      core_point:
+        'Spring Boot 通过自动配置机制，让开发者无需繁琐的 XML 配置即可快速构建生产就绪的 Spring 应用。',
+      deep_understanding:
+        'Spring Boot 的核心是 @EnableAutoConfiguration，它通过扫描 spring.factories 文件，根据 classpath 中存在的依赖自动装配合适的 Bean。这种「约定优于配置」的设计大幅降低了开发门槛，同时保留了覆盖默认配置的灵活性。Actuator 模块进一步提供了开箱即用的健康检查与指标监控端点。',
+      use_cases:
+        '广泛用于微服务架构的快速开发、REST API 服务构建、企业级后端系统。通过 Spring Initializr 可在几分钟内生成完整项目骨架，结合 Docker 可实现一键容器化部署。',
+      thinking_question:
+        '当生产环境 Spring Boot 应用出现内存持续上涨时，你会借助哪些 Actuator 端点进行排查，/health、/metrics 和 /heapdump 各能提供哪些关键线索？',
+    },
+  };
+
+  /* ── State ── */
+  let isFlipped = false;
+
+  /* ── Helpers ── */
+  function fmt(dateStr) {
+    // parse as local noon to avoid UTC offset flipping the day
+    const d = new Date(dateStr + 'T12:00:00');
+    return d.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
+
+  function fmtStars(n) {
+    return n >= 1000 ? (n / 1000).toFixed(1) + 'k' : String(n);
+  }
+
+  function txt(content, field) {
+    if (!content) return '';
+    if (typeof content === 'string') return content;
+    if (content[field]) return content[field];
+    // raw fallback: for core_point take first sentence
+    if (content.raw) {
+      if (field === 'core_point') {
+        const s = content.raw.split(/[。.!\n]/)[0];
+        return s ? s + '。' : content.raw;
+      }
+      return content.raw;
+    }
+    return '';
+  }
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  /* ── Flip ── */
+  function toggleFlip() {
+    isFlipped = !isFlipped;
+    document.getElementById('scene').classList.toggle('flipped', isFlipped);
+    document.getElementById('flipBtn').textContent =
+      isFlipped ? '↺  翻回正面' : '↺  翻转查看详情';
+  }
+
+  document.getElementById('scene').addEventListener('click', toggleFlip);
+  document.getElementById('scene').addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFlip(); }
+  });
+
+  /* ── Render main card ── */
+  function renderCard(card) {
+    const c = card.card_content || {};
+    const shortName = (card.repo_name || '').split('/').pop();
+    const org       = (card.repo_name || '').split('/')[0];
+    const corePoint = txt(c, 'core_point');
+
+    document.getElementById('front').innerHTML = `
+      <div class="front-meta">
+        <span class="meta-date">${esc(fmt(card.date))}</span>
+        <span class="meta-stars"><span class="star-icon">★</span>${esc(fmtStars(card.stars || 0))}</span>
+      </div>
+      <div class="front-repo-name">${esc(shortName || card.repo_name)}</div>
+      <div class="front-meta-row">
+        ${card.language ? `<span class="lang-dot"></span><span>${esc(card.language)}</span>` : ''}
+        ${card.language && org ? '<span>·</span>' : ''}
+        ${org ? `<span>${esc(org)}</span>` : ''}
+      </div>
+      ${card.repo_url
+        ? `<a class="repo-link" href="${esc(card.repo_url)}" target="_blank" rel="noopener noreferrer"
+             onclick="event.stopPropagation()">↗ 查看仓库</a>`
+        : ''}
+      <div class="front-divider"></div>
+      <div class="front-teaser">${esc(corePoint)}</div>
+      <div class="front-hint">点击卡片翻转查看详细内容</div>
+    `;
+
+    document.getElementById('back').innerHTML = `
+      <div class="back-section">
+        <div class="back-label">🔑 核心知识点</div>
+        <div class="back-text">${esc(corePoint)}</div>
+      </div>
+      <div class="back-section">
+        <div class="back-label">📖 深入理解</div>
+        <div class="back-text">${esc(txt(c, 'deep_understanding'))}</div>
+      </div>
+      <div class="back-section">
+        <div class="back-label">⚡ 实际应用场景</div>
+        <div class="back-text">${esc(txt(c, 'use_cases'))}</div>
+      </div>
+      <div class="back-section">
+        <div class="back-label">💭 思考问题</div>
+        <div class="back-text question">${esc(txt(c, 'thinking_question'))}</div>
+      </div>
+      <div class="back-hint">再次点击卡片可翻回正面</div>
+    `;
+  }
+
+  /* ── Render archive grid ── */
+  function renderArchive(cards) {
+    const grid = document.getElementById('archiveGrid');
+    const slice = (cards || []).slice(0, 7);
+    if (!slice.length) {
+      grid.innerHTML = '<p style="color:var(--text-3);text-align:center;grid-column:1/-1;padding:1rem">暂无历史记录</p>';
+      return;
+    }
+    grid.innerHTML = slice.map(card => {
+      const c     = card.card_content || {};
+      const point = txt(c, 'core_point');
+      const short = (card.repo_name || '').split('/').pop() || card.repo_name;
+      return `
+        <a class="arc-card" href="${esc(card.repo_url || '#')}" target="_blank" rel="noopener noreferrer">
+          <div class="arc-date">${esc(fmt(card.date))}</div>
+          <div class="arc-repo" title="${esc(card.repo_name)}">${esc(short)}</div>
+          <div class="arc-point">${esc(point)}</div>
+        </a>
+      `;
+    }).join('');
+  }
+
+  /* ── Fetch with fallback ── */
+  async function fetchJSON(url, fallback) {
+    try {
+      const r = await fetch(url + '?_=' + Date.now());
+      if (!r.ok) throw new Error(r.status);
+      return await r.json();
+    } catch {
+      return fallback;
+    }
+  }
+
+  /* ── Boot ── */
+  (async () => {
+    const [card, archive] = await Promise.all([
+      fetchJSON('cards/latest.json', FALLBACK),
+      fetchJSON('cards/archive.json', [FALLBACK]),
+    ]);
+    renderCard(card);
+    renderArchive(archive);
+  })();
+</script>
+</body>
+</html>

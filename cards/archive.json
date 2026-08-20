@@ -1,0 +1,72 @@
+[
+  {
+    "date": "2026-08-19",
+    "repo_name": "spring-projects/spring-boot",
+    "repo_url": "https://github.com/spring-projects/spring-boot",
+    "repo_description": "Spring Boot makes it easy to create Spring-powered, production-grade applications and services with absolute minimum fuss.",
+    "language": "Java",
+    "stars": 74800,
+    "card_content": {
+      "core_point": "Spring Boot 通过自动配置机制，让开发者无需繁琐的 XML 配置即可快速构建生产就绪的 Spring 应用。",
+      "deep_understanding": "Spring Boot 的核心是 @EnableAutoConfiguration，它通过扫描 spring.factories 文件，根据 classpath 中存在的依赖自动装配合适的 Bean。这种「约定优于配置」的设计大幅降低了开发门槛，同时完整保留了覆盖默认配置的灵活性。Actuator 模块进一步提供了开箱即用的健康检查、指标监控和应用管理端点，是生产部署不可缺少的组件。",
+      "use_cases": "广泛用于微服务架构的快速开发、REST API 服务构建、企业级后端系统。通过 Spring Initializr 可在几分钟内生成带有完整依赖管理的项目骨架，结合 Docker 与 Spring Cloud 可实现一键容器化的分布式服务体系。",
+      "thinking_question": "当生产环境的 Spring Boot 应用出现内存持续上涨时，你会借助哪些 Actuator 端点进行排查，/health、/metrics 和 /heapdump 各能提供哪些关键线索？"
+    }
+  },
+  {
+    "date": "2026-08-18",
+    "repo_name": "facebook/react",
+    "repo_url": "https://github.com/facebook/react",
+    "repo_description": "The library for web and native user interfaces.",
+    "language": "JavaScript",
+    "stars": 229000,
+    "card_content": {
+      "core_point": "React 18 引入的并发特性允许渲染过程可中断，从根本上解决了长时间渲染阻塞主线程、导致界面卡顿的问题。",
+      "deep_understanding": "并发渲染的核心是 Fiber 架构的调度能力，通过 startTransition 可以将非紧急更新标记为可中断的低优先级任务。useTransition 和 useDeferredValue 让开发者能够精细控制 UI 更新的优先级，在保持响应性的同时处理复杂计算。React 18 的自动批处理（Automatic Batching）还将事件处理函数中的多次 setState 合并为单次渲染，进一步减少不必要的重渲染。",
+      "use_cases": "适用于需要高交互性的复杂 SPA、实时数据仪表板、大型列表筛选和搜索功能。用 startTransition 包裹重量级状态更新，可以保证输入框等高优先级 UI 的即时响应，同时让列表渲染在后台平滑完成。",
+      "thinking_question": "在实现一个带有实时搜索的万级数据列表时，你会如何结合 useTransition、useDeferredValue 和虚拟列表（如 react-window）来达到最优的用户体验，三者各自解决什么问题？"
+    }
+  },
+  {
+    "date": "2026-08-17",
+    "repo_name": "golang/go",
+    "repo_url": "https://github.com/golang/go",
+    "repo_description": "The Go programming language.",
+    "language": "Go",
+    "stars": 124000,
+    "card_content": {
+      "core_point": "Go 的 goroutine 与 channel 实现了 CSP 并发模型，以极低的内存开销让开发者用顺序思维写出安全的并发程序。",
+      "deep_understanding": "goroutine 是由 Go 运行时管理的轻量级协程，初始栈仅 2KB 并可动态扩展，单机可轻松运行数十万个。Go 调度器采用 M:N 模型（M 个 goroutine 映射到 N 个 OS 线程），配合工作窃取算法实现高效调度。channel 作为 goroutine 间通信的唯一推荐方式，配合 select 可以优雅地处理超时、取消和多路复用，体现了「通过通信共享内存，而非通过共享内存通信」的哲学。",
+      "use_cases": "适合高并发网络服务、CLI 工具、数据处理 pipeline。Go 标准库的 net/http 直接可用于生产，结合 goroutine 池可轻松构建每秒处理数万请求的服务；sync.WaitGroup 和 errgroup 则让批量并发任务的协调变得简洁可靠。",
+      "thinking_question": "需要并发调用 10 个外部 API 并聚合结果，同时要求任一请求超时后整体取消，你会如何用 context、goroutine 和 channel 设计这段代码，错误处理的边界在哪里？"
+    }
+  },
+  {
+    "date": "2026-08-16",
+    "repo_name": "vercel/next.js",
+    "repo_url": "https://github.com/vercel/next.js",
+    "repo_description": "The React Framework for the Web.",
+    "language": "TypeScript",
+    "stars": 128000,
+    "card_content": {
+      "core_point": "Next.js App Router 通过 React Server Components 将组件渲染移至服务端，从源头上大幅削减客户端 JavaScript 体积。",
+      "deep_understanding": "App Router 引入了全新的文件系统路由约定：layout.tsx 提供可嵌套的共享状态，loading.tsx 和 error.tsx 实现细粒度的流式加载与错误边界。React Server Components 默认在服务端渲染，可直接访问数据库或文件系统，只有标记 'use client' 的组件才会打包进客户端 bundle。这种混合渲染模式兼顾了 SEO 友好、首屏性能和丰富的客户端交互。",
+      "use_cases": "适用于内容驱动的营销网站、电商平台、多租户 SaaS 应用。利用 Server Actions 可以直接在组件中定义服务端数据变更逻辑，配合 ISR（增量静态再生）可实现高性能动态内容缓存，无需独立的 API 层。",
+      "thinking_question": "设计一个电商商品详情页时，你会如何在 Next.js 中权衡 SSR、SSG 与 ISR 的使用——哪些数据适合在构建时生成，哪些应在请求时服务端获取，哪些必须在客户端动态拉取？"
+    }
+  },
+  {
+    "date": "2026-08-15",
+    "repo_name": "kubernetes/kubernetes",
+    "repo_url": "https://github.com/kubernetes/kubernetes",
+    "repo_description": "Production-Grade Container Scheduling and Management.",
+    "language": "Go",
+    "stars": 112000,
+    "card_content": {
+      "core_point": "Kubernetes 通过声明式 API 与控制器模式，持续将集群的实际状态驱动至用户定义的期望状态，实现自愈与弹性。",
+      "deep_understanding": "K8s 核心是控制平面（etcd + API Server + Controller Manager + Scheduler）与工作节点（kubelet + kube-proxy）的协作。所有控制器遵循「调谐循环（Reconciliation Loop）」模式：持续观察资源的当前状态与期望状态的差异并采取行动弥合。Operator 模式将此理念扩展至有状态应用，通过 CRD 和自定义控制器实现复杂应用的自动化运维，例如数据库的备份、扩缩容和版本升级。",
+      "use_cases": "适用于需要弹性伸缩的微服务集群、CI/CD 工作负载调度、多租户平台基础设施。HPA 根据 CPU/内存或自定义指标自动水平扩缩 Pod，KEDA 则支持基于事件（如消息队列长度）触发零到 N 的弹性伸缩。",
+      "thinking_question": "当集群中某个 Deployment 的 Pod 持续处于 CrashLoopBackOff 状态时，你的完整排查路径是什么——从 kubectl describe、logs 到 events，你最先关注哪些字段，又如何区分是镜像问题、配置问题还是资源限制问题？"
+    }
+  }
+]
