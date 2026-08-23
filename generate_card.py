@@ -78,17 +78,20 @@ def build_prompt(repo: dict, commits: list) -> str:
     )
 
 
-def call_claude(prompt: str, api_key: str) -> dict:
-    """Call Claude claude-haiku-4-5-20251001 and return parsed card content."""
-    import anthropic
+MODEL = os.environ.get("OPENROUTER_MODEL") or "deepseek/deepseek-chat"
 
-    client = anthropic.Anthropic(api_key=api_key)
-    message = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+
+def call_llm(prompt: str, api_key: str) -> dict:
+    """通过 OpenRouter 调用模型，返回解析后的卡片内容。"""
+    from openai import OpenAI
+
+    client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=api_key)
+    message = client.chat.completions.create(
+        model=MODEL,
         max_tokens=1024,
         messages=[{"role": "user", "content": prompt}],
     )
-    raw = message.content[0].text.strip()
+    raw = message.choices[0].message.content.strip()
 
     # Extract the first JSON object found in the response
     match = re.search(r"\{[\s\S]*\}", raw)
@@ -128,12 +131,12 @@ def save_files(card: dict) -> None:
 def main() -> None:
     owner = os.environ.get("REPO_OWNER", "").strip()
     github_token = os.environ.get("CARDS_GITHUB_TOKEN", "").strip()
-    anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    openrouter_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
 
     missing = [k for k, v in [
         ("REPO_OWNER", owner),
         ("CARDS_GITHUB_TOKEN", github_token),
-        ("ANTHROPIC_API_KEY", anthropic_key),
+        ("OPENROUTER_API_KEY", openrouter_key),
     ] if not v]
     if missing:
         print(f"Error: missing environment variables: {', '.join(missing)}")
@@ -153,7 +156,7 @@ def main() -> None:
 
     prompt = build_prompt(repo, commits)
     print("Calling Claude API ...")
-    card_content = call_claude(prompt, anthropic_key)
+    card_content = call_llm(prompt, openrouter_key)
 
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     card = {

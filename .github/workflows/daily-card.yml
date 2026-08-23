@@ -24,7 +24,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install Python dependencies
-        run: pip install requests anthropic
+        run: pip install requests openai
 
       - name: Resolve GitHub token for starred repos
         env:
@@ -38,7 +38,8 @@ jobs:
 
       - name: Generate learning card
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
           REPO_OWNER: ${{ github.repository_owner }}
         run: python generate_card.py
 

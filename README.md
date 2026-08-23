@@ -29,7 +29,7 @@ Go to **Settings → Secrets and variables → Actions** and add:
 
 | Secret | Description |
 |---|---|
-| `ANTHROPIC_API_KEY` | Your Anthropic API key — get one at [console.anthropic.com](https://console.anthropic.com) |
+| `OPENROUTER_API_KEY` | Your OpenRouter API key — get one at [openrouter.ai/keys](https://openrouter.ai/keys) |
 | `CARDS_GITHUB_TOKEN` | *(Optional)* A GitHub Personal Access Token (PAT) with `read:user` scope, used to read your starred repos. If omitted, the built-in `GITHUB_TOKEN` is used, which works as long as your starred repos are public. |
 
 To create a PAT: **GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)** → New token → enable `read:user` scope.
@@ -51,7 +51,7 @@ GitHub Actions (cron: 0 8 * * *)
        │
        ├─ GET /repos/{owner}/{repo}/commits  (last 5)
        │
-       ├─ Claude claude-haiku-4-5-20251001  →  JSON card content
+       ├─ OpenRouter (deepseek/deepseek-chat)  →  JSON card content
        │
        ├─ Write  cards/latest.json
        ├─ Prepend cards/archive.json  (keeps last 30 entries)
