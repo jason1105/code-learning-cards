@@ -1,14 +1,1 @@
-{
-  "date": "2026-08-19",
-  "repo_name": "spring-projects/spring-boot",
-  "repo_url": "https://github.com/spring-projects/spring-boot",
-  "repo_description": "Spring Boot makes it easy to create Spring-powered, production-grade applications and services with absolute minimum fuss.",
-  "language": "Java",
-  "stars": 74800,
-  "card_content": {
-    "core_point": "Spring Boot 通过自动配置机制，让开发者无需繁琐的 XML 配置即可快速构建生产就绪的 Spring 应用。",
-    "deep_understanding": "Spring Boot 的核心是 @EnableAutoConfiguration，它通过扫描 spring.factories 文件，根据 classpath 中存在的依赖自动装配合适的 Bean。这种「约定优于配置」的设计大幅降低了开发门槛，同时完整保留了覆盖默认配置的灵活性。Actuator 模块进一步提供了开箱即用的健康检查、指标监控和应用管理端点，是生产部署不可缺少的组件。",
-    "use_cases": "广泛用于微服务架构的快速开发、REST API 服务构建、企业级后端系统。通过 Spring Initializr 可在几分钟内生成带有完整依赖管理的项目骨架，结合 Docker 与 Spring Cloud 可实现一键容器化的分布式服务体系。",
-    "thinking_question": "当生产环境的 Spring Boot 应用出现内存持续上涨时，你会借助哪些 Actuator 端点进行排查，/health、/metrics 和 /heapdump 各能提供哪些关键线索？"
-  }
-}
+{}

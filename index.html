@@ -411,24 +411,7 @@
 
 <script>
   /* ── Fallback sample (shown when JSON files aren't available) ── */
-  const FALLBACK = {
-    date: '2026-08-19',
-    repo_name: 'spring-projects/spring-boot',
-    repo_url: 'https://github.com/spring-projects/spring-boot',
-    repo_description: 'Spring Boot makes it easy to create Spring-powered, production-grade applications.',
-    language: 'Java',
-    stars: 74800,
-    card_content: {
-      core_point:
-        'Spring Boot 通过自动配置机制，让开发者无需繁琐的 XML 配置即可快速构建生产就绪的 Spring 应用。',
-      deep_understanding:
-        'Spring Boot 的核心是 @EnableAutoConfiguration，它通过扫描 spring.factories 文件，根据 classpath 中存在的依赖自动装配合适的 Bean。这种「约定优于配置」的设计大幅降低了开发门槛，同时保留了覆盖默认配置的灵活性。Actuator 模块进一步提供了开箱即用的健康检查与指标监控端点。',
-      use_cases:
-        '广泛用于微服务架构的快速开发、REST API 服务构建、企业级后端系统。通过 Spring Initializr 可在几分钟内生成完整项目骨架，结合 Docker 可实现一键容器化部署。',
-      thinking_question:
-        '当生产环境 Spring Boot 应用出现内存持续上涨时，你会借助哪些 Actuator 端点进行排查，/health、/metrics 和 /heapdump 各能提供哪些关键线索？',
-    },
-  };
+  const FALLBACK = null;
 
   /* ── State ── */
   let isFlipped = false;
@@ -482,6 +465,15 @@
 
   /* ── Render main card ── */
   function renderCard(card) {
+    // 尚无数据时显示空状态，绝不渲染占位/样例内容
+    if (!card || !card.repo_name) {
+      document.getElementById('front').innerHTML =
+        '<div style="text-align:center;padding:2rem;color:var(--text-3)">'
+        + '<div style="font-size:1.1rem;margin-bottom:.5rem">尚无学习卡</div>'
+        + '<div style="font-size:.85rem">等待每日工作流首次生成，或在 Actions 页面手动触发</div></div>';
+      document.getElementById('back').innerHTML = '';
+      return;
+    }
     const c = card.card_content || {};
     const shortName = (card.repo_name || '').split('/').pop();
     const org       = (card.repo_name || '').split('/')[0];
@@ -564,8 +556,8 @@
   /* ── Boot ── */
   (async () => {
     const [card, archive] = await Promise.all([
-      fetchJSON('cards/latest.json', FALLBACK),
-      fetchJSON('cards/archive.json', [FALLBACK]),
+      fetchJSON('cards/latest.json', null),
+      fetchJSON('cards/archive.json', []),
     ]);
     renderCard(card);
     renderArchive(archive);
