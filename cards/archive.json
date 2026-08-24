@@ -1,6 +1,20 @@
 [
   {
     "date": "2026-08-24",
+    "repo_name": "mrdoob/three.js",
+    "repo_url": "https://github.com/mrdoob/three.js",
+    "repo_description": "JavaScript 3D Library.",
+    "language": "JavaScript",
+    "stars": 114737,
+    "card_content": {
+      "core_point": "欧拉角顺序（Euler Order）决定旋转组合的先后次序，直接影响物体的最终朝向。",
+      "deep_understanding": "在three.js中，Euler类支持多种绕轴顺序（如XYZ、YXZ、ZYX等）。不同顺序的旋转结果不同，因为旋转矩阵乘法不满足交换律。例如，绕X轴旋转90°后再绕Y轴旋转，与先绕Y轴再绕X轴的结果截然不同。掌握欧拉角顺序有助于准确控制物体姿态，避免意外旋转，并在动画或交互中保持一致性。",
+      "use_cases": "适用于需要精确控制物体朝向的场景，如相机跟随、角色骨骼动画、机械臂关节旋转、飞行器姿态模拟等。尤其在处理万向锁问题时，调整欧拉顺序（如使用YXZ）可避免旋转自由度丢失。",
+      "thinking_question": "当使用欧拉角旋转时，如何根据实际需求选择最优的旋转顺序，并防止万向锁导致的运动异常？"
+    }
+  },
+  {
+    "date": "2026-08-24",
     "repo_name": "huggingface/transformers",
     "repo_url": "https://github.com/huggingface/transformers",
     "repo_description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
