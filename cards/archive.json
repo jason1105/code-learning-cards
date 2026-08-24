@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "date": "2026-08-24",
+    "repo_name": "JetBrains/intellij-sdk-docs",
+    "repo_url": "https://github.com/JetBrains/intellij-sdk-docs",
+    "repo_description": "IntelliJ SDK Platform Documentation",
+    "language": "Markdown",
+    "stars": 1290,
+    "card_content": {
+      "core_point": "IntelliJ SDK平台文档近期更新了Gradle插件功能，包括原生变体支持、新任务和测试框架更新。",
+      "deep_understanding": "这些更新增强了插件开发者在构建和测试IntelliJ平台插件时的灵活性和效率，特别是对Android Studio的支持更加完善。通过文档中的详细说明，开发者可以更好地利用这些新特性来优化开发流程。",
+      "use_cases": "适用于需要为IntelliJ平台或Android Studio开发插件的场景，特别是在需要处理不同平台变体或使用最新测试框架时。",
+      "thinking_question": "在使用IntelliJ SDK的Gradle插件时，如何利用原生变体支持来优化跨平台插件的构建过程？"
+    }
+  }
+]
