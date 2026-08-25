@@ -1,14 +1,14 @@
 {
-  "date": "2026-08-24",
-  "repo_name": "mrdoob/three.js",
-  "repo_url": "https://github.com/mrdoob/three.js",
-  "repo_description": "JavaScript 3D Library.",
-  "language": "JavaScript",
-  "stars": 114737,
+  "date": "2026-08-25",
+  "repo_name": "firstcontributions/first-contributions",
+  "repo_url": "https://github.com/firstcontributions/first-contributions",
+  "repo_description": "🚀✨ Help beginners to contribute to open source projects",
+  "language": "",
+  "stars": 55658,
   "card_content": {
-    "core_point": "欧拉角顺序（Euler Order）决定旋转组合的先后次序，直接影响物体的最终朝向。",
-    "deep_understanding": "在three.js中，Euler类支持多种绕轴顺序（如XYZ、YXZ、ZYX等）。不同顺序的旋转结果不同，因为旋转矩阵乘法不满足交换律。例如，绕X轴旋转90°后再绕Y轴旋转，与先绕Y轴再绕X轴的结果截然不同。掌握欧拉角顺序有助于准确控制物体姿态，避免意外旋转，并在动画或交互中保持一致性。",
-    "use_cases": "适用于需要精确控制物体朝向的场景，如相机跟随、角色骨骼动画、机械臂关节旋转、飞行器姿态模拟等。尤其在处理万向锁问题时，调整欧拉顺序（如使用YXZ）可避免旋转自由度丢失。",
-    "thinking_question": "当使用欧拉角旋转时，如何根据实际需求选择最优的旋转顺序，并防止万向锁导致的运动异常？"
+    "core_point": "开源贡献的第一步不是写代码，而是学会通过Pull Request提交自己的名字。",
+    "deep_understanding": "这个仓库通过让新手向Contributors.md添加自己的名字来练习完整的Git工作流（fork、clone、branch、commit、push、PR），从而降低参与开源的心理门槛。它强调贡献的多样性——文档、名单、小改动都是有效贡献，帮助新手建立信心并熟悉协作规范。",
+    "use_cases": "适用于任何想参与开源但不知从何下手的新手；也适合作为Git/GitHub教学的第一课，或团队内部培训协作流程的演练场。",
+    "thinking_question": "如果让你设计一个类似的“首次贡献”练习，你会选择什么类型的文件或任务来让新手既感到安全又能学到核心协作技能？"
   }
 }

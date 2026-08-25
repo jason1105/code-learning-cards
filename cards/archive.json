@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-08-25",
+    "repo_name": "firstcontributions/first-contributions",
+    "repo_url": "https://github.com/firstcontributions/first-contributions",
+    "repo_description": "🚀✨ Help beginners to contribute to open source projects",
+    "language": "",
+    "stars": 55658,
+    "card_content": {
+      "core_point": "开源贡献的第一步不是写代码，而是学会通过Pull Request提交自己的名字。",
+      "deep_understanding": "这个仓库通过让新手向Contributors.md添加自己的名字来练习完整的Git工作流（fork、clone、branch、commit、push、PR），从而降低参与开源的心理门槛。它强调贡献的多样性——文档、名单、小改动都是有效贡献，帮助新手建立信心并熟悉协作规范。",
+      "use_cases": "适用于任何想参与开源但不知从何下手的新手；也适合作为Git/GitHub教学的第一课，或团队内部培训协作流程的演练场。",
+      "thinking_question": "如果让你设计一个类似的“首次贡献”练习，你会选择什么类型的文件或任务来让新手既感到安全又能学到核心协作技能？"
+    }
+  },
+  {
     "date": "2026-08-24",
     "repo_name": "mrdoob/three.js",
     "repo_url": "https://github.com/mrdoob/three.js",
