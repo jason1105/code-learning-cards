@@ -39,6 +39,10 @@ jobs:
 
       - name: Generate learning card
         env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          # 过渡期保留 OpenRouter 兜底，切稳后可删
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
           REPO_OWNER: ${{ github.repository_owner }}
