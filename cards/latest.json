@@ -1,14 +1,14 @@
 {
-  "date": "2026-08-25",
-  "repo_name": "firstcontributions/first-contributions",
-  "repo_url": "https://github.com/firstcontributions/first-contributions",
-  "repo_description": "🚀✨ Help beginners to contribute to open source projects",
-  "language": "",
-  "stars": 55658,
+  "date": "2026-08-26",
+  "repo_name": "grafana/grafana",
+  "repo_url": "https://github.com/grafana/grafana",
+  "repo_description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
+  "language": "TypeScript",
+  "stars": 76426,
   "card_content": {
-    "core_point": "开源贡献的第一步不是写代码，而是学会通过Pull Request提交自己的名字。",
-    "deep_understanding": "这个仓库通过让新手向Contributors.md添加自己的名字来练习完整的Git工作流（fork、clone、branch、commit、push、PR），从而降低参与开源的心理门槛。它强调贡献的多样性——文档、名单、小改动都是有效贡献，帮助新手建立信心并熟悉协作规范。",
-    "use_cases": "适用于任何想参与开源但不知从何下手的新手；也适合作为Git/GitHub教学的第一课，或团队内部培训协作流程的演练场。",
-    "thinking_question": "如果让你设计一个类似的“首次贡献”练习，你会选择什么类型的文件或任务来让新手既感到安全又能学到核心协作技能？"
+    "core_point": "Grafana 是一个开源、可组合的可观测性与数据可视化平台，能统一可视化来自 Prometheus、Loki、Elasticsearch 等多数据源的指标、日志和链路数据。",
+    "deep_understanding": "Grafana 的核心价值在于其“可组合性”：通过插件生态和数据源抽象，用户可以将不同存储后端的数据汇聚到同一个交互式仪表盘中，而不必关心底层查询语言的差异。近期提交涉及统一存储的 gRPC 客户端更新、搜索 API 增强以及文档和国际化改进，说明项目在持续打磨平台的基础设施与开发者体验。",
+    "use_cases": "适用于云原生环境下的统一监控：例如运维团队用一个 Grafana 实例同时查看 Prometheus 的指标、Loki 的日志以及 Tempo 的链路追踪，快速定位故障；也适用于业务数据分析师通过 PostgreSQL 或 InfluxDB 数据源构建实时业务看板。",
+    "thinking_question": "如果让你为 Grafana 设计一个新的数据源插件，你会如何抽象不同数据源的查询能力，使得它们既能保持各自特性，又能被统一的可视化模型优雅地消费？"
   }
 }
