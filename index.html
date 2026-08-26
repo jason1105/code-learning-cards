@@ -341,6 +341,83 @@
       overflow: hidden;
     }
 
+    /* ── Rating (spaced repetition) ──────────────────────── */
+    .rating-row {
+      display: flex; gap: .5rem;
+      margin-top: .7rem; padding-top: .7rem;
+      border-top: 1px solid var(--border);
+    }
+    .rate-btn {
+      flex: 1;
+      font-family: inherit;
+      font-size: .72rem;
+      padding: .42rem .3rem;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 1px solid var(--border-hi);
+      background: rgba(251,191,36,.06);
+      color: var(--text-2);
+      transition: background .15s, color .15s, border-color .15s, transform .1s;
+    }
+    .rate-btn:hover { background: rgba(251,191,36,.16); color: var(--amber-200); }
+    .rate-btn:active { transform: scale(.96); }
+    .rate-btn.again { border-color: rgba(239,68,68,.4); }
+    .rate-btn.again:hover { background: rgba(239,68,68,.16); color: #fca5a5; }
+    .rate-btn.good { border-color: rgba(74,222,128,.35); }
+    .rate-btn.good:hover { background: rgba(74,222,128,.16); color: #86efac; }
+    .rate-note { font-size: .64rem; color: var(--amber-500); text-align: center; margin-top: .45rem; min-height: .9rem; }
+
+    /* ── Review queue (spaced repetition) ────────────────── */
+    .review { max-width: 880px; margin: 0 auto 3rem; }
+    .review-head {
+      display: flex; align-items: center; justify-content: center; gap: .55rem;
+      margin-bottom: 1.3rem;
+    }
+    .review-heading {
+      font-size: .72rem; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--text-3);
+    }
+    .review-badge {
+      font-size: .64rem; font-weight: 700;
+      color: var(--bg); background: var(--amber-400);
+      padding: .12rem .55rem; border-radius: 20px; min-width: 1.4rem; text-align: center;
+    }
+    .review-badge.zero { background: var(--surface-2); color: var(--text-3); }
+    .rq-list { display: flex; flex-direction: column; gap: .7rem; }
+    .rq-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--amber-500);
+      border-radius: var(--radius-sm);
+      padding: .85rem 1.1rem;
+      transition: border-color .2s;
+    }
+    .rq-card.new { border-left-color: var(--amber-300); }
+    .rq-top { display: flex; align-items: center; gap: .6rem; cursor: pointer; }
+    .rq-tag {
+      font-size: .58rem; font-weight: 700; letter-spacing: .06em;
+      padding: .14rem .5rem; border-radius: 20px; flex-shrink: 0;
+      background: rgba(251,191,36,.12); color: var(--amber-300);
+    }
+    .rq-tag.new { background: rgba(74,222,128,.14); color: #86efac; }
+    .rq-repo {
+      font-size: .85rem; font-weight: 600; color: var(--amber-200); flex: 1;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .rq-chev { color: var(--text-3); font-size: .72rem; transition: transform .2s; flex-shrink: 0; }
+    .rq-card.expanded .rq-chev { transform: rotate(90deg); }
+    .rq-detail { display: none; margin-top: .8rem; }
+    .rq-card.expanded .rq-detail { display: block; }
+    .rq-sec { margin-bottom: .6rem; }
+    .rq-label {
+      font-size: .6rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--amber-500); font-weight: 700; margin-bottom: .22rem;
+    }
+    .rq-text { font-size: .8rem; line-height: 1.55; color: var(--text-2); }
+    .rq-text.question { color: var(--amber-200); font-style: italic; }
+    .rq-empty { text-align: center; color: var(--text-3); font-size: .82rem; padding: 1.4rem; }
+    .rq-scheduled { text-align: center; color: var(--text-3); font-size: .68rem; margin-top: 1rem; }
+
     /* ── Loading / error ─────────────────────────────────── */
     .spinner-wrap { text-align: center; padding: 2.5rem; color: var(--text-3); }
     .spinner {
@@ -398,6 +475,18 @@
     <span class="flip-icon">↺</span> 翻转查看详情
   </button>
 </div>
+
+<!-- ── Review queue (spaced repetition) ──────────────────── -->
+<section class="review" id="reviewSection">
+  <div class="review-head">
+    <span class="review-heading">▸ 复习队列</span>
+    <span class="review-badge" id="reviewBadge">…</span>
+  </div>
+  <div class="rq-list" id="reviewList">
+    <div class="spinner-wrap"><div class="spinner"></div></div>
+  </div>
+  <div class="rq-scheduled" id="reviewScheduled"></div>
+</section>
 
 <!-- ── Archive ───────────────────────────────────────────── -->
 <section class="archive">
@@ -516,6 +605,13 @@
         <div class="back-label">💭 思考问题</div>
         <div class="back-text question">${esc(txt(c, 'thinking_question'))}</div>
       </div>
+      <div class="back-label" style="margin-top:.4rem">📅 复习掌握度</div>
+      <div class="rating-row">
+        <button class="rate-btn again" onclick="event.stopPropagation();rateCard('${esc(cardId(card))}','again')">😵 忘了</button>
+        <button class="rate-btn hard"  onclick="event.stopPropagation();rateCard('${esc(cardId(card))}','hard')">🤔 模糊</button>
+        <button class="rate-btn good"  onclick="event.stopPropagation();rateCard('${esc(cardId(card))}','good')">😎 记住</button>
+      </div>
+      <div class="rate-note" id="todayRateNote"></div>
       <div class="back-hint">再次点击卡片可翻回正面</div>
     `;
   }
@@ -542,6 +638,120 @@
     }).join('');
   }
 
+  /* ── Spaced repetition (Leitner box, per-browser localStorage) ── */
+  const SR_KEY    = 'clc-sr';
+  const INTERVALS = [1, 2, 4, 8, 16, 32];   // days-until-next-review, indexed by box
+  const MAX_BOX   = INTERVALS.length - 1;
+  let ARCHIVE     = [];
+  let TODAY_CARD  = null;
+
+  function todayStr() {
+    const d = new Date();
+    const p = n => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+  }
+  function addDays(dateStr, n) {
+    const d = new Date(dateStr + 'T12:00:00');
+    d.setDate(d.getDate() + n);
+    const p = x => String(x).padStart(2, '0');
+    return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+  }
+  function getSR() {
+    try { return JSON.parse(localStorage.getItem(SR_KEY)) || {}; }
+    catch { return {}; }
+  }
+  function saveSR(m) {
+    try { localStorage.setItem(SR_KEY, JSON.stringify(m)); } catch {}
+  }
+  // key on date + repo so multiple cards sharing a date stay independent
+  function cardId(card) { return card.date + '::' + card.repo_name; }
+
+  function rateCard(id, grade) {
+    const m = getSR();
+    const prev = m[id] || { box: 0, reps: 0 };
+    let box = prev.box || 0;
+    if (grade === 'again')     box = 0;                       // forgot → shortest interval
+    else if (grade === 'hard') box = Math.max(0, box);        // fuzzy → hold current box
+    else                       box = Math.min(MAX_BOX, box + 1); // got it → grow interval
+    const t = todayStr();
+    m[id] = { box, due: addDays(t, INTERVALS[box]), last: t, reps: (prev.reps || 0) + 1 };
+    saveSR(m);
+    renderReview(ARCHIVE);
+    syncTodayRating();
+  }
+
+  function partitionCards(cards) {
+    const sr = getSR();
+    const t  = todayStr();
+    const due = [], fresh = [], scheduled = [];
+    (cards || []).forEach(card => {
+      if (!card || !card.repo_name || !card.date) return;
+      const s = sr[cardId(card)];
+      if (!s)              fresh.push(card);
+      else if (s.due <= t) due.push(card);
+      else                 scheduled.push(s);
+    });
+    return { due, fresh, scheduled };
+  }
+
+  function reviewItemHTML(card, kind) {
+    const c = card.card_content || {};
+    const short = (card.repo_name || '').split('/').pop() || card.repo_name;
+    const tag = kind === 'new' ? '新卡' : '待复习';
+    return `
+      <div class="rq-card ${kind}" data-date="${esc(card.date)}">
+        <div class="rq-top" onclick="toggleRQ(this)">
+          <span class="rq-tag ${kind}">${tag}</span>
+          <span class="rq-repo" title="${esc(card.repo_name)}">${esc(short)}</span>
+          <span class="rq-chev">▸</span>
+        </div>
+        <div class="rq-detail">
+          <div class="rq-sec"><div class="rq-label">🔑 核心知识点</div><div class="rq-text">${esc(txt(c, 'core_point'))}</div></div>
+          <div class="rq-sec"><div class="rq-label">📖 深入理解</div><div class="rq-text">${esc(txt(c, 'deep_understanding'))}</div></div>
+          <div class="rq-sec"><div class="rq-label">⚡ 实际应用场景</div><div class="rq-text">${esc(txt(c, 'use_cases'))}</div></div>
+          <div class="rq-sec"><div class="rq-label">💭 思考问题</div><div class="rq-text question">${esc(txt(c, 'thinking_question'))}</div></div>
+          <div class="rating-row">
+            <button class="rate-btn again" onclick="rateCard('${esc(cardId(card))}','again')">😵 忘了</button>
+            <button class="rate-btn hard"  onclick="rateCard('${esc(cardId(card))}','hard')">🤔 模糊</button>
+            <button class="rate-btn good"  onclick="rateCard('${esc(cardId(card))}','good')">😎 记住</button>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function toggleRQ(top) { top.parentElement.classList.toggle('expanded'); }
+
+  function renderReview(cards) {
+    ARCHIVE = cards || [];
+    const { due, fresh, scheduled } = partitionCards(cards);
+    const list   = document.getElementById('reviewList');
+    const badge  = document.getElementById('reviewBadge');
+    const schedEl = document.getElementById('reviewScheduled');
+    const total  = due.length + fresh.length;
+
+    badge.textContent = total;
+    badge.classList.toggle('zero', total === 0);
+
+    let html = '';
+    due.forEach(card   => { html += reviewItemHTML(card, 'due'); });
+    fresh.forEach(card => { html += reviewItemHTML(card, 'new'); });
+    list.innerHTML = html || '<div class="rq-empty">🎉 今日复习已清空，明天再来</div>';
+
+    if (scheduled.length) {
+      const next = scheduled.map(s => s.due).sort()[0];
+      schedEl.textContent = `另有 ${scheduled.length} 张已排期 · 下次复习 ${fmt(next)}`;
+    } else {
+      schedEl.textContent = '';
+    }
+  }
+
+  function syncTodayRating() {
+    const note = document.getElementById('todayRateNote');
+    if (!note || !TODAY_CARD || !TODAY_CARD.date) return;
+    const s = getSR()[cardId(TODAY_CARD)];
+    note.textContent = s ? `已记录 · 下次复习 ${fmt(s.due)}` : '';
+  }
+
   /* ── Fetch with fallback ── */
   async function fetchJSON(url, fallback) {
     try {
@@ -559,8 +769,11 @@
       fetchJSON('cards/latest.json', null),
       fetchJSON('cards/archive.json', []),
     ]);
+    TODAY_CARD = card;
     renderCard(card);
     renderArchive(archive);
+    renderReview(archive);
+    syncTodayRating();
   })();
 </script>
 </body>
