@@ -78,14 +78,14 @@ def build_prompt(repo: dict, commits: list) -> str:
     )
 
 
-MODEL = os.environ.get("OPENROUTER_MODEL") or "deepseek/deepseek-chat"
+MODEL = os.environ.get("LLM_MODEL") or os.environ.get("OPENROUTER_MODEL") or "deepseek-v4-flash"
 
 
 def call_llm(prompt: str, api_key: str) -> dict:
     """通过 OpenRouter 调用模型，返回解析后的卡片内容。"""
     from openai import OpenAI
 
-    client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=api_key)
+    client = OpenAI(base_url=os.environ.get("LLM_BASE_URL") or "https://api.deepseek.com", api_key=api_key)
     message = client.chat.completions.create(
         model=MODEL,
         max_tokens=1024,
@@ -131,12 +131,12 @@ def save_files(card: dict) -> None:
 def main() -> None:
     owner = os.environ.get("REPO_OWNER", "").strip()
     github_token = os.environ.get("CARDS_GITHUB_TOKEN", "").strip()
-    openrouter_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    openrouter_key = (os.environ.get("LLM_API_KEY") or os.environ.get("OPENROUTER_API_KEY", "")).strip()
 
     missing = [k for k, v in [
         ("REPO_OWNER", owner),
         ("CARDS_GITHUB_TOKEN", github_token),
-        ("OPENROUTER_API_KEY", openrouter_key),
+        ("LLM_API_KEY / OPENROUTER_API_KEY", openrouter_key),
     ] if not v]
     if missing:
         print(f"Error: missing environment variables: {', '.join(missing)}")
