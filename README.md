@@ -29,7 +29,7 @@ Go to **Settings → Secrets and variables → Actions** and add:
 
 | Secret | Description |
 |---|---|
-| `OPENROUTER_API_KEY` | Your OpenRouter API key — get one at [openrouter.ai/keys](https://openrouter.ai/keys) |
+| `LLM_API_KEY` | Your DeepSeek API key — get one at [platform.deepseek.com](https://platform.deepseek.com) (`OPENROUTER_API_KEY` also accepted) |
 | `CARDS_GITHUB_TOKEN` | *(Optional)* A GitHub Personal Access Token (PAT) with `read:user` scope, used to read your starred repos. If omitted, the built-in `GITHUB_TOKEN` is used, which works as long as your starred repos are public. |
 
 To create a PAT: **GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)** → New token → enable `read:user` scope.
@@ -51,7 +51,7 @@ GitHub Actions (cron: 0 8 * * *)
        │
        ├─ GET /repos/{owner}/{repo}/commits  (last 5)
        │
-       ├─ OpenRouter (deepseek/deepseek-chat)  →  JSON card content
+       ├─ DeepSeek (deepseek-v4-flash)       →  JSON card content
        │
        ├─ Write  cards/latest.json
        ├─ Prepend cards/archive.json  (keeps last 30 entries)
@@ -85,7 +85,7 @@ code-learning-cards/
 
 **Change the schedule:** Edit the `cron` expression in `daily-card.yml`. The current value `0 8 * * *` fires at 08:00 UTC daily.
 
-**Change the model:** Edit the `model=` argument in `generate_card.py`. Any Claude model works.
+**Change the model:** set the `LLM_MODEL` repository variable (default `deepseek-v4-flash`); no code change needed.
 
 **Change the prompt language or format:** Edit the `build_prompt()` function in `generate_card.py`.
 
