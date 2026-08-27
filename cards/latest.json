@@ -1,14 +1,14 @@
 {
-  "date": "2026-08-26",
-  "repo_name": "grafana/grafana",
-  "repo_url": "https://github.com/grafana/grafana",
-  "repo_description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
-  "language": "TypeScript",
-  "stars": 76426,
+  "date": "2026-08-27",
+  "repo_name": "andyrewlee/awesome-agent-orchestrators",
+  "repo_url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
+  "repo_description": "List of agent orchestrators",
+  "language": "",
+  "stars": 1529,
   "card_content": {
-    "core_point": "Grafana 是一个开源、可组合的可观测性与数据可视化平台，能统一可视化来自 Prometheus、Loki、Elasticsearch 等多数据源的指标、日志和链路数据。",
-    "deep_understanding": "Grafana 的核心价值在于其“可组合性”：通过插件生态和数据源抽象，用户可以将不同存储后端的数据汇聚到同一个交互式仪表盘中，而不必关心底层查询语言的差异。近期提交涉及统一存储的 gRPC 客户端更新、搜索 API 增强以及文档和国际化改进，说明项目在持续打磨平台的基础设施与开发者体验。",
-    "use_cases": "适用于云原生环境下的统一监控：例如运维团队用一个 Grafana 实例同时查看 Prometheus 的指标、Loki 的日志以及 Tempo 的链路追踪，快速定位故障；也适用于业务数据分析师通过 PostgreSQL 或 InfluxDB 数据源构建实时业务看板。",
-    "thinking_question": "如果让你为 Grafana 设计一个新的数据源插件，你会如何抽象不同数据源的查询能力，使得它们既能保持各自特性，又能被统一的可视化模型优雅地消费？"
+    "core_point": "Agent编排器是协调多个AI代理协同完成复杂任务的系统工具，该仓库收录了丰富多样的编排器项目。",
+    "deep_understanding": "这个仓库按应用场景分类整理了各类agent编排器，如并行编码、个人助理、自主任务运行等，体现了AI代理从单点工具向多代理协作生态演进的趋势。通过研究这些项目，可以了解当前编排器的设计模式、适用场景和社区活跃度，为技术选型提供参考。",
+    "use_cases": "开发者可参考该列表选择适合自己项目的编排器，例如在软件工程中引入并行编码代理提升效率，或使用个人助理代理自动化日常事务；同时也可作为学习资源，理解不同编排器的架构与实现思路。",
+    "thinking_question": "在面对多种agent编排器时，你会用哪些关键维度（如扩展性、容错性、易用性、成本）来评估并选择最适合的解决方案？"
   }
 }
