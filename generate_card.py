@@ -158,6 +158,17 @@ def main() -> None:
     print("Calling Claude API ...")
     card_content = call_llm(prompt, openrouter_key)
 
+    # 防空响应：内容无效则不写盘，保留 latest.json 与 archive（不被空覆盖）
+    def _valid_card(c):
+        if not isinstance(c, dict):
+            return False
+        if "core_point" in c:
+            return bool(str(c.get("core_point", "")).strip())
+        return len(str(c.get("raw", "")).strip()) >= 40
+    if not _valid_card(card_content):
+        print("ERROR: LLM 返回空/无效卡片内容，跳过写入以避免覆盖已有数据。", file=sys.stderr)
+        sys.exit(1)
+
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     card = {
         "date": today,
