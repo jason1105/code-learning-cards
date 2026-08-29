@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-08-29",
+    "repo_name": "ggml-org/whisper.cpp",
+    "repo_url": "https://github.com/ggml-org/whisper.cpp",
+    "repo_description": "Port of OpenAI's Whisper model in C/C++",
+    "language": "C++",
+    "stars": 53273,
+    "card_content": {
+      "core_point": "whisper.cpp 是 OpenAI Whisper 语音识别模型的高性能 C/C++ 移植版，专为本地和边缘设备优化。",
+      "deep_understanding": "该项目利用 GGML 张量库实现了 Whisper 模型的完整推理流程，无需 Python 环境和 PyTorch 依赖，可在 CPU 上高效运行。它支持多种量化方式以降低内存占用，并提供了丰富的示例应用，如实时转写和翻译。其核心价值在于让语音识别能力可以轻松嵌入到桌面、移动端甚至嵌入式系统中。",
+      "use_cases": "适合在隐私敏感或离线场景下使用，如本地会议录音转文字、智能语音助手、字幕生成工具，以及资源受限的嵌入式设备上的语音控制。",
+      "thinking_question": "在无 GPU 的普通 CPU 上，whisper.cpp 相比原始 Python 版 Whisper 能提升多少推理速度？这种性能差异主要来源于哪些优化策略？"
+    }
+  },
+  {
     "date": "2026-08-27",
     "repo_name": "andyrewlee/awesome-agent-orchestrators",
     "repo_url": "https://github.com/andyrewlee/awesome-agent-orchestrators",
