@@ -1,14 +1,14 @@
 {
-  "date": "2026-08-29",
-  "repo_name": "ggml-org/whisper.cpp",
-  "repo_url": "https://github.com/ggml-org/whisper.cpp",
-  "repo_description": "Port of OpenAI's Whisper model in C/C++",
+  "date": "2026-08-30",
+  "repo_name": "PurpleI2P/i2pd",
+  "repo_url": "https://github.com/PurpleI2P/i2pd",
+  "repo_description": " 🛡 I2P: End-to-End encrypted and anonymous Internet",
   "language": "C++",
-  "stars": 53273,
+  "stars": 4182,
   "card_content": {
-    "core_point": "whisper.cpp 是 OpenAI Whisper 语音识别模型的高性能 C/C++ 移植版，专为本地和边缘设备优化。",
-    "deep_understanding": "该项目利用 GGML 张量库实现了 Whisper 模型的完整推理流程，无需 Python 环境和 PyTorch 依赖，可在 CPU 上高效运行。它支持多种量化方式以降低内存占用，并提供了丰富的示例应用，如实时转写和翻译。其核心价值在于让语音识别能力可以轻松嵌入到桌面、移动端甚至嵌入式系统中。",
-    "use_cases": "适合在隐私敏感或离线场景下使用，如本地会议录音转文字、智能语音助手、字幕生成工具，以及资源受限的嵌入式设备上的语音控制。",
-    "thinking_question": "在无 GPU 的普通 CPU 上，whisper.cpp 相比原始 Python 版 Whisper 能提升多少推理速度？这种性能差异主要来源于哪些优化策略？"
+    "core_point": "i2pd 是 I2P 匿名网络的轻量级 C++ 实现，提供端到端加密的匿名通信能力。",
+    "deep_understanding": "与 Java 版 I2P 相比，i2pd 资源占用更低，适合在路由器、树莓派等受限设备上运行。它通过大蒜路由、隧道配对和噪声协议等机制，在应用层之下构建一层匿名传输网络，使通信双方难以被流量分析或追踪。",
+    "use_cases": "适用于需要在低功耗设备上运行匿名代理、访问 eepsite（I2P 内部网站）、搭建匿名聊天或文件共享服务，以及作为现有应用的 SOCKS 代理出口。",
+    "thinking_question": "I2P 的每条消息会经过多条隧道和多次加密，这种设计在增强匿名性的同时显著增加了延迟；如果你设计一个匿名通信系统，会如何权衡延迟、带宽和匿名强度之间的取舍？"
   }
 }
