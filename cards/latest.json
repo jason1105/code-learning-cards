@@ -1,14 +1,14 @@
 {
-  "date": "2026-08-30",
-  "repo_name": "PurpleI2P/i2pd",
-  "repo_url": "https://github.com/PurpleI2P/i2pd",
-  "repo_description": " 🛡 I2P: End-to-End encrypted and anonymous Internet",
-  "language": "C++",
-  "stars": 4182,
+  "date": "2026-08-31",
+  "repo_name": "firstcontributions/first-contributions",
+  "repo_url": "https://github.com/firstcontributions/first-contributions",
+  "repo_description": "🚀✨ Help beginners to contribute to open source projects",
+  "language": "",
+  "stars": 55756,
   "card_content": {
-    "core_point": "i2pd 是 I2P 匿名网络的轻量级 C++ 实现，提供端到端加密的匿名通信能力。",
-    "deep_understanding": "与 Java 版 I2P 相比，i2pd 资源占用更低，适合在路由器、树莓派等受限设备上运行。它通过大蒜路由、隧道配对和噪声协议等机制，在应用层之下构建一层匿名传输网络，使通信双方难以被流量分析或追踪。",
-    "use_cases": "适用于需要在低功耗设备上运行匿名代理、访问 eepsite（I2P 内部网站）、搭建匿名聊天或文件共享服务，以及作为现有应用的 SOCKS 代理出口。",
-    "thinking_question": "I2P 的每条消息会经过多条隧道和多次加密，这种设计在增强匿名性的同时显著增加了延迟；如果你设计一个匿名通信系统，会如何权衡延迟、带宽和匿名强度之间的取舍？"
+    "core_point": "通过模拟一个最小可完成的流程，让新手安全地完成第一次开源贡献（Pull Request）。",
+    "deep_understanding": "这个仓库刻意简化了真实开源项目的复杂性，把贡献流程拆解为“Fork → Clone → 修改 → PR”四个步骤，让初学者在无压力环境中建立信心。它不关注代码本身，而是强调协作规范与工具链的熟练度。真正掌握后，这种流程可以迁移到任何开源项目中，成为持续参与社区协作的起点。",
+    "use_cases": "用于开源教育、企业新人入职培训、编程工作坊，以及任何希望快速理解GitHub协作流程的场景。也可以作为练习“PR审核”流程的安全沙盒。",
+    "thinking_question": "如果你在完成第一次PR时遇到“冲突”或“审核不通过”，你会如何定位问题并调整心态？"
   }
 }
