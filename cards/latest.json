@@ -1,14 +1,14 @@
 {
-  "date": "2026-08-31",
-  "repo_name": "firstcontributions/first-contributions",
-  "repo_url": "https://github.com/firstcontributions/first-contributions",
-  "repo_description": "🚀✨ Help beginners to contribute to open source projects",
-  "language": "",
-  "stars": 55756,
+  "date": "2026-09-01",
+  "repo_name": "argoproj/argo-cd",
+  "repo_url": "https://github.com/argoproj/argo-cd",
+  "repo_description": "Declarative Continuous Deployment for Kubernetes",
+  "language": "Go",
+  "stars": 24051,
   "card_content": {
-    "core_point": "通过模拟一个最小可完成的流程，让新手安全地完成第一次开源贡献（Pull Request）。",
-    "deep_understanding": "这个仓库刻意简化了真实开源项目的复杂性，把贡献流程拆解为“Fork → Clone → 修改 → PR”四个步骤，让初学者在无压力环境中建立信心。它不关注代码本身，而是强调协作规范与工具链的熟练度。真正掌握后，这种流程可以迁移到任何开源项目中，成为持续参与社区协作的起点。",
-    "use_cases": "用于开源教育、企业新人入职培训、编程工作坊，以及任何希望快速理解GitHub协作流程的场景。也可以作为练习“PR审核”流程的安全沙盒。",
-    "thinking_question": "如果你在完成第一次PR时遇到“冲突”或“审核不通过”，你会如何定位问题并调整心态？"
+    "core_point": "Argo CD 是一个基于 GitOps 理念的声明式持续交付工具，用于将 Kubernetes 应用部署与 Git 仓库中的配置保持同步。",
+    "deep_understanding": "Argo CD 以 Git 仓库作为应用的唯一事实来源，通过持续监控集群实际状态与仓库期望状态的差异，并在检测到漂移时自动或手动同步，从而简化部署、回滚和审计。它天然支持多集群管理、应用版本追踪和策略化同步，使基础设施变更像代码一样可审查、可回滚。",
+    "use_cases": "适合需要频繁发布并保证环境一致性的 Kubernetes 场景，例如多环境（开发/预发/生产）统一部署、集群配置基线管理、紧急回滚到历史版本，以及跨团队协作时通过 PR 审批流程控制生产变更。",
+    "thinking_question": "在团队中实施 GitOps 时，如何设计 Git 仓库的目录结构与权限模型，才能在保证安全审批的前提下，兼顾多应用、多环境的灵活部署和响应速度？"
   }
 }
