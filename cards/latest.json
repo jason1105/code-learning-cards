@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-01",
-  "repo_name": "argoproj/argo-cd",
-  "repo_url": "https://github.com/argoproj/argo-cd",
-  "repo_description": "Declarative Continuous Deployment for Kubernetes",
-  "language": "Go",
-  "stars": 24051,
+  "date": "2026-09-02",
+  "repo_name": "slint-ui/slint",
+  "repo_url": "https://github.com/slint-ui/slint",
+  "repo_description": "Slint is an open-source declarative GUI toolkit to build native user interfaces for Rust, C++, JavaScript, or Python apps.",
+  "language": "Rust",
+  "stars": 23671,
   "card_content": {
-    "core_point": "Argo CD 是一个基于 GitOps 理念的声明式持续交付工具，用于将 Kubernetes 应用部署与 Git 仓库中的配置保持同步。",
-    "deep_understanding": "Argo CD 以 Git 仓库作为应用的唯一事实来源，通过持续监控集群实际状态与仓库期望状态的差异，并在检测到漂移时自动或手动同步，从而简化部署、回滚和审计。它天然支持多集群管理、应用版本追踪和策略化同步，使基础设施变更像代码一样可审查、可回滚。",
-    "use_cases": "适合需要频繁发布并保证环境一致性的 Kubernetes 场景，例如多环境（开发/预发/生产）统一部署、集群配置基线管理、紧急回滚到历史版本，以及跨团队协作时通过 PR 审批流程控制生产变更。",
-    "thinking_question": "在团队中实施 GitOps 时，如何设计 Git 仓库的目录结构与权限模型，才能在保证安全审批的前提下，兼顾多应用、多环境的灵活部署和响应速度？"
+    "core_point": "Slint是一个用于Rust、C++、JavaScript和Python的开源声明式GUI工具包，主打原生界面与跨语言集成。",
+    "deep_understanding": "Slint采用声明式UI描述语言，将界面设计与业务逻辑清晰分离，同时通过多语言绑定让不同技术栈的开发者都能使用同一套GUI核心。近期提交关注软件渲染器的no_std支持、Node绑定错误处理改进等，说明其在嵌入式与跨语言生态上持续打磨，强调轻量、稳定与可移植性。",
+    "use_cases": "适合需要高保真原生界面且希望复用Rust/C++后端逻辑的桌面应用；也适用于嵌入式设备上资源受限但需要流畅渲染的界面场景。",
+    "thinking_question": "与其他声明式GUI框架（如Qt QML或Flutter）相比，Slint在跨语言支持和轻量化设计上可能有哪些取舍？你会如何评估它是否适合某个具体项目？"
   }
 }
