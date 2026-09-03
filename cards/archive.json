@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-09-03",
+    "repo_name": "1c7/chinese-independent-developer",
+    "repo_url": "https://github.com/1c7/chinese-independent-developer",
+    "repo_description": "👩🏿‍💻👨🏾‍💻👩🏼‍💻👨🏽‍💻👩🏻‍💻中国独立开发者项目列表 -- 分享大家都在做什么",
+    "language": "Python",
+    "stars": 61230,
+    "card_content": {
+      "core_point": "中国独立开发者项目列表是一个集中展示与发现独立开发作品的开源资源库。",
+      "deep_understanding": "该项目通过收集和整理独立开发者的作品，帮助开发者相互了解、借鉴和合作。它不仅是项目展示平台，也反映了中国独立开发者的生态和创意趋势，适合用于市场调研、灵感碰撞和社区连接。",
+      "use_cases": "开发者可以在作品发布后提交项目地址以增加曝光；创业者可参考列表中的成功案例寻找切入点；学习者则能通过研究这些项目理解不同技术栈和产品设计思路。",
+      "thinking_question": "浏览这些独立开发项目时，你会如何判断一个项目是否值得学习或借鉴？可以从技术实现、用户需求和商业价值三个维度展开思考。"
+    }
+  },
+  {
     "date": "2026-09-02",
     "repo_name": "slint-ui/slint",
     "repo_url": "https://github.com/slint-ui/slint",
