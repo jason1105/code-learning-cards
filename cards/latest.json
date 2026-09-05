@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-04",
-  "repo_name": "tauri-apps/tauri",
-  "repo_url": "https://github.com/tauri-apps/tauri",
-  "repo_description": "Build smaller, faster, and more secure desktop and mobile applications with a web frontend.",
-  "language": "Rust",
-  "stars": 110805,
+  "date": "2026-09-05",
+  "repo_name": "bojieli/ai-agent-book",
+  "repo_url": "https://github.com/bojieli/ai-agent-book",
+  "repo_description": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
+  "language": "Python",
+  "stars": 44787,
   "card_content": {
-    "core_point": "Tauri 通过 Rust 后端与系统 WebView 渲染前端，让开发者用 Web 技术构建更小、更快、更安全的桌面和移动应用。",
-    "deep_understanding": "与捆绑 Chromium 的 Electron 不同，Tauri 调用操作系统原生 WebView，因此二进制体积更小、内存占用更低。与此同时，Rust 后端带来严格的内存安全与能力权限控制，使得暴露给前端的系统 API 都可以精细化授权，在架构上更贴近“最小权限”原则。近期提交中对 Image 的 RGBA 序列化优化和 CI 权限收紧，也体现了对性能与供应链安全的高度重视。",
-    "use_cases": "适合需要跨平台交付但仍希望控制安装包体积和安全边界的工具类桌面应用、内部管理系统、轻量级多媒体编辑器，以及希望复用 Web 前端技能栈并补充原生能力的移动/桌面产品。",
-    "thinking_question": "如果 Tauri 允许每个命令单独配置权限，那么在发布一个高交互、多命令的复杂应用时，你如何设计权限清单，既保证体验流畅又不暴露不必要的系统能力？"
+    "core_point": "《深入理解 AI Agent》是一本系统讲解 AI Agent 设计原理与工程实践的开源书籍，并配有代码与多语种文档。",
+    "deep_understanding": "这本书不只是讲概念，而是从工程落地角度拆解 Agent 的架构、推理、工具调用与学习机制，例如近期更新中强调以“三层验证”为主线来理解如何从运行轨迹中获得学习信号。开源仓库持续迭代，反映出 Agent 领域实践快速演进，读者可以结合最新代码和版本来掌握设计范式。",
+    "use_cases": "适合 AI 工程师、技术团队负责人或产品经理用于学习 Agent 系统设计、参考可运行的工程代码、设计带反馈与学习能力的智能体，或作为企业内部技术培训与读书会的基础材料。",
+    "thinking_question": "当 Agent 在运行轨迹中犯错时，如何设计三层验证机制来区分“工具调用错误”“推理逻辑错误”和“任务理解错误”，并分别给出有效的学习信号？"
   }
 }
