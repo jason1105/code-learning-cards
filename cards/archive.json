@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-09-06",
+    "repo_name": "crimx/ext-saladict",
+    "repo_url": "https://github.com/crimx/ext-saladict",
+    "repo_description": "🥗 All-in-one professional pop-up dictionary and page translator which supports multiple search modes, page translations, new word notebook and PDF selection searching.",
+    "language": "TypeScript",
+    "stars": 13311,
+    "card_content": {
+      "core_point": "沙拉查词是一个基于TypeScript的全能划词翻译扩展，通过多搜索模式与PDF取词等技术优化阅读与翻译体验。",
+      "deep_understanding": "该项目以弹窗词典为核心，集成了页面翻译、生词本与PDF划词搜索，展现了“工具型浏览器扩展”的完整设计思路。从最近的提交看，项目对细节非常重视，例如去重Collins请求的cookie、修复多配置文件默认词典等，这些看似微小的修改直接影响跨语言查询的准确性和用户配置的稳定性。通过长期维护和持续重构（如移除非空断言），项目在功能复杂性和代码健壮性之间做了扎实平衡。",
+      "use_cases": "适合外语阅读者快速查词而无需切换标签页；也适合研究者对PDF原文进行划词翻译与生词收集；还可以作为页面整体翻译的轻量方案，减少在多语言内容间的切换成本。",
+      "thinking_question": "当浏览器扩展需要同时支持划词、整页翻译和PDF取词时，如何设计数据流与权限模型，才能既保证响应速度又不牺牲用户隐私?"
+    }
+  },
+  {
     "date": "2026-09-05",
     "repo_name": "bojieli/ai-agent-book",
     "repo_url": "https://github.com/bojieli/ai-agent-book",
