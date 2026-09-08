@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-07",
-  "repo_name": "charlax/professional-programming",
-  "repo_url": "https://github.com/charlax/professional-programming",
-  "repo_description": "A collection of learning resources for curious software engineers",
-  "language": "Python",
-  "stars": 51495,
+  "date": "2026-09-08",
+  "repo_name": "firstcontributions/first-contributions",
+  "repo_url": "https://github.com/firstcontributions/first-contributions",
+  "repo_description": "🚀✨ Help beginners to contribute to open source projects",
+  "language": "",
+  "stars": 55858,
   "card_content": {
-    "core_point": "软件工程师的成长不仅靠编码，更需要系统化的学习资源和跨领域知识积累。",
-    "deep_understanding": "professional-programming 仓库本质上是一个精选知识库，覆盖从编程语言基础到架构设计、数据语义、金融科技等多元主题。它提醒我们：真正的专业能力源于持续输入高质量信息，并主动建立知识之间的联系。通过跟踪优质资源，你可以像维护代码一样维护自己的知识体系，让学习路径更清晰。",
-    "use_cases": "当你想拓展技术视野时，可以按图索骥探索其中的主题；当你在某个领域遇到瓶颈时，可以从中寻找推荐书籍或文章；当你需要为团队设计学习计划时，也能借鉴其分类和内容组织方式。",
-    "thinking_question": "如果让你为这份资源列表新增一个“现代软件工程必备”的章节，你会选择哪些主题？为什么？"
+    "core_point": "开源贡献的门槛远低于想象，一次简单的“添加名字到贡献者列表”就是参与全球协作的起点。",
+    "deep_understanding": "这个仓库通过让初学者完成一次真实的Pull Request流程——复刻仓库、创建分支、提交修改、发起PR——来消除他们对开源贡献的陌生感。其核心价值不在代码量，而在于理解分布式协作的闭环。即使只修改一个文档，也已进入“提出问题→建立分支→合并变更”的核心循环，这种体验是后续深入参与一切开源项目的基础。",
+    "use_cases": "适用于任何人第一次接触开源：学习Git基础操作、验证本地环境配置、体验与维护者沟通的流程。也能作为技术导师或社区组织者用于入门工作坊的演练素材，让参与者快速获得“我的PR被合并”的正反馈。",
+    "thinking_question": "如果让你为这个仓库添加一条对中文初学者更友好的说明文件，你会如何设计它的目录结构和描述重点，以便让完全不懂Git的人也能第一次就成功提交？"
   }
 }
