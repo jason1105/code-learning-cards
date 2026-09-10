@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-09",
-  "repo_name": "Tencent/teamai-cli",
-  "repo_url": "https://github.com/Tencent/teamai-cli",
-  "repo_description": "Make Every Team AI Native",
-  "language": "TypeScript",
-  "stars": 2667,
+  "date": "2026-09-10",
+  "repo_name": "firstcontributions/first-contributions",
+  "repo_url": "https://github.com/firstcontributions/first-contributions",
+  "repo_description": "🚀✨ Help beginners to contribute to open source projects",
+  "language": "",
+  "stars": 55881,
   "card_content": {
-    "core_point": "Tencent/teamai-cli 是一个让团队“AI原生”的 TypeScript CLI 工具，正通过多项目工作区、成员名册和智能数据布局来重塑团队协作方式。",
-    "deep_understanding": "从最近的提交看，项目正在重构 data-layout，以支持 worktree 下的自我定位与 workspace 合并，同时新增多项目管理、成员名单和 push --project 等能力。这意味着它不只是单一的命令行工具，而是一个面向规模化团队、强调数据一致性和协作流程的 AI 原生基础设施。Star 数 2667 也说明该方向在开发者社区中有一定共鸣。",
-    "use_cases": "适用于需要统一管理多个 AI 项目、成员权限和推送逻辑的团队，尤其是使用 Git worktree 并行开发时，可避免本地路径和业务根目录错乱，并让协作命令更具一致性。",
-    "thinking_question": "当 AI CLI 工具需要管理团队级数据布局时，如何在“便捷共享”和“权限隔离/安全边界”之间设计出可持续演进的架构？"
+    "core_point": "开源贡献的入门本质是一条标准化协作链路：Fork → Clone → 新建分支 → 提交 → Push → 发起 Pull Request。",
+    "deep_understanding": "first-contributions 仓库本身几乎没有业务代码，它的价值在于把「参与开源」这一抽象行为拆解成可重复执行的 Git/GitHub 操作步骤。每个 PR 只是把一行名字加进贡献者列表，却完整模拟了真实开源项目的协作回路：修改、评审、合并、署名。低风险的练习环境让初学者把注意力放在流程本身，而不是代码难度上。",
+    "use_cases": "适合个人首次接触开源、团队新人 Git 上手培训、高校或社区工作坊教学；企业也可借鉴其模式，搭建内部的「第一个 PR」引导仓库，降低新成员融入协作规范的门槛。",
+    "thinking_question": "该仓库每天合并上百个几乎相同的 PR，如果你来维护它，会如何设计自动化校验与机器人流程（如 PR 模板、CI 检查、自动合并），既保证列表质量又减少人工成本？"
   }
 }
