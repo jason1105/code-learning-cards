@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-09-10",
+    "repo_name": "firstcontributions/first-contributions",
+    "repo_url": "https://github.com/firstcontributions/first-contributions",
+    "repo_description": "🚀✨ Help beginners to contribute to open source projects",
+    "language": "",
+    "stars": 55881,
+    "card_content": {
+      "core_point": "开源贡献的入门本质是一条标准化协作链路：Fork → Clone → 新建分支 → 提交 → Push → 发起 Pull Request。",
+      "deep_understanding": "first-contributions 仓库本身几乎没有业务代码，它的价值在于把「参与开源」这一抽象行为拆解成可重复执行的 Git/GitHub 操作步骤。每个 PR 只是把一行名字加进贡献者列表，却完整模拟了真实开源项目的协作回路：修改、评审、合并、署名。低风险的练习环境让初学者把注意力放在流程本身，而不是代码难度上。",
+      "use_cases": "适合个人首次接触开源、团队新人 Git 上手培训、高校或社区工作坊教学；企业也可借鉴其模式，搭建内部的「第一个 PR」引导仓库，降低新成员融入协作规范的门槛。",
+      "thinking_question": "该仓库每天合并上百个几乎相同的 PR，如果你来维护它，会如何设计自动化校验与机器人流程（如 PR 模板、CI 检查、自动合并），既保证列表质量又减少人工成本？"
+    }
+  },
+  {
     "date": "2026-09-09",
     "repo_name": "Tencent/teamai-cli",
     "repo_url": "https://github.com/Tencent/teamai-cli",
