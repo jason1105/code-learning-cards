@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-11",
-  "repo_name": "grafana/grafana",
-  "repo_url": "https://github.com/grafana/grafana",
-  "repo_description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
+  "date": "2026-09-12",
+  "repo_name": "OpenHands/OpenHands",
+  "repo_url": "https://github.com/OpenHands/OpenHands",
+  "repo_description": "🙌 OpenHands: AI-Driven Development",
   "language": "TypeScript",
-  "stars": 76689,
+  "stars": 87600,
   "card_content": {
-    "core_point": "Grafana 的核心设计是「数据源插件 + 可视化面板」解耦：插件把异构数据统一成 DataFrame，面板只负责渲染，从而实现真正的可组合可观测性。",
-    "deep_understanding": "后端数据源插件负责把 Prometheus、Loki、InfluxDB、Postgres 等各自的查询语言翻译成统一的 DataFrame 结构，前端面板消费这一层抽象，因此新增数据源时无需改动任何面板代码。仓库中「plugin compat: add get/update app settings」这类提交正说明插件 API 在被持续标准化，让 app 插件的设置读写也纳入统一契约。与此同时，大量 Renovate 依赖升级与 esbuild 安全修复也提醒我们：生态越开放，依赖面与供应链风险就越需要工程化治理。",
-    "use_cases": "1) 搭建统一观测大屏，把指标、日志、链路放在同一条时间轴上做关联排查；2) 为团队内部自研服务编写自定义数据源插件，复用 Grafana 现成的告警与面板生态；3) 通过 provisioning 配置文件以代码方式管理多环境的数据源、Dashboard 与插件设置，实现可版本化的运维。",
-    "thinking_question": "如果让你为内部系统写一个数据源插件，你会如何设计查询结果到 DataFrame 的字段映射，才能让现有面板不改一行代码就能直接复用？"
+    "core_point": "在 AI 驱动开发中，应把 agent profile 作用域绑定到特定 MCP servers，以最小权限原则治理代理可调用的外部能力。",
+    "deep_understanding": "OpenHands 最新提交显示其支持将 agent profile 限定到特定 MCP servers，并让 ACP harness 对每个注册项做显式决策。这意味着代理不再默认拥有全局工具集，而是按角色、任务和信任边界获得可审计的 MCP 能力。",
+    "use_cases": "团队可为前端、后端、运维、代码审查等不同 OpenHands agent 分别配置 MCP：前端只连组件库与浏览器工具，后端连数据库与 API 文档，运维仅连受控部署通道，从而降低越权与误操作风险。",
+    "thinking_question": "当某个 agent 必须临时跨 profile 使用另一个 MCP server 时，你会用审批、短时凭证还是代理链来实现安全授权，同时不拖慢开发效率？"
   }
 }
