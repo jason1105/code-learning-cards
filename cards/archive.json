@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-09-12",
+    "repo_name": "OpenHands/OpenHands",
+    "repo_url": "https://github.com/OpenHands/OpenHands",
+    "repo_description": "🙌 OpenHands: AI-Driven Development",
+    "language": "TypeScript",
+    "stars": 87600,
+    "card_content": {
+      "core_point": "在 AI 驱动开发中，应把 agent profile 作用域绑定到特定 MCP servers，以最小权限原则治理代理可调用的外部能力。",
+      "deep_understanding": "OpenHands 最新提交显示其支持将 agent profile 限定到特定 MCP servers，并让 ACP harness 对每个注册项做显式决策。这意味着代理不再默认拥有全局工具集，而是按角色、任务和信任边界获得可审计的 MCP 能力。",
+      "use_cases": "团队可为前端、后端、运维、代码审查等不同 OpenHands agent 分别配置 MCP：前端只连组件库与浏览器工具，后端连数据库与 API 文档，运维仅连受控部署通道，从而降低越权与误操作风险。",
+      "thinking_question": "当某个 agent 必须临时跨 profile 使用另一个 MCP server 时，你会用审批、短时凭证还是代理链来实现安全授权，同时不拖慢开发效率？"
+    }
+  },
+  {
     "date": "2026-09-11",
     "repo_name": "grafana/grafana",
     "repo_url": "https://github.com/grafana/grafana",
