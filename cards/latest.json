@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-12",
-  "repo_name": "OpenHands/OpenHands",
-  "repo_url": "https://github.com/OpenHands/OpenHands",
-  "repo_description": "🙌 OpenHands: AI-Driven Development",
-  "language": "TypeScript",
-  "stars": 87600,
+  "date": "2026-09-13",
+  "repo_name": "apache/poi",
+  "repo_url": "https://github.com/apache/poi",
+  "repo_description": "Mirror of Apache POI gitbox. The Java API for Microsoft Documents.",
+  "language": "Java",
+  "stars": 2269,
   "card_content": {
-    "core_point": "在 AI 驱动开发中，应把 agent profile 作用域绑定到特定 MCP servers，以最小权限原则治理代理可调用的外部能力。",
-    "deep_understanding": "OpenHands 最新提交显示其支持将 agent profile 限定到特定 MCP servers，并让 ACP harness 对每个注册项做显式决策。这意味着代理不再默认拥有全局工具集，而是按角色、任务和信任边界获得可审计的 MCP 能力。",
-    "use_cases": "团队可为前端、后端、运维、代码审查等不同 OpenHands agent 分别配置 MCP：前端只连组件库与浏览器工具，后端连数据库与 API 文档，运维仅连受控部署通道，从而降低越权与误操作风险。",
-    "thinking_question": "当某个 agent 必须临时跨 profile 使用另一个 MCP server 时，你会用审批、短时凭证还是代理链来实现安全授权，同时不拖慢开发效率？"
+    "core_point": "Apache POI 是 Java 生态中操作 Microsoft Office 文档的核心 API，其维护重点包括 OOXML 解析、依赖升级与跨 JDK 兼容性。",
+    "deep_understanding": "从近期提交看，POI 通过升级 XMLBeans 到 5.4.1、适配 IBM JDK 的 XML 特性以及更新 Ant，持续保障不同运行环境下的稳定解析。同时，修复公式解析 NPE、将无效 EMF 文件的断言改为异常，说明健壮性和可诊断性对文档处理库至关重要。",
+    "use_cases": "适用于 Java Web 或批处理系统中读取和生成 Excel 报表、填充 Word 合同模板、解析 PPT 内容，以及在企业数据导入导出、财务报表和自动化办公场景中处理 Office 文件。",
+    "thinking_question": "如果你的应用依赖 POI 处理用户上传的 Office 文件，面对不同 JDK、XMLBeans 版本和畸形文件，你会如何设计异常边界与兼容性测试？"
   }
 }
