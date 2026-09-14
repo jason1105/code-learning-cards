@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-09-14",
+    "repo_name": "spring-projects/spring-boot",
+    "repo_url": "https://github.com/spring-projects/spring-boot",
+    "repo_description": "Spring Boot helps you to create Spring-powered, production-grade applications and services with absolute minimum fuss.",
+    "language": "Java",
+    "stars": 81429,
+    "card_content": {
+      "raw": "{\"core_point\":\"Spring Boot 的核心价值是用自动配置、Starter 和生产就绪特性，让 Spring 应用以最小成本达到生产级标准。\",\"deep_understanding\":\"它通过约定优于配置减少样板代码，同时用 Actuator、健康检查、外部化配置和嵌入式容器覆盖部署与运维。近期仓库在 4.0.x/4.1.x 间持续合并并升级 XML Maven Plugin、在 Homebrew 验证测试中使用 Landlock 沙箱，说明成熟框架不仅关注功能，也重视构建可重复性与测试安全。\",\"use_cases\":\"适用于快速构建微服务、REST API、批处理、云原生后端和企业内部平台；也适合在升级 Spring Boot 版本时学习其多分支维护、依赖管理和安全验证实践。\",\"thinking_question\":\"在你的项目中，哪些 Spring Boot 自动配置或生产就绪特性真正降低了开发与运维"
+    }
+  },
+  {
     "date": "2026-09-13",
     "repo_name": "apache/poi",
     "repo_url": "https://github.com/apache/poi",
