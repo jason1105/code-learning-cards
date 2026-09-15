@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-09-15",
+    "repo_name": "fschutt/azul",
+    "repo_url": "https://github.com/fschutt/azul",
+    "repo_description": "Desktop GUI Framework",
+    "language": "Rust",
+    "stars": 6118,
+    "card_content": {
+      "core_point": "Azul 是一个用 Rust 实现的桌面 GUI 框架，它用类似 Web 的 DOM 布局模型来构建原生界面，并通过 C ABI 把同一套渲染与事件系统开放给 Go、Nim、Python 等多语言绑定。",
+      "deep_understanding": "Azul 把界面抽象成可增量 diff 的节点树，配合不可变数据与回调，让声明式 UI 在 Rust 中也能高效更新；同时核心逻辑保持 Rust 实现、以 C ABI 对外暴露，使各种宿主语言共享同一条渲染管线。正因如此，跨语言边界的所有权与生命周期管理就成了工程质量的关键，近期提交中反复出现的内存泄漏修复与 memtest/e2e 跑测正说明了这一点。",
+      "use_cases": "适合构建需要原生性能的跨平台桌面工具、嵌入式或轻量级界面程序；也适合希望用 Rust 甚至 Go、Python 快速搭建 GUI 的团队，以及想研究 FFI 边界内存管理与多语言绑定设计的开发者。",
+      "thinking_question": "当一个 GUI 框架要同时服务多种宿主语言时，应该如何在保持 Rust 内存安全的前提下设计所有权与生命周期模型，避免绑定层成为内存泄漏的高发区？"
+    }
+  },
+  {
     "date": "2026-09-14",
     "repo_name": "spring-projects/spring-boot",
     "repo_url": "https://github.com/spring-projects/spring-boot",
