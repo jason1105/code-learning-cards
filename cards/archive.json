@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-09-16",
+    "repo_name": "nilbuild/developer-roadmap",
+    "repo_url": "https://github.com/nilbuild/developer-roadmap",
+    "repo_description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+    "language": "TypeScript",
+    "stars": 367386,
+    "card_content": {
+      "core_point": "学习技术不要从零散的知识点开始，而应沿着一条可视化的“路线图”循序渐进，先建立全局坐标系，再逐节点深入。",
+      "deep_understanding": "developer-roadmap 用 TypeScript 构建了一套交互式学习路线图，把前端、后端、DevOps 等方向拆解成有依赖关系的节点网络，让学习者随时知道“我在哪、下一步学什么、哪些可以先跳过”。它的内容由独立内容源定期同步到仓库（提交记录里大量 chore: sync content to repo 就是自动化同步），说明路线图本身也是持续演进的活文档，而非一次性写死的清单。",
+      "use_cases": "1) 转行或入门时，用路线图定位自己的起点，避免被无穷尽的教程淹没；2) 团队做技术培训或新人 onboarding 时，把路线图裁剪成岗位专属的学习地图；3) 准备面试前，对照目标岗位路线图做查漏补缺，识别知识盲区。",
+      "thinking_question": "如果路线图上的每个节点你都能“看懂”，但让你从零实现一个完整项目时仍然卡壳——你该如何设计一套验证机制，来区分“知道”和“真的会用”？"
+    }
+  },
+  {
     "date": "2026-09-15",
     "repo_name": "fschutt/azul",
     "repo_url": "https://github.com/fschutt/azul",
