@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-16",
-  "repo_name": "nilbuild/developer-roadmap",
-  "repo_url": "https://github.com/nilbuild/developer-roadmap",
-  "repo_description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
-  "language": "TypeScript",
-  "stars": 367386,
+  "date": "2026-09-17",
+  "repo_name": "OtterMind/Chat2DB",
+  "repo_url": "https://github.com/OtterMind/Chat2DB",
+  "repo_description": "Chat2DB is a free, cross-platform, local-first database client and SQL workspace for developers, DBAs, analysts, and data teams. Connect to 40+ databases, manage data, edit and run SQL, and use your own AI model to generate, explain, and optimize queries. Available on desktop, web, Docker, and CLI, with MCP support.",
+  "language": "Java",
+  "stars": 28133,
   "card_content": {
-    "core_point": "学习技术不要从零散的知识点开始，而应沿着一条可视化的“路线图”循序渐进，先建立全局坐标系，再逐节点深入。",
-    "deep_understanding": "developer-roadmap 用 TypeScript 构建了一套交互式学习路线图，把前端、后端、DevOps 等方向拆解成有依赖关系的节点网络，让学习者随时知道“我在哪、下一步学什么、哪些可以先跳过”。它的内容由独立内容源定期同步到仓库（提交记录里大量 chore: sync content to repo 就是自动化同步），说明路线图本身也是持续演进的活文档，而非一次性写死的清单。",
-    "use_cases": "1) 转行或入门时，用路线图定位自己的起点，避免被无穷尽的教程淹没；2) 团队做技术培训或新人 onboarding 时，把路线图裁剪成岗位专属的学习地图；3) 准备面试前，对照目标岗位路线图做查漏补缺，识别知识盲区。",
-    "thinking_question": "如果路线图上的每个节点你都能“看懂”，但让你从零实现一个完整项目时仍然卡壳——你该如何设计一套验证机制，来区分“知道”和“真的会用”？"
+    "core_point": "Chat2DB 是一个本地优先、跨平台的数据库客户端与 SQL 工作台，通过统一抽象层连接 40+ 种数据库，并以 MCP 协议把你的 AI 模型接入数据库工作流。",
+    "deep_understanding": "它的架构大致分为三层：连接适配层（把不同数据库驱动与方言统一封装，因此能同时支持 40+ 数据库）、SQL 工作区层（编辑、执行、结果集管理与数据维护）、AI 层（可自带模型做 SQL 生成、解释与优化）。同一套核心能力以桌面（JCEF 内嵌渲染）、Web、Docker、CLI 多种形态发布，所以「多端行为一致」和「并发控制」是它的关键工程细节——最近的 JCEF Windows 编辑器光标闪烁修复、MCP token 重置的 single-flight 处理，都是这类问题的典型体现。",
+    "use_cases": "适合数据团队统一 SQL 工作台，避免每人装一堆不同厂商客户端；DBA 用它跨多种数据库做日常排查、数据维护与变更；分析师接入自建 AI 模型，让模型帮忙生成和优化查询；也可以通过 MCP 把数据库能力直接暴露给 AI Agent，实现自然语言查数、自动化报表或数据巡检。",
+    "thinking_question": "当你让 AI Agent 通过 MCP 直连生产数据库时，你会如何在「查数够方便」与「权限最小化、操作可审计、成本可控」之间划定边界？"
   }
 }
