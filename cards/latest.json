@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-17",
-  "repo_name": "OtterMind/Chat2DB",
-  "repo_url": "https://github.com/OtterMind/Chat2DB",
-  "repo_description": "Chat2DB is a free, cross-platform, local-first database client and SQL workspace for developers, DBAs, analysts, and data teams. Connect to 40+ databases, manage data, edit and run SQL, and use your own AI model to generate, explain, and optimize queries. Available on desktop, web, Docker, and CLI, with MCP support.",
-  "language": "Java",
-  "stars": 28133,
+  "date": "2026-09-18",
+  "repo_name": "hesreallyhim/awesome-claude-code",
+  "repo_url": "https://github.com/hesreallyhim/awesome-claude-code",
+  "repo_description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC. A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
+  "language": "Python",
+  "stars": 54248,
   "card_content": {
-    "core_point": "Chat2DB 是一个本地优先、跨平台的数据库客户端与 SQL 工作台，通过统一抽象层连接 40+ 种数据库，并以 MCP 协议把你的 AI 模型接入数据库工作流。",
-    "deep_understanding": "它的架构大致分为三层：连接适配层（把不同数据库驱动与方言统一封装，因此能同时支持 40+ 数据库）、SQL 工作区层（编辑、执行、结果集管理与数据维护）、AI 层（可自带模型做 SQL 生成、解释与优化）。同一套核心能力以桌面（JCEF 内嵌渲染）、Web、Docker、CLI 多种形态发布，所以「多端行为一致」和「并发控制」是它的关键工程细节——最近的 JCEF Windows 编辑器光标闪烁修复、MCP token 重置的 single-flight 处理，都是这类问题的典型体现。",
-    "use_cases": "适合数据团队统一 SQL 工作台，避免每人装一堆不同厂商客户端；DBA 用它跨多种数据库做日常排查、数据维护与变更；分析师接入自建 AI 模型，让模型帮忙生成和优化查询；也可以通过 MCP 把数据库能力直接暴露给 AI Agent，实现自然语言查数、自动化报表或数据巡检。",
-    "thinking_question": "当你让 AI Agent 通过 MCP 直连生产数据库时，你会如何在「查数够方便」与「权限最小化、操作可审计、成本可控」之间划定边界？"
+    "core_point": "awesome-claude-code 是一份由社区策展的 Claude Code 生态资源索引，用「清单」这种最低成本的形式，把技能（Skills）、子代理（Agents）、状态栏、插件与开发工具串联成可检索的知识地图。",
+    "deep_understanding": "Awesome 列表的真正价值不在代码，而在信息组织与持续维护：它把分散在博客、Gist、个人仓库里的经验收敛成统一分类，降低了新人的探索成本。该仓库以 Python 脚本 + GitHub Actions 自动刷新 repo ticker 与 SVG，说明「策展」本身也需要工程化保鲜机制，否则清单会迅速腐化。它同时折射出一个趋势：AI 编码代理正从单一 CLI 工具演化为可插拔平台，围绕 Skills、Subagents、Plugins 形成了类似早期 npm / VS Code 扩展的生态雏形。",
+    "use_cases": "团队准备在工程中落地 Claude Code 时，可用它做技术选型与配置参考，直接借鉴成熟的 CLAUDE.md 模板、子代理分工方案和状态栏脚本；个人开发者可从中挖掘提效插件，快速搭建自己的编码工作流；技术负责人也可参照其分类方式，搭建团队内部的「AI 工具与规范索引」，沉淀最佳实践。",
+    "thinking_question": "当工具生态以周为单位快速迭代时，一份社区维护的清单该如何判断其资源是否仍然可用、可信？如果由你来设计它的「保鲜」机制，除了自动更新 star 数与提交记录，你还会引入哪些信号（如最后验证时间、兼容版本、真实使用反馈）？"
   }
 }
