@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-09-18",
+    "repo_name": "hesreallyhim/awesome-claude-code",
+    "repo_url": "https://github.com/hesreallyhim/awesome-claude-code",
+    "repo_description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC. A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
+    "language": "Python",
+    "stars": 54248,
+    "card_content": {
+      "core_point": "awesome-claude-code 是一份由社区策展的 Claude Code 生态资源索引，用「清单」这种最低成本的形式，把技能（Skills）、子代理（Agents）、状态栏、插件与开发工具串联成可检索的知识地图。",
+      "deep_understanding": "Awesome 列表的真正价值不在代码，而在信息组织与持续维护：它把分散在博客、Gist、个人仓库里的经验收敛成统一分类，降低了新人的探索成本。该仓库以 Python 脚本 + GitHub Actions 自动刷新 repo ticker 与 SVG，说明「策展」本身也需要工程化保鲜机制，否则清单会迅速腐化。它同时折射出一个趋势：AI 编码代理正从单一 CLI 工具演化为可插拔平台，围绕 Skills、Subagents、Plugins 形成了类似早期 npm / VS Code 扩展的生态雏形。",
+      "use_cases": "团队准备在工程中落地 Claude Code 时，可用它做技术选型与配置参考，直接借鉴成熟的 CLAUDE.md 模板、子代理分工方案和状态栏脚本；个人开发者可从中挖掘提效插件，快速搭建自己的编码工作流；技术负责人也可参照其分类方式，搭建团队内部的「AI 工具与规范索引」，沉淀最佳实践。",
+      "thinking_question": "当工具生态以周为单位快速迭代时，一份社区维护的清单该如何判断其资源是否仍然可用、可信？如果由你来设计它的「保鲜」机制，除了自动更新 star 数与提交记录，你还会引入哪些信号（如最后验证时间、兼容版本、真实使用反馈）？"
+    }
+  },
+  {
     "date": "2026-09-17",
     "repo_name": "OtterMind/Chat2DB",
     "repo_url": "https://github.com/OtterMind/Chat2DB",
