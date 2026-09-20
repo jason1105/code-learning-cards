@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-19",
+  "date": "2026-09-20",
   "repo_name": "Tencent/teamai-cli",
   "repo_url": "https://github.com/Tencent/teamai-cli",
   "repo_description": "Make Every Team AI Native",
   "language": "TypeScript",
-  "stars": 4788,
+  "stars": 4837,
   "card_content": {
-    "core_point": "teamai-cli 是一个用 TypeScript 编写的「团队 AI 原生」命令行底座，核心思路是把 AI 能力沉淀为可复用的共享能力（skill / 扩展），而不是让每个人各自搭一套工具。",
-    "deep_understanding": "从最近的提交可以看出它的设计重心是「共享能力」而非单点功能：README 明确把产品定位从口号转向共享能力叙事，同时通过 OMP（Oh My Pi）扩展运行器把生命周期钩子、资源同步等机制做成一等公民。这意味着 CLI 只是统一入口，真正的能力单元是可分发、可版本化的 skill 与扩展；连 GitHub 登录这类交互也被设计成由 AI 助手驱动，从而减少人工操作成本。",
-    "use_cases": "适合需要统一 AI 工作流的研发团队：把代码评审、发布检查、CI 生命周期钩子封装进 CLI 让全员复用；把内部平台工具包装成 skill 分发给团队；在终端或 IDE 的 AI 助手中自动完成认证、资源同步与上下文准备，降低新人接入成本。",
-    "thinking_question": "当 GitHub 登录这类敏感操作由 AI 助手而非人来驱动时，你会如何设计权限边界、凭据管理与审计日志，既保证自动化体验又不失控？"
+    "core_point": "teamai-cli 用 TypeScript 把 AI 能力（MCP、Copilot）封装成可统一下发的 CLI 工具链，让「团队 AI 原生」从口号变成可安装、可版本化、可审计的工程实践。",
+    "deep_understanding": "从最近的提交可以看出，这类 AI 工具真正的难点不在模型调用，而在工程化细节：Windows 上按绝对路径解析 Git Bash、更新检查在缓存有效但无新版本时短路返回，都是在消除跨平台与性能上的隐性坑。同时 CI 的 fail closed（拒绝检查失败即阻断）和 MCP servers 同步，说明团队把 AI 能力当作正式基础设施来治理——默认安全、配置集中、行为可复现，而不是让每个人各自拼凑脚本。",
+    "use_cases": "1）团队统一 AI 开发环境：一条命令为所有成员下发相同的 MCP 服务与 Copilot 配置，避免「我这能跑你那不能跑」；2）CI/CD 中接入 AI 审查门禁，检查失败即阻断合并，守住质量与合规底线；3）跨平台混合团队（Windows/macOS/Linux）需要一致的 CLI 行为，尤其是 shell 与路径差异的处理。",
+    "thinking_question": "当 AI 能力被标准化下发到每个开发者的终端时，你会如何设计『fail closed』的默认策略——既不让安全检查误伤日常开发效率，又能在真正有风险时果断阻断？"
   }
 }
