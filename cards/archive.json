@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-09-21",
+    "repo_name": "dbeaver/dbeaver",
+    "repo_url": "https://github.com/dbeaver/dbeaver",
+    "repo_description": "Free universal database tool and SQL client",
+    "language": "Java",
+    "stars": 51818,
+    "card_content": {
+      "core_point": "成熟的开源项目靠「issue 驱动的小步迭代」演进：每个提交都绑定明确的问题编号，一次只解决一个问题。",
+      "deep_understanding": "从 DBeaver 最近的提交可以看到，即使是 5 万 Star 级别的成熟项目，日常提交也多是 UI 细节修复（SQL 编辑器工具栏配色、CSmartCombo 组件改进）、功能渐进式重设计（AI 引擎选择器）以及测试基础设施增强（自动化测试浏览器参数化），而不是大规模重构。用 issue 编号串联每一次改动，让变更可追溯、可回滚、可评审，同时把回归风险压到最小。测试代码与产品代码同步演进，正是这类长期维护项目保持稳定的关键。",
+      "use_cases": "适合参与大型开源项目的贡献者：先定位一个具体 issue，只改动与之相关的代码并补上对应测试，再通过 PR 关闭它。同样适用于企业团队日常开发——把需求拆成可独立验证的小任务，用 issue 编号把提交、PR、发布说明串成一条完整链路，方便回溯与责任归属。",
+      "thinking_question": "回顾你最近的一次代码提交：如果要求它必须绑定一个明确的问题编号，且只解决这一个问题，你会怎样把这次改动拆分成若干可独立验证的小步？"
+    }
+  },
+  {
     "date": "2026-09-20",
     "repo_name": "Tencent/teamai-cli",
     "repo_url": "https://github.com/Tencent/teamai-cli",

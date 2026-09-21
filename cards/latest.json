@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-20",
-  "repo_name": "Tencent/teamai-cli",
-  "repo_url": "https://github.com/Tencent/teamai-cli",
-  "repo_description": "Make Every Team AI Native",
-  "language": "TypeScript",
-  "stars": 4837,
+  "date": "2026-09-21",
+  "repo_name": "dbeaver/dbeaver",
+  "repo_url": "https://github.com/dbeaver/dbeaver",
+  "repo_description": "Free universal database tool and SQL client",
+  "language": "Java",
+  "stars": 51818,
   "card_content": {
-    "core_point": "teamai-cli 用 TypeScript 把 AI 能力（MCP、Copilot）封装成可统一下发的 CLI 工具链，让「团队 AI 原生」从口号变成可安装、可版本化、可审计的工程实践。",
-    "deep_understanding": "从最近的提交可以看出，这类 AI 工具真正的难点不在模型调用，而在工程化细节：Windows 上按绝对路径解析 Git Bash、更新检查在缓存有效但无新版本时短路返回，都是在消除跨平台与性能上的隐性坑。同时 CI 的 fail closed（拒绝检查失败即阻断）和 MCP servers 同步，说明团队把 AI 能力当作正式基础设施来治理——默认安全、配置集中、行为可复现，而不是让每个人各自拼凑脚本。",
-    "use_cases": "1）团队统一 AI 开发环境：一条命令为所有成员下发相同的 MCP 服务与 Copilot 配置，避免「我这能跑你那不能跑」；2）CI/CD 中接入 AI 审查门禁，检查失败即阻断合并，守住质量与合规底线；3）跨平台混合团队（Windows/macOS/Linux）需要一致的 CLI 行为，尤其是 shell 与路径差异的处理。",
-    "thinking_question": "当 AI 能力被标准化下发到每个开发者的终端时，你会如何设计『fail closed』的默认策略——既不让安全检查误伤日常开发效率，又能在真正有风险时果断阻断？"
+    "core_point": "成熟的开源项目靠「issue 驱动的小步迭代」演进：每个提交都绑定明确的问题编号，一次只解决一个问题。",
+    "deep_understanding": "从 DBeaver 最近的提交可以看到，即使是 5 万 Star 级别的成熟项目，日常提交也多是 UI 细节修复（SQL 编辑器工具栏配色、CSmartCombo 组件改进）、功能渐进式重设计（AI 引擎选择器）以及测试基础设施增强（自动化测试浏览器参数化），而不是大规模重构。用 issue 编号串联每一次改动，让变更可追溯、可回滚、可评审，同时把回归风险压到最小。测试代码与产品代码同步演进，正是这类长期维护项目保持稳定的关键。",
+    "use_cases": "适合参与大型开源项目的贡献者：先定位一个具体 issue，只改动与之相关的代码并补上对应测试，再通过 PR 关闭它。同样适用于企业团队日常开发——把需求拆成可独立验证的小任务，用 issue 编号把提交、PR、发布说明串成一条完整链路，方便回溯与责任归属。",
+    "thinking_question": "回顾你最近的一次代码提交：如果要求它必须绑定一个明确的问题编号，且只解决这一个问题，你会怎样把这次改动拆分成若干可独立验证的小步？"
   }
 }
