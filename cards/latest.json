@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-23",
-  "repo_name": "t8y2/dbx",
-  "repo_url": "https://github.com/t8y2/dbx",
-  "repo_description": "25 MB lightweight cross-platform database client for 90+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 90+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。",
-  "language": "Rust",
-  "stars": 20537,
+  "date": "2026-09-24",
+  "repo_name": "grafana/grafana",
+  "repo_url": "https://github.com/grafana/grafana",
+  "repo_description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
+  "language": "TypeScript",
+  "stars": 76886,
   "card_content": {
-    "core_point": "dbx 用 Rust 打造仅 25MB 的跨平台数据库客户端，通过统一驱动抽象与插件机制覆盖 90+ 数据库，并把 AI 助手与 MCP Server 直接内置为数据访问层。",
-    "deep_understanding": "面对关系型、键值、文档等异构数据库，dbx 的关键不在于“支持得多”，而在于用统一的查询/元数据抽象层抹平协议差异，同时在方言层保留各库特性——最近的 MySQL 提交正是当 TiDB/tddl 拒绝 group_concat 初始化时优雅降级，而非直接报错。插件系统新增命令与菜单贡献、底部 dock 面板，说明其架构把 UI 与能力都当作可扩展插槽；而内置 MCP Server 则让数据库从“人操作的 GUI”变成“Agent 可调用的工具”。",
-    "use_cases": "1) 开发者本地一个客户端同时连 MySQL、PostgreSQL、Redis、MongoDB、达梦，免装多个工具；2) 用 CLI 或 Docker 镜像在服务器/CI 中执行查询与结构对比，做 schema-diff 与迁移校验；3) 通过 MCP Server 让 AI 助手或编码 Agent 直接读取库结构与数据，辅助写 SQL、排查问题；4) 借助粘贴名单批量选择传输对象，快速完成跨库数据搬运。",
-    "thinking_question": "当一款工具要同时兼容 90+ 数据库时，公共抽象很容易退化成“最小公倍数”，各库的高级特性反被牺牲。dbx 对 MySQL tddl 的降级处理给你什么启示：你会如何在统一接口与保留方言特性之间划出边界？"
+    "core_point": "Grafana 的核心竞争力在于「可组合」：用统一的抽象层（数据源插件、存储注册表）把异构的指标、日志、链路数据接入同一套可视化与告警体系。",
+    "deep_understanding": "从最近的提交能看出这种抽象思想贯穿全局——IAM 模块通过 registered storage 读取内部角色资源，把业务逻辑与具体存储实现解耦，这与数据源插件屏蔽 Prometheus、Loki、Postgres 差异的做法如出一辙。前端同样在持续重构（如 FilterByName 函数组件化修复边界 bug），让可视化组件具备更强的复用与组合能力。正是这种「插件化后端 + 组件化前端」的双层可组合性，让 Grafana 能同时容纳上百种数据源而保持一致体验。",
+    "use_cases": "典型场景是构建统一可观测性大盘：用 Prometheus 看指标、Loki 查日志、Tempo 追链路，在同一 Dashboard 上通过 data link 从异常指标一路下钻到具体请求的 trace。也可用于跨团队的自定义插件开发，把内部自研监控系统以插件形式接入 Grafana，而不必改造其存储层。",
+    "thinking_question": "如果你要为团队接入一个自研的时序数据库，你会选择写一个 Grafana 数据源插件，还是先在中间做一层统一查询网关？这两种方案在可组合性、性能与长期维护成本上各有什么取舍？"
   }
 }
