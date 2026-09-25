@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-24",
+  "date": "2026-09-25",
   "repo_name": "grafana/grafana",
   "repo_url": "https://github.com/grafana/grafana",
   "repo_description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
   "language": "TypeScript",
-  "stars": 76886,
+  "stars": 76907,
   "card_content": {
-    "core_point": "Grafana 的核心竞争力在于「可组合」：用统一的抽象层（数据源插件、存储注册表）把异构的指标、日志、链路数据接入同一套可视化与告警体系。",
-    "deep_understanding": "从最近的提交能看出这种抽象思想贯穿全局——IAM 模块通过 registered storage 读取内部角色资源，把业务逻辑与具体存储实现解耦，这与数据源插件屏蔽 Prometheus、Loki、Postgres 差异的做法如出一辙。前端同样在持续重构（如 FilterByName 函数组件化修复边界 bug），让可视化组件具备更强的复用与组合能力。正是这种「插件化后端 + 组件化前端」的双层可组合性，让 Grafana 能同时容纳上百种数据源而保持一致体验。",
-    "use_cases": "典型场景是构建统一可观测性大盘：用 Prometheus 看指标、Loki 查日志、Tempo 追链路，在同一 Dashboard 上通过 data link 从异常指标一路下钻到具体请求的 trace。也可用于跨团队的自定义插件开发，把内部自研监控系统以插件形式接入 Grafana，而不必改造其存储层。",
-    "thinking_question": "如果你要为团队接入一个自研的时序数据库，你会选择写一个 Grafana 数据源插件，还是先在中间做一层统一查询网关？这两种方案在可组合性、性能与长期维护成本上各有什么取舍？"
+    "core_point": "Grafana 的核心价值是作为开放、可组合的可观测性平台，将多源 metrics、logs、traces 统一查询、可视化并接入告警。",
+    "deep_understanding": "它本身通常不负责存储所有可观测数据，而是通过数据源插件连接 Prometheus、Loki、Elasticsearch、InfluxDB、Postgres 等系统，再用 Dashboard、Explore、Alerting 等能力形成统一体验。近期提交涉及 Alerting 外部 Alertmanager、app-sdk logger、Scenes 版本升级等，说明 Grafana 在扩展生态的同时，也持续关注告警语义、日志上下文和可视化组件稳定性。",
+    "use_cases": "适合 SRE、DevOps 和平台团队搭建统一监控大盘，在故障排查时关联指标、日志与链路追踪；也适合将 Grafana 作为可观测性入口嵌入内部平台，降低多系统切换成本。",
+    "thinking_question": "如果你的团队同时使用 Prometheus 和 Loki，你会如何设计 Grafana 的数据源、Dashboard 与告警策略，才能既保持统一体验，又避免告警重复和碎片化？"
   }
 }
