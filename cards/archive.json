@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-09-28",
+    "repo_name": "hesreallyhim/awesome-claude-code",
+    "repo_url": "https://github.com/hesreallyhim/awesome-claude-code",
+    "repo_description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC. A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
+    "language": "Python",
+    "stars": 54747,
+    "card_content": {
+      "core_point": "awesome-claude-code 是一份由社区精心策展的 Claude Code 资源清单，覆盖 skills、agents、状态栏、开发工具与插件，并用 Python + GitHub Actions 自动维护数据与 SVG 徽章。",
+      "deep_understanding": "Awesome 列表的核心价值不在\"收集\"，而在\"策展\"——用人工筛选和清晰分类，把庞杂生态压缩成可信的入门地图。该仓库近期提交全部来自 github-actions[bot] 自动更新 repo ticker 数据和 SVG，说明它把\"数据保鲜\"这类机械劳动交给了 CI，让维护者专注在内容取舍上。这种\"静态内容 + 动态指标\"的组合，是当下高质量开源文档的常见形态。",
+      "use_cases": "1) 想快速上手 Claude Code 时，把它当作生态入口，按分类找到现成的 agent、插件或状态栏配置；2) 自己维护 awesome 列表或项目 README 时，可借鉴其用 GitHub Actions 定时拉取 star/fork 数据并渲染 SVG 徽章的做法，让文档自动保持最新；3) 做技术选型调研时，观察一个活跃生态的资源分布，判断哪些方向最受关注。",
+      "thinking_question": "当资源条目从几百增长到几千，人工策展必然失效——你会设计怎样的分类、准入标准或社区投票机制，来防止 awesome list 退化成\"链接垃圾场\"？"
+    }
+  },
+  {
     "date": "2026-09-27",
     "repo_name": "nowledge-co/community",
     "repo_url": "https://github.com/nowledge-co/community",
@@ -397,20 +411,6 @@
       "deep_understanding": "与 Java 版 I2P 相比，i2pd 资源占用更低，适合在路由器、树莓派等受限设备上运行。它通过大蒜路由、隧道配对和噪声协议等机制，在应用层之下构建一层匿名传输网络，使通信双方难以被流量分析或追踪。",
       "use_cases": "适用于需要在低功耗设备上运行匿名代理、访问 eepsite（I2P 内部网站）、搭建匿名聊天或文件共享服务，以及作为现有应用的 SOCKS 代理出口。",
       "thinking_question": "I2P 的每条消息会经过多条隧道和多次加密，这种设计在增强匿名性的同时显著增加了延迟；如果你设计一个匿名通信系统，会如何权衡延迟、带宽和匿名强度之间的取舍？"
-    }
-  },
-  {
-    "date": "2026-08-29",
-    "repo_name": "ggml-org/whisper.cpp",
-    "repo_url": "https://github.com/ggml-org/whisper.cpp",
-    "repo_description": "Port of OpenAI's Whisper model in C/C++",
-    "language": "C++",
-    "stars": 53273,
-    "card_content": {
-      "core_point": "whisper.cpp 是 OpenAI Whisper 语音识别模型的高性能 C/C++ 移植版，专为本地和边缘设备优化。",
-      "deep_understanding": "该项目利用 GGML 张量库实现了 Whisper 模型的完整推理流程，无需 Python 环境和 PyTorch 依赖，可在 CPU 上高效运行。它支持多种量化方式以降低内存占用，并提供了丰富的示例应用，如实时转写和翻译。其核心价值在于让语音识别能力可以轻松嵌入到桌面、移动端甚至嵌入式系统中。",
-      "use_cases": "适合在隐私敏感或离线场景下使用，如本地会议录音转文字、智能语音助手、字幕生成工具，以及资源受限的嵌入式设备上的语音控制。",
-      "thinking_question": "在无 GPU 的普通 CPU 上，whisper.cpp 相比原始 Python 版 Whisper 能提升多少推理速度？这种性能差异主要来源于哪些优化策略？"
     }
   }
 ]
