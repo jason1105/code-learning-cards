@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-28",
-  "repo_name": "hesreallyhim/awesome-claude-code",
-  "repo_url": "https://github.com/hesreallyhim/awesome-claude-code",
-  "repo_description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC. A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
-  "language": "Python",
-  "stars": 54747,
+  "date": "2026-09-29",
+  "repo_name": "TriliumNext/Trilium",
+  "repo_url": "https://github.com/TriliumNext/Trilium",
+  "repo_description": "Build your personal knowledge base with Trilium Notes",
+  "language": "TypeScript",
+  "stars": 38077,
   "card_content": {
-    "core_point": "awesome-claude-code 是一份由社区精心策展的 Claude Code 资源清单，覆盖 skills、agents、状态栏、开发工具与插件，并用 Python + GitHub Actions 自动维护数据与 SVG 徽章。",
-    "deep_understanding": "Awesome 列表的核心价值不在\"收集\"，而在\"策展\"——用人工筛选和清晰分类，把庞杂生态压缩成可信的入门地图。该仓库近期提交全部来自 github-actions[bot] 自动更新 repo ticker 数据和 SVG，说明它把\"数据保鲜\"这类机械劳动交给了 CI，让维护者专注在内容取舍上。这种\"静态内容 + 动态指标\"的组合，是当下高质量开源文档的常见形态。",
-    "use_cases": "1) 想快速上手 Claude Code 时，把它当作生态入口，按分类找到现成的 agent、插件或状态栏配置；2) 自己维护 awesome 列表或项目 README 时，可借鉴其用 GitHub Actions 定时拉取 star/fork 数据并渲染 SVG 徽章的做法，让文档自动保持最新；3) 做技术选型调研时，观察一个活跃生态的资源分布，判断哪些方向最受关注。",
-    "thinking_question": "当资源条目从几百增长到几千，人工策展必然失效——你会设计怎样的分类、准入标准或社区投票机制，来防止 awesome list 退化成\"链接垃圾场\"？"
+    "core_point": "受保护笔记在通过同步到达内容后，必须触发搜索索引更新，才能被正确检索。",
+    "deep_understanding": "在 Trilium 这类支持受保护笔记和同步的知识库中，同步可能先带来元数据或占位记录，内容稍后才到达或解密。如果搜索索引只依赖当前本地已有内容，就可能出现内容已同步但搜索仍找不到该笔记的问题。因此，需要在内容可用后重建或补全索引，保证搜索状态与数据同步状态最终一致。",
+    "use_cases": "多设备用户在新设备上同步加密笔记后，立即搜索受保护笔记正文；开发者实现离线优先、端到端加密同步的知识库时，处理搜索索引与同步数据之间的一致性。",
+    "thinking_question": "如果受保护笔记必须本地解密后才能建立搜索索引，你会如何设计同步、解密与索引更新的顺序，以兼顾搜索及时性、隐私安全和性能？"
   }
 }
