@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-29",
-  "repo_name": "TriliumNext/Trilium",
-  "repo_url": "https://github.com/TriliumNext/Trilium",
-  "repo_description": "Build your personal knowledge base with Trilium Notes",
-  "language": "TypeScript",
-  "stars": 38077,
+  "date": "2026-09-30",
+  "repo_name": "microsoft/PowerToys",
+  "repo_url": "https://github.com/microsoft/PowerToys",
+  "repo_description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
+  "language": "C",
+  "stars": 139110,
   "card_content": {
-    "core_point": "受保护笔记在通过同步到达内容后，必须触发搜索索引更新，才能被正确检索。",
-    "deep_understanding": "在 Trilium 这类支持受保护笔记和同步的知识库中，同步可能先带来元数据或占位记录，内容稍后才到达或解密。如果搜索索引只依赖当前本地已有内容，就可能出现内容已同步但搜索仍找不到该笔记的问题。因此，需要在内容可用后重建或补全索引，保证搜索状态与数据同步状态最终一致。",
-    "use_cases": "多设备用户在新设备上同步加密笔记后，立即搜索受保护笔记正文；开发者实现离线优先、端到端加密同步的知识库时，处理搜索索引与同步数据之间的一致性。",
-    "thinking_question": "如果受保护笔记必须本地解密后才能建立搜索索引，你会如何设计同步、解密与索引更新的顺序，以兼顾搜索及时性、隐私安全和性能？"
+    "core_point": "PowerToys 正在通过为 CmdPal Shelf 增加 Alt+# 与 Alt+Shift+# 等分层快捷键，强化 Windows 上的键盘优先生产力体验。",
+    "deep_understanding": "CmdPal Shelf 可理解为命令面板中的暂存区，用于快速访问常用内容；本次提交用 Alt+# 定位列表页，用 Alt+Shift+# 选择具体条目，并补齐标准快捷键和上下文菜单。这种小步迭代体现了 PowerToys 对可访问性、操作效率和发布质量的持续打磨。",
+    "use_cases": "用户可把常用文件、文本片段或命令放入 Shelf，再用 Alt+数字或 Alt+Shift+数字快速切换和调用，减少鼠标操作；开发者也能借鉴这种分层快捷键设计，为自己的 Windows 工具或命令面板扩展提升键盘可操作性。",
+    "thinking_question": "当 Shelf 中的项目越来越多时，仅依赖 Alt+数字快捷键会遇到哪些可扩展性与冲突问题，应该如何设计替代或补充交互？"
   }
 }

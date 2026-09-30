@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-09-30",
+    "repo_name": "microsoft/PowerToys",
+    "repo_url": "https://github.com/microsoft/PowerToys",
+    "repo_description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
+    "language": "C",
+    "stars": 139110,
+    "card_content": {
+      "core_point": "PowerToys 正在通过为 CmdPal Shelf 增加 Alt+# 与 Alt+Shift+# 等分层快捷键，强化 Windows 上的键盘优先生产力体验。",
+      "deep_understanding": "CmdPal Shelf 可理解为命令面板中的暂存区，用于快速访问常用内容；本次提交用 Alt+# 定位列表页，用 Alt+Shift+# 选择具体条目，并补齐标准快捷键和上下文菜单。这种小步迭代体现了 PowerToys 对可访问性、操作效率和发布质量的持续打磨。",
+      "use_cases": "用户可把常用文件、文本片段或命令放入 Shelf，再用 Alt+数字或 Alt+Shift+数字快速切换和调用，减少鼠标操作；开发者也能借鉴这种分层快捷键设计，为自己的 Windows 工具或命令面板扩展提升键盘可操作性。",
+      "thinking_question": "当 Shelf 中的项目越来越多时，仅依赖 Alt+数字快捷键会遇到哪些可扩展性与冲突问题，应该如何设计替代或补充交互？"
+    }
+  },
+  {
     "date": "2026-09-29",
     "repo_name": "TriliumNext/Trilium",
     "repo_url": "https://github.com/TriliumNext/Trilium",
@@ -397,20 +411,6 @@
       "deep_understanding": "Argo CD 以 Git 仓库作为应用的唯一事实来源，通过持续监控集群实际状态与仓库期望状态的差异，并在检测到漂移时自动或手动同步，从而简化部署、回滚和审计。它天然支持多集群管理、应用版本追踪和策略化同步，使基础设施变更像代码一样可审查、可回滚。",
       "use_cases": "适合需要频繁发布并保证环境一致性的 Kubernetes 场景，例如多环境（开发/预发/生产）统一部署、集群配置基线管理、紧急回滚到历史版本，以及跨团队协作时通过 PR 审批流程控制生产变更。",
       "thinking_question": "在团队中实施 GitOps 时，如何设计 Git 仓库的目录结构与权限模型，才能在保证安全审批的前提下，兼顾多应用、多环境的灵活部署和响应速度？"
-    }
-  },
-  {
-    "date": "2026-08-31",
-    "repo_name": "firstcontributions/first-contributions",
-    "repo_url": "https://github.com/firstcontributions/first-contributions",
-    "repo_description": "🚀✨ Help beginners to contribute to open source projects",
-    "language": "",
-    "stars": 55756,
-    "card_content": {
-      "core_point": "通过模拟一个最小可完成的流程，让新手安全地完成第一次开源贡献（Pull Request）。",
-      "deep_understanding": "这个仓库刻意简化了真实开源项目的复杂性，把贡献流程拆解为“Fork → Clone → 修改 → PR”四个步骤，让初学者在无压力环境中建立信心。它不关注代码本身，而是强调协作规范与工具链的熟练度。真正掌握后，这种流程可以迁移到任何开源项目中，成为持续参与社区协作的起点。",
-      "use_cases": "用于开源教育、企业新人入职培训、编程工作坊，以及任何希望快速理解GitHub协作流程的场景。也可以作为练习“PR审核”流程的安全沙盒。",
-      "thinking_question": "如果你在完成第一次PR时遇到“冲突”或“审核不通过”，你会如何定位问题并调整心态？"
     }
   }
 ]
