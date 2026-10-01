@@ -1,14 +1,14 @@
 {
-  "date": "2026-09-30",
-  "repo_name": "microsoft/PowerToys",
-  "repo_url": "https://github.com/microsoft/PowerToys",
-  "repo_description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
-  "language": "C",
-  "stars": 139110,
+  "date": "2026-10-01",
+  "repo_name": "t8y2/dbx",
+  "repo_url": "https://github.com/t8y2/dbx",
+  "repo_description": "25 MB lightweight cross-platform database client for 100+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 100+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP。",
+  "language": "Rust",
+  "stars": 23660,
   "card_content": {
-    "core_point": "PowerToys 正在通过为 CmdPal Shelf 增加 Alt+# 与 Alt+Shift+# 等分层快捷键，强化 Windows 上的键盘优先生产力体验。",
-    "deep_understanding": "CmdPal Shelf 可理解为命令面板中的暂存区，用于快速访问常用内容；本次提交用 Alt+# 定位列表页，用 Alt+Shift+# 选择具体条目，并补齐标准快捷键和上下文菜单。这种小步迭代体现了 PowerToys 对可访问性、操作效率和发布质量的持续打磨。",
-    "use_cases": "用户可把常用文件、文本片段或命令放入 Shelf，再用 Alt+数字或 Alt+Shift+数字快速切换和调用，减少鼠标操作；开发者也能借鉴这种分层快捷键设计，为自己的 Windows 工具或命令面板扩展提升键盘可操作性。",
-    "thinking_question": "当 Shelf 中的项目越来越多时，仅依赖 Alt+数字快捷键会遇到哪些可扩展性与冲突问题，应该如何设计替代或补充交互？"
+    "core_point": "dbx 用 Rust 打造了一个约 25 MB 的跨平台数据库客户端，通过统一的连接与查询抽象层，把 MySQL、PostgreSQL、Redis、MongoDB、达梦等 100+ 种数据库收进同一个桌面端 / CLI / Docker 入口，并内置 AI 与 MCP 服务。",
+    "deep_understanding": "它的核心价值不只是「支持得多」，而在于用一套抽象把异构数据库的差异（SQL 方言、连接协议、结果集结构）收敛到同一交互模型里；Rust 的零成本抽象与静态编译，是它能同时做到体积小、启动快、跨平台分发的底层原因。而最近的修复提交恰恰说明抽象是有代价的——像 MongoDB 的 use 切库、子管道中拒绝阶段的下推这类语义，必须由驱动层单独正确实现，否则统一接口就会「漏」出底层细节。",
+    "use_cases": "适合同时维护多种数据库的开发者：例如一个微服务项目里用 PostgreSQL 存业务数据、Redis 做缓存、MongoDB 存日志文档，你可以只装一个客户端就完成全部连接、查询与格式化；也适合把它作为 Docker 容器挂在服务器上，配合 CLI 或 MCP Server，让 AI 助手直接读取数据库结构、辅助写 SQL 或排查问题。",
+    "thinking_question": "当你要为 100+ 种数据库设计统一接口时，应该在哪一层做抽象、又在哪一层保留各数据库的独有语义？如果为了兼容性把 MongoDB 的集合与 SQL 的表强行映射成同一种模型，会带来哪些隐性成本？"
   }
 }
