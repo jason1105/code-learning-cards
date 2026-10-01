@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-01",
+    "repo_name": "t8y2/dbx",
+    "repo_url": "https://github.com/t8y2/dbx",
+    "repo_description": "25 MB lightweight cross-platform database client for 100+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 100+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP。",
+    "language": "Rust",
+    "stars": 23660,
+    "card_content": {
+      "core_point": "dbx 用 Rust 打造了一个约 25 MB 的跨平台数据库客户端，通过统一的连接与查询抽象层，把 MySQL、PostgreSQL、Redis、MongoDB、达梦等 100+ 种数据库收进同一个桌面端 / CLI / Docker 入口，并内置 AI 与 MCP 服务。",
+      "deep_understanding": "它的核心价值不只是「支持得多」，而在于用一套抽象把异构数据库的差异（SQL 方言、连接协议、结果集结构）收敛到同一交互模型里；Rust 的零成本抽象与静态编译，是它能同时做到体积小、启动快、跨平台分发的底层原因。而最近的修复提交恰恰说明抽象是有代价的——像 MongoDB 的 use 切库、子管道中拒绝阶段的下推这类语义，必须由驱动层单独正确实现，否则统一接口就会「漏」出底层细节。",
+      "use_cases": "适合同时维护多种数据库的开发者：例如一个微服务项目里用 PostgreSQL 存业务数据、Redis 做缓存、MongoDB 存日志文档，你可以只装一个客户端就完成全部连接、查询与格式化；也适合把它作为 Docker 容器挂在服务器上，配合 CLI 或 MCP Server，让 AI 助手直接读取数据库结构、辅助写 SQL 或排查问题。",
+      "thinking_question": "当你要为 100+ 种数据库设计统一接口时，应该在哪一层做抽象、又在哪一层保留各数据库的独有语义？如果为了兼容性把 MongoDB 的集合与 SQL 的表强行映射成同一种模型，会带来哪些隐性成本？"
+    }
+  },
+  {
     "date": "2026-09-30",
     "repo_name": "microsoft/PowerToys",
     "repo_url": "https://github.com/microsoft/PowerToys",
@@ -397,20 +411,6 @@
       "deep_understanding": "Slint采用声明式UI描述语言，将界面设计与业务逻辑清晰分离，同时通过多语言绑定让不同技术栈的开发者都能使用同一套GUI核心。近期提交关注软件渲染器的no_std支持、Node绑定错误处理改进等，说明其在嵌入式与跨语言生态上持续打磨，强调轻量、稳定与可移植性。",
       "use_cases": "适合需要高保真原生界面且希望复用Rust/C++后端逻辑的桌面应用；也适用于嵌入式设备上资源受限但需要流畅渲染的界面场景。",
       "thinking_question": "与其他声明式GUI框架（如Qt QML或Flutter）相比，Slint在跨语言支持和轻量化设计上可能有哪些取舍？你会如何评估它是否适合某个具体项目？"
-    }
-  },
-  {
-    "date": "2026-09-01",
-    "repo_name": "argoproj/argo-cd",
-    "repo_url": "https://github.com/argoproj/argo-cd",
-    "repo_description": "Declarative Continuous Deployment for Kubernetes",
-    "language": "Go",
-    "stars": 24051,
-    "card_content": {
-      "core_point": "Argo CD 是一个基于 GitOps 理念的声明式持续交付工具，用于将 Kubernetes 应用部署与 Git 仓库中的配置保持同步。",
-      "deep_understanding": "Argo CD 以 Git 仓库作为应用的唯一事实来源，通过持续监控集群实际状态与仓库期望状态的差异，并在检测到漂移时自动或手动同步，从而简化部署、回滚和审计。它天然支持多集群管理、应用版本追踪和策略化同步，使基础设施变更像代码一样可审查、可回滚。",
-      "use_cases": "适合需要频繁发布并保证环境一致性的 Kubernetes 场景，例如多环境（开发/预发/生产）统一部署、集群配置基线管理、紧急回滚到历史版本，以及跨团队协作时通过 PR 审批流程控制生产变更。",
-      "thinking_question": "在团队中实施 GitOps 时，如何设计 Git 仓库的目录结构与权限模型，才能在保证安全审批的前提下，兼顾多应用、多环境的灵活部署和响应速度？"
     }
   }
 ]
