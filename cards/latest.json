@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-01",
-  "repo_name": "t8y2/dbx",
-  "repo_url": "https://github.com/t8y2/dbx",
-  "repo_description": "25 MB lightweight cross-platform database client for 100+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 100+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP。",
+  "date": "2026-10-02",
+  "repo_name": "tokio-rs/tokio",
+  "repo_url": "https://github.com/tokio-rs/tokio",
+  "repo_description": "A runtime for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...",
   "language": "Rust",
-  "stars": 23660,
+  "stars": 33302,
   "card_content": {
-    "core_point": "dbx 用 Rust 打造了一个约 25 MB 的跨平台数据库客户端，通过统一的连接与查询抽象层，把 MySQL、PostgreSQL、Redis、MongoDB、达梦等 100+ 种数据库收进同一个桌面端 / CLI / Docker 入口，并内置 AI 与 MCP 服务。",
-    "deep_understanding": "它的核心价值不只是「支持得多」，而在于用一套抽象把异构数据库的差异（SQL 方言、连接协议、结果集结构）收敛到同一交互模型里；Rust 的零成本抽象与静态编译，是它能同时做到体积小、启动快、跨平台分发的底层原因。而最近的修复提交恰恰说明抽象是有代价的——像 MongoDB 的 use 切库、子管道中拒绝阶段的下推这类语义，必须由驱动层单独正确实现，否则统一接口就会「漏」出底层细节。",
-    "use_cases": "适合同时维护多种数据库的开发者：例如一个微服务项目里用 PostgreSQL 存业务数据、Redis 做缓存、MongoDB 存日志文档，你可以只装一个客户端就完成全部连接、查询与格式化；也适合把它作为 Docker 容器挂在服务器上，配合 CLI 或 MCP Server，让 AI 助手直接读取数据库结构、辅助写 SQL 或排查问题。",
-    "thinking_question": "当你要为 100+ 种数据库设计统一接口时，应该在哪一层做抽象、又在哪一层保留各数据库的独有语义？如果为了兼容性把 MongoDB 的集合与 SQL 的表强行映射成同一种模型，会带来哪些隐性成本？"
+    "core_point": "在 Tokio 中，UnixStream::shutdown 遇到 ENOTCONN 时可按成功处理，使关闭未连接或对端已关闭的 Unix 流更符合幂等语义。",
+    "deep_understanding": "ENOTCONN 表示套接字未连接；当调用 shutdown 时，这个状态可能意味着连接已经不可用或此前已断开。将其视作成功可避免异步任务因重复关闭或竞态关闭而收到伪错误，从而简化清理逻辑。最新提交 #8526 正是在 Tokio 的 net 模块中做了这一调整。",
+    "use_cases": "适用于基于 UnixStream 的本地 IPC、进程间通信、服务优雅关闭和连接池清理等场景，尤其是多个任务可能并发 shutdown 同一连接时。",
+    "thinking_question": "如果你设计一个异步网络库，应该把哪些“对象已处于目标状态”的系统错误视为幂等成功？这会如何影响 API 的错误契约？"
   }
 }
