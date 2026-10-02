@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-02",
+    "repo_name": "tokio-rs/tokio",
+    "repo_url": "https://github.com/tokio-rs/tokio",
+    "repo_description": "A runtime for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...",
+    "language": "Rust",
+    "stars": 33302,
+    "card_content": {
+      "core_point": "在 Tokio 中，UnixStream::shutdown 遇到 ENOTCONN 时可按成功处理，使关闭未连接或对端已关闭的 Unix 流更符合幂等语义。",
+      "deep_understanding": "ENOTCONN 表示套接字未连接；当调用 shutdown 时，这个状态可能意味着连接已经不可用或此前已断开。将其视作成功可避免异步任务因重复关闭或竞态关闭而收到伪错误，从而简化清理逻辑。最新提交 #8526 正是在 Tokio 的 net 模块中做了这一调整。",
+      "use_cases": "适用于基于 UnixStream 的本地 IPC、进程间通信、服务优雅关闭和连接池清理等场景，尤其是多个任务可能并发 shutdown 同一连接时。",
+      "thinking_question": "如果你设计一个异步网络库，应该把哪些“对象已处于目标状态”的系统错误视为幂等成功？这会如何影响 API 的错误契约？"
+    }
+  },
+  {
     "date": "2026-10-01",
     "repo_name": "t8y2/dbx",
     "repo_url": "https://github.com/t8y2/dbx",
@@ -397,20 +411,6 @@
       "deep_understanding": "该项目通过收集和整理独立开发者的作品，帮助开发者相互了解、借鉴和合作。它不仅是项目展示平台，也反映了中国独立开发者的生态和创意趋势，适合用于市场调研、灵感碰撞和社区连接。",
       "use_cases": "开发者可以在作品发布后提交项目地址以增加曝光；创业者可参考列表中的成功案例寻找切入点；学习者则能通过研究这些项目理解不同技术栈和产品设计思路。",
       "thinking_question": "浏览这些独立开发项目时，你会如何判断一个项目是否值得学习或借鉴？可以从技术实现、用户需求和商业价值三个维度展开思考。"
-    }
-  },
-  {
-    "date": "2026-09-02",
-    "repo_name": "slint-ui/slint",
-    "repo_url": "https://github.com/slint-ui/slint",
-    "repo_description": "Slint is an open-source declarative GUI toolkit to build native user interfaces for Rust, C++, JavaScript, or Python apps.",
-    "language": "Rust",
-    "stars": 23671,
-    "card_content": {
-      "core_point": "Slint是一个用于Rust、C++、JavaScript和Python的开源声明式GUI工具包，主打原生界面与跨语言集成。",
-      "deep_understanding": "Slint采用声明式UI描述语言，将界面设计与业务逻辑清晰分离，同时通过多语言绑定让不同技术栈的开发者都能使用同一套GUI核心。近期提交关注软件渲染器的no_std支持、Node绑定错误处理改进等，说明其在嵌入式与跨语言生态上持续打磨，强调轻量、稳定与可移植性。",
-      "use_cases": "适合需要高保真原生界面且希望复用Rust/C++后端逻辑的桌面应用；也适用于嵌入式设备上资源受限但需要流畅渲染的界面场景。",
-      "thinking_question": "与其他声明式GUI框架（如Qt QML或Flutter）相比，Slint在跨语言支持和轻量化设计上可能有哪些取舍？你会如何评估它是否适合某个具体项目？"
     }
   }
 ]
