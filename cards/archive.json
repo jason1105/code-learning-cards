@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-03",
+    "repo_name": "Stirling-Tools/Stirling-PDF",
+    "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
+    "repo_description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
+    "language": "Java",
+    "stars": 93494,
+    "card_content": {
+      "core_point": "Stirling-PDF 是一个可自托管、以 Java 为核心的全能型 PDF 处理平台，让用户在任何设备的浏览器中完成编辑、转换、OCR 等操作，数据尽量不出本地环境。",
+      "deep_understanding": "从最近的提交能看出它的三条演进主线：一是交互体验向桌面级软件看齐，比如文本编辑器支持 Acrobat 风格的对象级编辑（退格删除、拖拽选择、文本框缩放）；二是性能治理，例如预加载翻译文件、停止每次写文件都重扫资源库和重写缩略图，避免为小功能付出大代价；三是数据可靠性，把处理原件保存在 .stirling 目录并做七天孤儿清理，兼顾可追溯与磁盘卫生。这三条线共同说明：工具类应用成熟的关键不只是\"能做事\"，而是\"快、稳、可恢复\"。",
+      "use_cases": "典型场景包括：企业内部私有化部署，处理合同、发票、病历等敏感 PDF，规避上传第三方云服务的合规风险；批量自动化流水线，如大批量 OCR、自动旋转、合并拆分、加水印与格式转换；以及作为自有 SaaS 产品的 PDF 能力后端，通过 API 集成而非自研底层解析。",
+      "thinking_question": "当本地 OCR 能力缺失时，系统会自动回退到云端处理——在这种情况下，你会如何设计降级策略，既保证功能可用，又不让用户的敏感文档悄悄离开本地？"
+    }
+  },
+  {
     "date": "2026-10-02",
     "repo_name": "tokio-rs/tokio",
     "repo_url": "https://github.com/tokio-rs/tokio",
@@ -397,20 +411,6 @@
       "deep_understanding": "与捆绑 Chromium 的 Electron 不同，Tauri 调用操作系统原生 WebView，因此二进制体积更小、内存占用更低。与此同时，Rust 后端带来严格的内存安全与能力权限控制，使得暴露给前端的系统 API 都可以精细化授权，在架构上更贴近“最小权限”原则。近期提交中对 Image 的 RGBA 序列化优化和 CI 权限收紧，也体现了对性能与供应链安全的高度重视。",
       "use_cases": "适合需要跨平台交付但仍希望控制安装包体积和安全边界的工具类桌面应用、内部管理系统、轻量级多媒体编辑器，以及希望复用 Web 前端技能栈并补充原生能力的移动/桌面产品。",
       "thinking_question": "如果 Tauri 允许每个命令单独配置权限，那么在发布一个高交互、多命令的复杂应用时，你如何设计权限清单，既保证体验流畅又不暴露不必要的系统能力？"
-    }
-  },
-  {
-    "date": "2026-09-03",
-    "repo_name": "1c7/chinese-independent-developer",
-    "repo_url": "https://github.com/1c7/chinese-independent-developer",
-    "repo_description": "👩🏿‍💻👨🏾‍💻👩🏼‍💻👨🏽‍💻👩🏻‍💻中国独立开发者项目列表 -- 分享大家都在做什么",
-    "language": "Python",
-    "stars": 61230,
-    "card_content": {
-      "core_point": "中国独立开发者项目列表是一个集中展示与发现独立开发作品的开源资源库。",
-      "deep_understanding": "该项目通过收集和整理独立开发者的作品，帮助开发者相互了解、借鉴和合作。它不仅是项目展示平台，也反映了中国独立开发者的生态和创意趋势，适合用于市场调研、灵感碰撞和社区连接。",
-      "use_cases": "开发者可以在作品发布后提交项目地址以增加曝光；创业者可参考列表中的成功案例寻找切入点；学习者则能通过研究这些项目理解不同技术栈和产品设计思路。",
-      "thinking_question": "浏览这些独立开发项目时，你会如何判断一个项目是否值得学习或借鉴？可以从技术实现、用户需求和商业价值三个维度展开思考。"
     }
   }
 ]
