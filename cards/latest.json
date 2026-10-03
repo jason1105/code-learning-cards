@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-02",
-  "repo_name": "tokio-rs/tokio",
-  "repo_url": "https://github.com/tokio-rs/tokio",
-  "repo_description": "A runtime for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...",
-  "language": "Rust",
-  "stars": 33302,
+  "date": "2026-10-03",
+  "repo_name": "Stirling-Tools/Stirling-PDF",
+  "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
+  "repo_description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
+  "language": "Java",
+  "stars": 93494,
   "card_content": {
-    "core_point": "在 Tokio 中，UnixStream::shutdown 遇到 ENOTCONN 时可按成功处理，使关闭未连接或对端已关闭的 Unix 流更符合幂等语义。",
-    "deep_understanding": "ENOTCONN 表示套接字未连接；当调用 shutdown 时，这个状态可能意味着连接已经不可用或此前已断开。将其视作成功可避免异步任务因重复关闭或竞态关闭而收到伪错误，从而简化清理逻辑。最新提交 #8526 正是在 Tokio 的 net 模块中做了这一调整。",
-    "use_cases": "适用于基于 UnixStream 的本地 IPC、进程间通信、服务优雅关闭和连接池清理等场景，尤其是多个任务可能并发 shutdown 同一连接时。",
-    "thinking_question": "如果你设计一个异步网络库，应该把哪些“对象已处于目标状态”的系统错误视为幂等成功？这会如何影响 API 的错误契约？"
+    "core_point": "Stirling-PDF 是一个可自托管、以 Java 为核心的全能型 PDF 处理平台，让用户在任何设备的浏览器中完成编辑、转换、OCR 等操作，数据尽量不出本地环境。",
+    "deep_understanding": "从最近的提交能看出它的三条演进主线：一是交互体验向桌面级软件看齐，比如文本编辑器支持 Acrobat 风格的对象级编辑（退格删除、拖拽选择、文本框缩放）；二是性能治理，例如预加载翻译文件、停止每次写文件都重扫资源库和重写缩略图，避免为小功能付出大代价；三是数据可靠性，把处理原件保存在 .stirling 目录并做七天孤儿清理，兼顾可追溯与磁盘卫生。这三条线共同说明：工具类应用成熟的关键不只是\"能做事\"，而是\"快、稳、可恢复\"。",
+    "use_cases": "典型场景包括：企业内部私有化部署，处理合同、发票、病历等敏感 PDF，规避上传第三方云服务的合规风险；批量自动化流水线，如大批量 OCR、自动旋转、合并拆分、加水印与格式转换；以及作为自有 SaaS 产品的 PDF 能力后端，通过 API 集成而非自研底层解析。",
+    "thinking_question": "当本地 OCR 能力缺失时，系统会自动回退到云端处理——在这种情况下，你会如何设计降级策略，既保证功能可用，又不让用户的敏感文档悄悄离开本地？"
   }
 }
