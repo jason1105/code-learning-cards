@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-03",
-  "repo_name": "Stirling-Tools/Stirling-PDF",
-  "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
-  "repo_description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
+  "date": "2026-10-04",
+  "repo_name": "Anuken/Mindustry",
+  "repo_url": "https://github.com/Anuken/Mindustry",
+  "repo_description": "The automation tower defense RTS",
   "language": "Java",
-  "stars": 93494,
+  "stars": 29208,
   "card_content": {
-    "core_point": "Stirling-PDF 是一个可自托管、以 Java 为核心的全能型 PDF 处理平台，让用户在任何设备的浏览器中完成编辑、转换、OCR 等操作，数据尽量不出本地环境。",
-    "deep_understanding": "从最近的提交能看出它的三条演进主线：一是交互体验向桌面级软件看齐，比如文本编辑器支持 Acrobat 风格的对象级编辑（退格删除、拖拽选择、文本框缩放）；二是性能治理，例如预加载翻译文件、停止每次写文件都重扫资源库和重写缩略图，避免为小功能付出大代价；三是数据可靠性，把处理原件保存在 .stirling 目录并做七天孤儿清理，兼顾可追溯与磁盘卫生。这三条线共同说明：工具类应用成熟的关键不只是\"能做事\"，而是\"快、稳、可恢复\"。",
-    "use_cases": "典型场景包括：企业内部私有化部署，处理合同、发票、病历等敏感 PDF，规避上传第三方云服务的合规风险；批量自动化流水线，如大批量 OCR、自动旋转、合并拆分、加水印与格式转换；以及作为自有 SaaS 产品的 PDF 能力后端，通过 API 集成而非自研底层解析。",
-    "thinking_question": "当本地 OCR 能力缺失时，系统会自动回退到云端处理——在这种情况下，你会如何设计降级策略，既保证功能可用，又不让用户的敏感文档悄悄离开本地？"
+    "core_point": "在大型 Java 开源游戏项目中，持续维护依赖小步迭代、清晰回滚和社区贡献规范，而不仅是新功能开发。",
+    "deep_understanding": "Mindustry 是 Java 编写的自动化塔防 RTS，近期提交覆盖控制台关闭、方向性卸载器读取修复、铜矿颜色修正，以及贡献指南与 AI 政策更新。这些改动说明成熟项目需要同时处理用户体验、逻辑正确性、视觉一致性和协作治理。即使是小修复，也会通过 PR、回滚和分支策略控制风险。",
+    "use_cases": "参与开源贡献时，可从修复 UI/逻辑小 bug、完善文档与贡献指南入手；团队内部也可借鉴其功能开关、回滚策略和 AI 使用政策，管理复杂游戏或工具项目。",
+    "thinking_question": "如果你负责一个已禁用的控制台功能，应该让玩家仍能打开后再看到禁用提示，还是直接隐藏入口？哪种设计更利于反馈与后续恢复？"
   }
 }
