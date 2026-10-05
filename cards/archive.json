@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-05",
+    "repo_name": "ankitects/anki",
+    "repo_url": "https://github.com/ankitects/anki",
+    "repo_description": "Anki is a smart spaced repetition flashcard program",
+    "language": "Rust",
+    "stars": 31773,
+    "card_content": {
+      "core_point": "Anki 新增 {{type:ci:}} 模板修饰符，让「输入答案」类卡片在比对时忽略大小写差异，避免因大小写导致的误判。",
+      "deep_understanding": "在 Anki 的卡片模板语法中，{{type:Field}} 会把用户输入与字段内容逐字符比对并高亮差异；:ci:（case-insensitive）修饰符在这一比对链路上加入大小写折叠，使 apple 与 Apple 都被判为正确。这看似只是一个小开关，实际牵动了模板解析、答案比对逻辑与前端渲染三处协同——同批提交中「Fix missing field in CompareAnswerRequest test」正说明它是一次跨 Rust 后端与 Web 前端的接口变更。",
+      "use_cases": "适合背诵英文单词、编程术语或专有名词的场景：过去输入 rust 而答案是 Rust、输入 sql 而答案是 SQL 时会被标红，用户不得不反复纠正；启用 {{type:ci:}} 后可减少这类无意义的重复复习，同时仍能识别真正的拼写错误（如 recieve）。",
+      "thinking_question": "如果还要支持「忽略首尾空格」或「忽略标点」，你倾向于继续叠加修饰符（如 {{type:ci:trim:}}），还是引入一套统一的「答案规范化」配置？这两种设计在可读性、可组合性与实现复杂度上各自有什么权衡？"
+    }
+  },
+  {
     "date": "2026-10-04",
     "repo_name": "Anuken/Mindustry",
     "repo_url": "https://github.com/Anuken/Mindustry",
@@ -397,20 +411,6 @@
       "deep_understanding": "该项目以弹窗词典为核心，集成了页面翻译、生词本与PDF划词搜索，展现了“工具型浏览器扩展”的完整设计思路。从最近的提交看，项目对细节非常重视，例如去重Collins请求的cookie、修复多配置文件默认词典等，这些看似微小的修改直接影响跨语言查询的准确性和用户配置的稳定性。通过长期维护和持续重构（如移除非空断言），项目在功能复杂性和代码健壮性之间做了扎实平衡。",
       "use_cases": "适合外语阅读者快速查词而无需切换标签页；也适合研究者对PDF原文进行划词翻译与生词收集；还可以作为页面整体翻译的轻量方案，减少在多语言内容间的切换成本。",
       "thinking_question": "当浏览器扩展需要同时支持划词、整页翻译和PDF取词时，如何设计数据流与权限模型，才能既保证响应速度又不牺牲用户隐私?"
-    }
-  },
-  {
-    "date": "2026-09-05",
-    "repo_name": "bojieli/ai-agent-book",
-    "repo_url": "https://github.com/bojieli/ai-agent-book",
-    "repo_description": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
-    "language": "Python",
-    "stars": 44787,
-    "card_content": {
-      "core_point": "《深入理解 AI Agent》是一本系统讲解 AI Agent 设计原理与工程实践的开源书籍，并配有代码与多语种文档。",
-      "deep_understanding": "这本书不只是讲概念，而是从工程落地角度拆解 Agent 的架构、推理、工具调用与学习机制，例如近期更新中强调以“三层验证”为主线来理解如何从运行轨迹中获得学习信号。开源仓库持续迭代，反映出 Agent 领域实践快速演进，读者可以结合最新代码和版本来掌握设计范式。",
-      "use_cases": "适合 AI 工程师、技术团队负责人或产品经理用于学习 Agent 系统设计、参考可运行的工程代码、设计带反馈与学习能力的智能体，或作为企业内部技术培训与读书会的基础材料。",
-      "thinking_question": "当 Agent 在运行轨迹中犯错时，如何设计三层验证机制来区分“工具调用错误”“推理逻辑错误”和“任务理解错误”，并分别给出有效的学习信号？"
     }
   }
 ]
