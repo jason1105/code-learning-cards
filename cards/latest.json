@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-05",
-  "repo_name": "ankitects/anki",
-  "repo_url": "https://github.com/ankitects/anki",
-  "repo_description": "Anki is a smart spaced repetition flashcard program",
-  "language": "Rust",
-  "stars": 31773,
+  "date": "2026-10-06",
+  "repo_name": "OpenHands/OpenHands",
+  "repo_url": "https://github.com/OpenHands/OpenHands",
+  "repo_description": "🙌 OpenHands: AI-Driven Development",
+  "language": "TypeScript",
+  "stars": 90100,
   "card_content": {
-    "core_point": "Anki 新增 {{type:ci:}} 模板修饰符，让「输入答案」类卡片在比对时忽略大小写差异，避免因大小写导致的误判。",
-    "deep_understanding": "在 Anki 的卡片模板语法中，{{type:Field}} 会把用户输入与字段内容逐字符比对并高亮差异；:ci:（case-insensitive）修饰符在这一比对链路上加入大小写折叠，使 apple 与 Apple 都被判为正确。这看似只是一个小开关，实际牵动了模板解析、答案比对逻辑与前端渲染三处协同——同批提交中「Fix missing field in CompareAnswerRequest test」正说明它是一次跨 Rust 后端与 Web 前端的接口变更。",
-    "use_cases": "适合背诵英文单词、编程术语或专有名词的场景：过去输入 rust 而答案是 Rust、输入 sql 而答案是 SQL 时会被标红，用户不得不反复纠正；启用 {{type:ci:}} 后可减少这类无意义的重复复习，同时仍能识别真正的拼写错误（如 recieve）。",
-    "thinking_question": "如果还要支持「忽略首尾空格」或「忽略标点」，你倾向于继续叠加修饰符（如 {{type:ci:trim:}}），还是引入一套统一的「答案规范化」配置？这两种设计在可读性、可组合性与实现复杂度上各自有什么权衡？"
+    "core_point": "从 OpenHands 的近期提交可以看出，成熟的 AI 驱动开发平台拼的不是单点炫技，而是『小步变更 + 快速回滚 + 持续清理技术债』的工程纪律。",
+    "deep_understanding": "这几条提交覆盖了四类典型工作：功能回滚（revert 恢复内置 VS Code 支持）、交互体验优化（把空响应的纠正提示降级为信息性提示）、测试减负（每周测试清扫，删除低价值用例）、以及 UI 文案与状态同步修复（刷新后正确显示当前文件内容）。它们共同说明，当项目进入 9 万 Star 量级后，团队的主要精力从『能不能做』转向『做得稳不稳、可维护性高不高』——revert 不是失败，而是一种主动的风险控制手段；删测试也不是偷懒，而是让测试集保持高信噪比。",
+    "use_cases": "1）你在维护内部 AI Agent 平台时，可以参考『每周测试清扫』机制，定期移除重复或与实现强耦合的脆弱用例，让 CI 反馈更快更准。2）设计前端交互时，区分『错误』与『信息性提示』的语义层级——像空响应这种可自愈的情况用温和提示而非红色报错，能显著降低用户焦虑。3）当新功能上线引发回归问题时，果断 revert 到已知良好状态再重新设计，比带着 bug 硬推更专业。",
+    "thinking_question": "如果你的团队也做『每周删测试』，你用什么标准判断一个测试是『低价值』而不是『暂时没暴露价值』？会不会把安全网悄悄拆掉？"
   }
 }
