@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-06",
+    "repo_name": "OpenHands/OpenHands",
+    "repo_url": "https://github.com/OpenHands/OpenHands",
+    "repo_description": "🙌 OpenHands: AI-Driven Development",
+    "language": "TypeScript",
+    "stars": 90100,
+    "card_content": {
+      "core_point": "从 OpenHands 的近期提交可以看出，成熟的 AI 驱动开发平台拼的不是单点炫技，而是『小步变更 + 快速回滚 + 持续清理技术债』的工程纪律。",
+      "deep_understanding": "这几条提交覆盖了四类典型工作：功能回滚（revert 恢复内置 VS Code 支持）、交互体验优化（把空响应的纠正提示降级为信息性提示）、测试减负（每周测试清扫，删除低价值用例）、以及 UI 文案与状态同步修复（刷新后正确显示当前文件内容）。它们共同说明，当项目进入 9 万 Star 量级后，团队的主要精力从『能不能做』转向『做得稳不稳、可维护性高不高』——revert 不是失败，而是一种主动的风险控制手段；删测试也不是偷懒，而是让测试集保持高信噪比。",
+      "use_cases": "1）你在维护内部 AI Agent 平台时，可以参考『每周测试清扫』机制，定期移除重复或与实现强耦合的脆弱用例，让 CI 反馈更快更准。2）设计前端交互时，区分『错误』与『信息性提示』的语义层级——像空响应这种可自愈的情况用温和提示而非红色报错，能显著降低用户焦虑。3）当新功能上线引发回归问题时，果断 revert 到已知良好状态再重新设计，比带着 bug 硬推更专业。",
+      "thinking_question": "如果你的团队也做『每周删测试』，你用什么标准判断一个测试是『低价值』而不是『暂时没暴露价值』？会不会把安全网悄悄拆掉？"
+    }
+  },
+  {
     "date": "2026-10-05",
     "repo_name": "ankitects/anki",
     "repo_url": "https://github.com/ankitects/anki",
@@ -397,20 +411,6 @@
       "deep_understanding": "professional-programming 仓库本质上是一个精选知识库，覆盖从编程语言基础到架构设计、数据语义、金融科技等多元主题。它提醒我们：真正的专业能力源于持续输入高质量信息，并主动建立知识之间的联系。通过跟踪优质资源，你可以像维护代码一样维护自己的知识体系，让学习路径更清晰。",
       "use_cases": "当你想拓展技术视野时，可以按图索骥探索其中的主题；当你在某个领域遇到瓶颈时，可以从中寻找推荐书籍或文章；当你需要为团队设计学习计划时，也能借鉴其分类和内容组织方式。",
       "thinking_question": "如果让你为这份资源列表新增一个“现代软件工程必备”的章节，你会选择哪些主题？为什么？"
-    }
-  },
-  {
-    "date": "2026-09-06",
-    "repo_name": "crimx/ext-saladict",
-    "repo_url": "https://github.com/crimx/ext-saladict",
-    "repo_description": "🥗 All-in-one professional pop-up dictionary and page translator which supports multiple search modes, page translations, new word notebook and PDF selection searching.",
-    "language": "TypeScript",
-    "stars": 13311,
-    "card_content": {
-      "core_point": "沙拉查词是一个基于TypeScript的全能划词翻译扩展，通过多搜索模式与PDF取词等技术优化阅读与翻译体验。",
-      "deep_understanding": "该项目以弹窗词典为核心，集成了页面翻译、生词本与PDF划词搜索，展现了“工具型浏览器扩展”的完整设计思路。从最近的提交看，项目对细节非常重视，例如去重Collins请求的cookie、修复多配置文件默认词典等，这些看似微小的修改直接影响跨语言查询的准确性和用户配置的稳定性。通过长期维护和持续重构（如移除非空断言），项目在功能复杂性和代码健壮性之间做了扎实平衡。",
-      "use_cases": "适合外语阅读者快速查词而无需切换标签页；也适合研究者对PDF原文进行划词翻译与生词收集；还可以作为页面整体翻译的轻量方案，减少在多语言内容间的切换成本。",
-      "thinking_question": "当浏览器扩展需要同时支持划词、整页翻译和PDF取词时，如何设计数据流与权限模型，才能既保证响应速度又不牺牲用户隐私?"
     }
   }
 ]
