@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-07",
+    "repo_name": "OpenHands/OpenHands",
+    "repo_url": "https://github.com/OpenHands/OpenHands",
+    "repo_description": "🙌 OpenHands: AI-Driven Development",
+    "language": "TypeScript",
+    "stars": 90172,
+    "card_content": {
+      "core_point": "OpenHands 的近期演进重点，是把 AI Agent 从「能跑通」推向「可稳定交付」——用工程化手段保障 AI 驱动开发在企业环境中的可靠性。",
+      "deep_understanding": "从最近提交看，大量工作集中在 E2E 测试（同模型 profile 对照、实时 Agent Server 任务、从标签页面板菜单打开 Commits）以及企业后端体验（Super Admin 引导、工作区挂起说明与切换）。这说明一个 AI 开发平台的成熟标志，不在于单次生成有多惊艳，而在于非确定性的 Agent 行为能否被持续集成验证、被诊断、被恢复。TypeScript 作为主语言，也反映出这类产品更偏向后端服务 + 前端交互的完整工程体系，而非单纯的模型封装。",
+      "use_cases": "1）把编码 Agent 接入团队 CI/CD，用 E2E 用例守护 Agent 的关键行为不回归；2）企业内网部署时，为管理员提供初始化引导、为开发者提供工作区异常时的明确提示与一键切换；3）做 Agent 产品的团队可参考其「同模型多配置对照测试」思路，隔离模型因素、定位工程问题。",
+      "thinking_question": "Agent 的行为天然带有非确定性——如果让你为它设计一套 E2E 测试，你会如何在「容忍合理的输出波动」与「捕捉真实的行为回归」之间划出那条判定线？"
+    }
+  },
+  {
     "date": "2026-10-06",
     "repo_name": "OpenHands/OpenHands",
     "repo_url": "https://github.com/OpenHands/OpenHands",
@@ -397,20 +411,6 @@
       "deep_understanding": "这个仓库通过让初学者完成一次真实的Pull Request流程——复刻仓库、创建分支、提交修改、发起PR——来消除他们对开源贡献的陌生感。其核心价值不在代码量，而在于理解分布式协作的闭环。即使只修改一个文档，也已进入“提出问题→建立分支→合并变更”的核心循环，这种体验是后续深入参与一切开源项目的基础。",
       "use_cases": "适用于任何人第一次接触开源：学习Git基础操作、验证本地环境配置、体验与维护者沟通的流程。也能作为技术导师或社区组织者用于入门工作坊的演练素材，让参与者快速获得“我的PR被合并”的正反馈。",
       "thinking_question": "如果让你为这个仓库添加一条对中文初学者更友好的说明文件，你会如何设计它的目录结构和描述重点，以便让完全不懂Git的人也能第一次就成功提交？"
-    }
-  },
-  {
-    "date": "2026-09-07",
-    "repo_name": "charlax/professional-programming",
-    "repo_url": "https://github.com/charlax/professional-programming",
-    "repo_description": "A collection of learning resources for curious software engineers",
-    "language": "Python",
-    "stars": 51495,
-    "card_content": {
-      "core_point": "软件工程师的成长不仅靠编码，更需要系统化的学习资源和跨领域知识积累。",
-      "deep_understanding": "professional-programming 仓库本质上是一个精选知识库，覆盖从编程语言基础到架构设计、数据语义、金融科技等多元主题。它提醒我们：真正的专业能力源于持续输入高质量信息，并主动建立知识之间的联系。通过跟踪优质资源，你可以像维护代码一样维护自己的知识体系，让学习路径更清晰。",
-      "use_cases": "当你想拓展技术视野时，可以按图索骥探索其中的主题；当你在某个领域遇到瓶颈时，可以从中寻找推荐书籍或文章；当你需要为团队设计学习计划时，也能借鉴其分类和内容组织方式。",
-      "thinking_question": "如果让你为这份资源列表新增一个“现代软件工程必备”的章节，你会选择哪些主题？为什么？"
     }
   }
 ]
