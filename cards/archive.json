@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-08",
+    "repo_name": "Stirling-Tools/Stirling-PDF",
+    "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
+    "repo_description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
+    "language": "TypeScript",
+    "stars": 93791,
+    "card_content": {
+      "core_point": "像 Stirling-PDF 这样的高星开源项目，其迭代重心已从「功能有没有」转向「交互体验、认证边界健壮性与 CI 交付效率」三条线并行推进。",
+      "deep_understanding": "从最近提交可以看到三种典型工作并存：重绘图标、重构添加文件入口这类体验打磨，修复 SaaS OAuth 重连时丢弃授权 code 这类状态恢复缺陷，以及通过去掉层缓存和冗余 host 构建来加速 /deploypr 流水线。这说明项目成熟后，真正的竞争力来自「用户感受 + 可靠性 + 工程吞吐」的组合，而不是单纯堆功能。以 TypeScript 为主语言也让前后端与工具链统一，便于这类高频、小颗粒度的持续迭代。",
+      "use_cases": "一是自建或二次开发 PDF / 文档处理工具时，可借鉴它「小步优化 UI + 同步修边界 bug + 定期体检 CI」的迭代节奏；二是接入 OAuth / SSO 时，要专门设计重连、回调中断后的状态恢复与幂等处理，避免授权码被静默丢弃；三是维护 CI 时，应定期审视缓存与构建步骤是否「帮倒忙」，用构建耗时数据而非直觉来决定保留或删除。",
+      "thinking_question": "当产品功能已经足够丰富时，你会把下一份工程资源优先投给体验细节、认证与数据一致性等边界缺陷，还是 CI / 交付效率？你打算用什么指标来证明这个优先级是对的？"
+    }
+  },
+  {
     "date": "2026-10-07",
     "repo_name": "OpenHands/OpenHands",
     "repo_url": "https://github.com/OpenHands/OpenHands",
@@ -397,20 +411,6 @@
       "deep_understanding": "从最近的提交看，项目正在重构 data-layout，以支持 worktree 下的自我定位与 workspace 合并，同时新增多项目管理、成员名单和 push --project 等能力。这意味着它不只是单一的命令行工具，而是一个面向规模化团队、强调数据一致性和协作流程的 AI 原生基础设施。Star 数 2667 也说明该方向在开发者社区中有一定共鸣。",
       "use_cases": "适用于需要统一管理多个 AI 项目、成员权限和推送逻辑的团队，尤其是使用 Git worktree 并行开发时，可避免本地路径和业务根目录错乱，并让协作命令更具一致性。",
       "thinking_question": "当 AI CLI 工具需要管理团队级数据布局时，如何在“便捷共享”和“权限隔离/安全边界”之间设计出可持续演进的架构？"
-    }
-  },
-  {
-    "date": "2026-09-08",
-    "repo_name": "firstcontributions/first-contributions",
-    "repo_url": "https://github.com/firstcontributions/first-contributions",
-    "repo_description": "🚀✨ Help beginners to contribute to open source projects",
-    "language": "",
-    "stars": 55858,
-    "card_content": {
-      "core_point": "开源贡献的门槛远低于想象，一次简单的“添加名字到贡献者列表”就是参与全球协作的起点。",
-      "deep_understanding": "这个仓库通过让初学者完成一次真实的Pull Request流程——复刻仓库、创建分支、提交修改、发起PR——来消除他们对开源贡献的陌生感。其核心价值不在代码量，而在于理解分布式协作的闭环。即使只修改一个文档，也已进入“提出问题→建立分支→合并变更”的核心循环，这种体验是后续深入参与一切开源项目的基础。",
-      "use_cases": "适用于任何人第一次接触开源：学习Git基础操作、验证本地环境配置、体验与维护者沟通的流程。也能作为技术导师或社区组织者用于入门工作坊的演练素材，让参与者快速获得“我的PR被合并”的正反馈。",
-      "thinking_question": "如果让你为这个仓库添加一条对中文初学者更友好的说明文件，你会如何设计它的目录结构和描述重点，以便让完全不懂Git的人也能第一次就成功提交？"
     }
   }
 ]
