@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-09",
+    "repo_name": "EbookFoundation/free-programming-books",
+    "repo_url": "https://github.com/EbookFoundation/free-programming-books",
+    "repo_description": ":books: Freely available programming books",
+    "language": "Python",
+    "stars": 398538,
+    "card_content": {
+      "core_point": "EbookFoundation/free-programming-books 是一个由社区协作维护的免费编程书籍索引仓库，其核心价值不在于存储内容，而在于持续维护一份高质量、可访问的知识链接清单。",
+      "deep_understanding": "这个仓库本质上是「元资源」而非书籍本身：它用结构化的 Markdown 清单，按语言、主题、难度组织全球免费编程学习资料。从最近的提交可以看到，社区工作的一大部分是链接修复（如通过 Wayback Machine 恢复失效链接）和内容增补（如新增 AI 相关书籍），这说明开放知识库的生命力来自持续的「园艺式」维护，而非一次性建设。Python 作为主要语言，通常用于链接检查、格式校验等自动化脚本，让几百名贡献者能在同一套规则下协作。",
+      "use_cases": "当你需要为某个技术方向（如 C 语言、人工智能）寻找免费学习资料时，可以直接检索该仓库对应章节，省去在搜索结果中筛选广告和低质内容的时间；团队做内部学习路径规划时，也可以参考它的分类结构来组织自己的书单。反过来，若你想参与开源贡献，从这个仓库入手门槛极低——修一个失效链接、补一本书，就是一次被合并的真实 PR。",
+      "thinking_question": "如果一个知识库的价值主要来自「链接的持续可用性」，那么当原始资源消失时，我们保存快照（如 Wayback Machine）算是保存了知识，还是只保存了知识的影子？"
+    }
+  },
+  {
     "date": "2026-10-08",
     "repo_name": "Stirling-Tools/Stirling-PDF",
     "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
@@ -397,20 +411,6 @@
       "deep_understanding": "first-contributions 仓库本身几乎没有业务代码，它的价值在于把「参与开源」这一抽象行为拆解成可重复执行的 Git/GitHub 操作步骤。每个 PR 只是把一行名字加进贡献者列表，却完整模拟了真实开源项目的协作回路：修改、评审、合并、署名。低风险的练习环境让初学者把注意力放在流程本身，而不是代码难度上。",
       "use_cases": "适合个人首次接触开源、团队新人 Git 上手培训、高校或社区工作坊教学；企业也可借鉴其模式，搭建内部的「第一个 PR」引导仓库，降低新成员融入协作规范的门槛。",
       "thinking_question": "该仓库每天合并上百个几乎相同的 PR，如果你来维护它，会如何设计自动化校验与机器人流程（如 PR 模板、CI 检查、自动合并），既保证列表质量又减少人工成本？"
-    }
-  },
-  {
-    "date": "2026-09-09",
-    "repo_name": "Tencent/teamai-cli",
-    "repo_url": "https://github.com/Tencent/teamai-cli",
-    "repo_description": "Make Every Team AI Native",
-    "language": "TypeScript",
-    "stars": 2667,
-    "card_content": {
-      "core_point": "Tencent/teamai-cli 是一个让团队“AI原生”的 TypeScript CLI 工具，正通过多项目工作区、成员名册和智能数据布局来重塑团队协作方式。",
-      "deep_understanding": "从最近的提交看，项目正在重构 data-layout，以支持 worktree 下的自我定位与 workspace 合并，同时新增多项目管理、成员名单和 push --project 等能力。这意味着它不只是单一的命令行工具，而是一个面向规模化团队、强调数据一致性和协作流程的 AI 原生基础设施。Star 数 2667 也说明该方向在开发者社区中有一定共鸣。",
-      "use_cases": "适用于需要统一管理多个 AI 项目、成员权限和推送逻辑的团队，尤其是使用 Git worktree 并行开发时，可避免本地路径和业务根目录错乱，并让协作命令更具一致性。",
-      "thinking_question": "当 AI CLI 工具需要管理团队级数据布局时，如何在“便捷共享”和“权限隔离/安全边界”之间设计出可持续演进的架构？"
     }
   }
 ]

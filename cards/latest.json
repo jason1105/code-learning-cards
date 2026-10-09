@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-08",
-  "repo_name": "Stirling-Tools/Stirling-PDF",
-  "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
-  "repo_description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
-  "language": "TypeScript",
-  "stars": 93791,
+  "date": "2026-10-09",
+  "repo_name": "EbookFoundation/free-programming-books",
+  "repo_url": "https://github.com/EbookFoundation/free-programming-books",
+  "repo_description": ":books: Freely available programming books",
+  "language": "Python",
+  "stars": 398538,
   "card_content": {
-    "core_point": "像 Stirling-PDF 这样的高星开源项目，其迭代重心已从「功能有没有」转向「交互体验、认证边界健壮性与 CI 交付效率」三条线并行推进。",
-    "deep_understanding": "从最近提交可以看到三种典型工作并存：重绘图标、重构添加文件入口这类体验打磨，修复 SaaS OAuth 重连时丢弃授权 code 这类状态恢复缺陷，以及通过去掉层缓存和冗余 host 构建来加速 /deploypr 流水线。这说明项目成熟后，真正的竞争力来自「用户感受 + 可靠性 + 工程吞吐」的组合，而不是单纯堆功能。以 TypeScript 为主语言也让前后端与工具链统一，便于这类高频、小颗粒度的持续迭代。",
-    "use_cases": "一是自建或二次开发 PDF / 文档处理工具时，可借鉴它「小步优化 UI + 同步修边界 bug + 定期体检 CI」的迭代节奏；二是接入 OAuth / SSO 时，要专门设计重连、回调中断后的状态恢复与幂等处理，避免授权码被静默丢弃；三是维护 CI 时，应定期审视缓存与构建步骤是否「帮倒忙」，用构建耗时数据而非直觉来决定保留或删除。",
-    "thinking_question": "当产品功能已经足够丰富时，你会把下一份工程资源优先投给体验细节、认证与数据一致性等边界缺陷，还是 CI / 交付效率？你打算用什么指标来证明这个优先级是对的？"
+    "core_point": "EbookFoundation/free-programming-books 是一个由社区协作维护的免费编程书籍索引仓库，其核心价值不在于存储内容，而在于持续维护一份高质量、可访问的知识链接清单。",
+    "deep_understanding": "这个仓库本质上是「元资源」而非书籍本身：它用结构化的 Markdown 清单，按语言、主题、难度组织全球免费编程学习资料。从最近的提交可以看到，社区工作的一大部分是链接修复（如通过 Wayback Machine 恢复失效链接）和内容增补（如新增 AI 相关书籍），这说明开放知识库的生命力来自持续的「园艺式」维护，而非一次性建设。Python 作为主要语言，通常用于链接检查、格式校验等自动化脚本，让几百名贡献者能在同一套规则下协作。",
+    "use_cases": "当你需要为某个技术方向（如 C 语言、人工智能）寻找免费学习资料时，可以直接检索该仓库对应章节，省去在搜索结果中筛选广告和低质内容的时间；团队做内部学习路径规划时，也可以参考它的分类结构来组织自己的书单。反过来，若你想参与开源贡献，从这个仓库入手门槛极低——修一个失效链接、补一本书，就是一次被合并的真实 PR。",
+    "thinking_question": "如果一个知识库的价值主要来自「链接的持续可用性」，那么当原始资源消失时，我们保存快照（如 Wayback Machine）算是保存了知识，还是只保存了知识的影子？"
   }
 }
