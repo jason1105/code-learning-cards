@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-09",
-  "repo_name": "EbookFoundation/free-programming-books",
-  "repo_url": "https://github.com/EbookFoundation/free-programming-books",
-  "repo_description": ":books: Freely available programming books",
-  "language": "Python",
-  "stars": 398538,
+  "date": "2026-10-10",
+  "repo_name": "rust-unofficial/awesome-rust",
+  "repo_url": "https://github.com/rust-unofficial/awesome-rust",
+  "repo_description": "A curated list of Rust code and resources.",
+  "language": "Rust",
+  "stars": 59755,
   "card_content": {
-    "core_point": "EbookFoundation/free-programming-books 是一个由社区协作维护的免费编程书籍索引仓库，其核心价值不在于存储内容，而在于持续维护一份高质量、可访问的知识链接清单。",
-    "deep_understanding": "这个仓库本质上是「元资源」而非书籍本身：它用结构化的 Markdown 清单，按语言、主题、难度组织全球免费编程学习资料。从最近的提交可以看到，社区工作的一大部分是链接修复（如通过 Wayback Machine 恢复失效链接）和内容增补（如新增 AI 相关书籍），这说明开放知识库的生命力来自持续的「园艺式」维护，而非一次性建设。Python 作为主要语言，通常用于链接检查、格式校验等自动化脚本，让几百名贡献者能在同一套规则下协作。",
-    "use_cases": "当你需要为某个技术方向（如 C 语言、人工智能）寻找免费学习资料时，可以直接检索该仓库对应章节，省去在搜索结果中筛选广告和低质内容的时间；团队做内部学习路径规划时，也可以参考它的分类结构来组织自己的书单。反过来，若你想参与开源贡献，从这个仓库入手门槛极低——修一个失效链接、补一本书，就是一次被合并的真实 PR。",
-    "thinking_question": "如果一个知识库的价值主要来自「链接的持续可用性」，那么当原始资源消失时，我们保存快照（如 Wayback Machine）算是保存了知识，还是只保存了知识的影子？"
+    "core_point": "awesome-rust 是一个由社区持续维护的 Rust 生态索引仓库，它用「分类清单」的方式把散落在各处的库、工具与学习资源组织成可检索的公共知识地图。",
+    "deep_understanding": "这个仓库的核心价值不在代码，而在协作机制：从最近的提交可以看到，几乎每天都有新项目通过 Pull Request 被并入 AI Tooling、Web Servers、Image processing 等分类，说明它是一份「活的」生态快照，而非一次性整理的文档。它用目录结构隐式记录了 Rust 应用版图的扩张方向——哪些领域正在变得活跃，哪些分类开始细分，本身就是一份可读的生态趋势信号。对学习者而言，它把「我不知道有什么可选项」这一最耗时的信息搜集环节，压缩成了一次浏览。",
+    "use_cases": "技术选型时快速横向对比同一领域的多个 crate；新人规划学习路径，按「入门→Web→异步→AI」等分类阶梯式推进；团队调研某个垂直方向（如 Web 服务器、图像处理、AI 工具链）的成熟方案与替代品；开源作者通过提交 PR 让自己的项目进入分类清单，从而获得社区曝光与反向链接。",
+    "thinking_question": "当一份清单的条目膨胀到数千条时，「分类 + 外链」的索引方式会不会逐渐失效？如果由你来重新设计「发现有价值的 Rust 库」这件事，你会引入哪些维度——活跃度、下载量、维护者响应速度，还是真实的生产案例？"
   }
 }
