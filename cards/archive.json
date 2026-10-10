@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-10",
+    "repo_name": "rust-unofficial/awesome-rust",
+    "repo_url": "https://github.com/rust-unofficial/awesome-rust",
+    "repo_description": "A curated list of Rust code and resources.",
+    "language": "Rust",
+    "stars": 59755,
+    "card_content": {
+      "core_point": "awesome-rust 是一个由社区持续维护的 Rust 生态索引仓库，它用「分类清单」的方式把散落在各处的库、工具与学习资源组织成可检索的公共知识地图。",
+      "deep_understanding": "这个仓库的核心价值不在代码，而在协作机制：从最近的提交可以看到，几乎每天都有新项目通过 Pull Request 被并入 AI Tooling、Web Servers、Image processing 等分类，说明它是一份「活的」生态快照，而非一次性整理的文档。它用目录结构隐式记录了 Rust 应用版图的扩张方向——哪些领域正在变得活跃，哪些分类开始细分，本身就是一份可读的生态趋势信号。对学习者而言，它把「我不知道有什么可选项」这一最耗时的信息搜集环节，压缩成了一次浏览。",
+      "use_cases": "技术选型时快速横向对比同一领域的多个 crate；新人规划学习路径，按「入门→Web→异步→AI」等分类阶梯式推进；团队调研某个垂直方向（如 Web 服务器、图像处理、AI 工具链）的成熟方案与替代品；开源作者通过提交 PR 让自己的项目进入分类清单，从而获得社区曝光与反向链接。",
+      "thinking_question": "当一份清单的条目膨胀到数千条时，「分类 + 外链」的索引方式会不会逐渐失效？如果由你来重新设计「发现有价值的 Rust 库」这件事，你会引入哪些维度——活跃度、下载量、维护者响应速度，还是真实的生产案例？"
+    }
+  },
+  {
     "date": "2026-10-09",
     "repo_name": "EbookFoundation/free-programming-books",
     "repo_url": "https://github.com/EbookFoundation/free-programming-books",
@@ -397,20 +411,6 @@
       "deep_understanding": "后端数据源插件负责把 Prometheus、Loki、InfluxDB、Postgres 等各自的查询语言翻译成统一的 DataFrame 结构，前端面板消费这一层抽象，因此新增数据源时无需改动任何面板代码。仓库中「plugin compat: add get/update app settings」这类提交正说明插件 API 在被持续标准化，让 app 插件的设置读写也纳入统一契约。与此同时，大量 Renovate 依赖升级与 esbuild 安全修复也提醒我们：生态越开放，依赖面与供应链风险就越需要工程化治理。",
       "use_cases": "1) 搭建统一观测大屏，把指标、日志、链路放在同一条时间轴上做关联排查；2) 为团队内部自研服务编写自定义数据源插件，复用 Grafana 现成的告警与面板生态；3) 通过 provisioning 配置文件以代码方式管理多环境的数据源、Dashboard 与插件设置，实现可版本化的运维。",
       "thinking_question": "如果让你为内部系统写一个数据源插件，你会如何设计查询结果到 DataFrame 的字段映射，才能让现有面板不改一行代码就能直接复用？"
-    }
-  },
-  {
-    "date": "2026-09-10",
-    "repo_name": "firstcontributions/first-contributions",
-    "repo_url": "https://github.com/firstcontributions/first-contributions",
-    "repo_description": "🚀✨ Help beginners to contribute to open source projects",
-    "language": "",
-    "stars": 55881,
-    "card_content": {
-      "core_point": "开源贡献的入门本质是一条标准化协作链路：Fork → Clone → 新建分支 → 提交 → Push → 发起 Pull Request。",
-      "deep_understanding": "first-contributions 仓库本身几乎没有业务代码，它的价值在于把「参与开源」这一抽象行为拆解成可重复执行的 Git/GitHub 操作步骤。每个 PR 只是把一行名字加进贡献者列表，却完整模拟了真实开源项目的协作回路：修改、评审、合并、署名。低风险的练习环境让初学者把注意力放在流程本身，而不是代码难度上。",
-      "use_cases": "适合个人首次接触开源、团队新人 Git 上手培训、高校或社区工作坊教学；企业也可借鉴其模式，搭建内部的「第一个 PR」引导仓库，降低新成员融入协作规范的门槛。",
-      "thinking_question": "该仓库每天合并上百个几乎相同的 PR，如果你来维护它，会如何设计自动化校验与机器人流程（如 PR 模板、CI 检查、自动合并），既保证列表质量又减少人工成本？"
     }
   }
 ]
