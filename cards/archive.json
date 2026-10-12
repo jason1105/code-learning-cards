@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-12",
+    "repo_name": "microsoft/PowerToys",
+    "repo_url": "https://github.com/microsoft/PowerToys",
+    "repo_description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
+    "language": "C",
+    "stars": 139223,
+    "card_content": {
+      "core_point": "Microsoft PowerToys 是一组模块化 Windows 生产力工具集，通过独立小工具解决具体场景痛点，并持续提升可发现性、本地化与工程质量。",
+      "deep_understanding": "从最近提交可见，PowerToys 不只是堆叠功能：Quick Accent 新增字符参考指南，帮助用户理解不同语言集内容；CmdPal 增加全屏初始位置选择器，优化交互体验；同时修复持久化模型与官方构建资源元数据，体现大型桌面项目对可维护性和发布质量的重视。这说明优秀生产力工具需要在功能、易用性和工程治理之间持续平衡。",
+      "use_cases": "Windows 用户可以借助 PowerToys 的 Quick Accent 输入特殊字符、用 CmdPal 快速启动命令、用 ZoomIt 做演示缩放与标注；开发者则可以学习其模块化插件架构、本地化资源管理和持久化模型设计，用于构建自己的桌面效率工具。",
+      "thinking_question": "在桌面生产力工具中，功能强大与易于发现、易于使用之间应该如何取舍？当新增高级能力时，怎样避免用户根本不知道它存在？"
+    }
+  },
+  {
     "date": "2026-10-11",
     "repo_name": "huggingface/transformers",
     "repo_url": "https://github.com/huggingface/transformers",
@@ -397,20 +411,6 @@
       "deep_understanding": "从近期提交看，POI 通过升级 XMLBeans 到 5.4.1、适配 IBM JDK 的 XML 特性以及更新 Ant，持续保障不同运行环境下的稳定解析。同时，修复公式解析 NPE、将无效 EMF 文件的断言改为异常，说明健壮性和可诊断性对文档处理库至关重要。",
       "use_cases": "适用于 Java Web 或批处理系统中读取和生成 Excel 报表、填充 Word 合同模板、解析 PPT 内容，以及在企业数据导入导出、财务报表和自动化办公场景中处理 Office 文件。",
       "thinking_question": "如果你的应用依赖 POI 处理用户上传的 Office 文件，面对不同 JDK、XMLBeans 版本和畸形文件，你会如何设计异常边界与兼容性测试？"
-    }
-  },
-  {
-    "date": "2026-09-12",
-    "repo_name": "OpenHands/OpenHands",
-    "repo_url": "https://github.com/OpenHands/OpenHands",
-    "repo_description": "🙌 OpenHands: AI-Driven Development",
-    "language": "TypeScript",
-    "stars": 87600,
-    "card_content": {
-      "core_point": "在 AI 驱动开发中，应把 agent profile 作用域绑定到特定 MCP servers，以最小权限原则治理代理可调用的外部能力。",
-      "deep_understanding": "OpenHands 最新提交显示其支持将 agent profile 限定到特定 MCP servers，并让 ACP harness 对每个注册项做显式决策。这意味着代理不再默认拥有全局工具集，而是按角色、任务和信任边界获得可审计的 MCP 能力。",
-      "use_cases": "团队可为前端、后端、运维、代码审查等不同 OpenHands agent 分别配置 MCP：前端只连组件库与浏览器工具，后端连数据库与 API 文档，运维仅连受控部署通道，从而降低越权与误操作风险。",
-      "thinking_question": "当某个 agent 必须临时跨 profile 使用另一个 MCP server 时，你会用审批、短时凭证还是代理链来实现安全授权，同时不拖慢开发效率？"
     }
   }
 ]
