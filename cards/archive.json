@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-10-13",
+    "repo_name": "huggingface/transformers",
+    "repo_url": "https://github.com/huggingface/transformers",
+    "repo_description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+    "language": "Python",
+    "stars": 167647,
+    "card_content": {
+      "raw": "{\"core_point\": \"工具调用（tool calling）的参数解析要做“宽容归一化”：当模型输出 5.0 这类“整数值浮点数”时，应被接受为合法的 int 参数，而不是直接抛错。\", \"deep_understanding\": \"LLM 输出的是 token 序列而非严格类型的 JSON，模型经常给出 5.0、“5”或带空格的变体，但下游函数签名要求的是 int。Transformers 选择在 parse_response 阶段做类型归一化，把语义等价的表示映射到目标类型；同时新增的 chat 输入清洗则从入口挡住模板注入与异常字符。两者合起来就是“出口容错 + 入口设防”的工程思路——如今框架的竞争力，越来越多体现在这类不起眼却决定可用性的鲁棒性细节"
+    }
+  },
+  {
     "date": "2026-10-12",
     "repo_name": "microsoft/PowerToys",
     "repo_url": "https://github.com/microsoft/PowerToys",
@@ -397,20 +408,6 @@
     "stars": 81429,
     "card_content": {
       "raw": "{\"core_point\":\"Spring Boot 的核心价值是用自动配置、Starter 和生产就绪特性，让 Spring 应用以最小成本达到生产级标准。\",\"deep_understanding\":\"它通过约定优于配置减少样板代码，同时用 Actuator、健康检查、外部化配置和嵌入式容器覆盖部署与运维。近期仓库在 4.0.x/4.1.x 间持续合并并升级 XML Maven Plugin、在 Homebrew 验证测试中使用 Landlock 沙箱，说明成熟框架不仅关注功能，也重视构建可重复性与测试安全。\",\"use_cases\":\"适用于快速构建微服务、REST API、批处理、云原生后端和企业内部平台；也适合在升级 Spring Boot 版本时学习其多分支维护、依赖管理和安全验证实践。\",\"thinking_question\":\"在你的项目中，哪些 Spring Boot 自动配置或生产就绪特性真正降低了开发与运维"
-    }
-  },
-  {
-    "date": "2026-09-13",
-    "repo_name": "apache/poi",
-    "repo_url": "https://github.com/apache/poi",
-    "repo_description": "Mirror of Apache POI gitbox. The Java API for Microsoft Documents.",
-    "language": "Java",
-    "stars": 2269,
-    "card_content": {
-      "core_point": "Apache POI 是 Java 生态中操作 Microsoft Office 文档的核心 API，其维护重点包括 OOXML 解析、依赖升级与跨 JDK 兼容性。",
-      "deep_understanding": "从近期提交看，POI 通过升级 XMLBeans 到 5.4.1、适配 IBM JDK 的 XML 特性以及更新 Ant，持续保障不同运行环境下的稳定解析。同时，修复公式解析 NPE、将无效 EMF 文件的断言改为异常，说明健壮性和可诊断性对文档处理库至关重要。",
-      "use_cases": "适用于 Java Web 或批处理系统中读取和生成 Excel 报表、填充 Word 合同模板、解析 PPT 内容，以及在企业数据导入导出、财务报表和自动化办公场景中处理 Office 文件。",
-      "thinking_question": "如果你的应用依赖 POI 处理用户上传的 Office 文件，面对不同 JDK、XMLBeans 版本和畸形文件，你会如何设计异常边界与兼容性测试？"
     }
   }
 ]
