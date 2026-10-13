@@ -1,14 +1,11 @@
 {
-  "date": "2026-10-12",
-  "repo_name": "microsoft/PowerToys",
-  "repo_url": "https://github.com/microsoft/PowerToys",
-  "repo_description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
-  "language": "C",
-  "stars": 139223,
+  "date": "2026-10-13",
+  "repo_name": "huggingface/transformers",
+  "repo_url": "https://github.com/huggingface/transformers",
+  "repo_description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+  "language": "Python",
+  "stars": 167647,
   "card_content": {
-    "core_point": "Microsoft PowerToys 是一组模块化 Windows 生产力工具集，通过独立小工具解决具体场景痛点，并持续提升可发现性、本地化与工程质量。",
-    "deep_understanding": "从最近提交可见，PowerToys 不只是堆叠功能：Quick Accent 新增字符参考指南，帮助用户理解不同语言集内容；CmdPal 增加全屏初始位置选择器，优化交互体验；同时修复持久化模型与官方构建资源元数据，体现大型桌面项目对可维护性和发布质量的重视。这说明优秀生产力工具需要在功能、易用性和工程治理之间持续平衡。",
-    "use_cases": "Windows 用户可以借助 PowerToys 的 Quick Accent 输入特殊字符、用 CmdPal 快速启动命令、用 ZoomIt 做演示缩放与标注；开发者则可以学习其模块化插件架构、本地化资源管理和持久化模型设计，用于构建自己的桌面效率工具。",
-    "thinking_question": "在桌面生产力工具中，功能强大与易于发现、易于使用之间应该如何取舍？当新增高级能力时，怎样避免用户根本不知道它存在？"
+    "raw": "{\"core_point\": \"工具调用（tool calling）的参数解析要做“宽容归一化”：当模型输出 5.0 这类“整数值浮点数”时，应被接受为合法的 int 参数，而不是直接抛错。\", \"deep_understanding\": \"LLM 输出的是 token 序列而非严格类型的 JSON，模型经常给出 5.0、“5”或带空格的变体，但下游函数签名要求的是 int。Transformers 选择在 parse_response 阶段做类型归一化，把语义等价的表示映射到目标类型；同时新增的 chat 输入清洗则从入口挡住模板注入与异常字符。两者合起来就是“出口容错 + 入口设防”的工程思路——如今框架的竞争力，越来越多体现在这类不起眼却决定可用性的鲁棒性细节"
   }
 }
