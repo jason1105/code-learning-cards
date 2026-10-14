@@ -1,11 +1,14 @@
 {
-  "date": "2026-10-13",
-  "repo_name": "huggingface/transformers",
-  "repo_url": "https://github.com/huggingface/transformers",
-  "repo_description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
-  "language": "Python",
-  "stars": 167647,
+  "date": "2026-10-14",
+  "repo_name": "vitejs/vite",
+  "repo_url": "https://github.com/vitejs/vite",
+  "repo_description": "Next generation frontend tooling. It's fast!",
+  "language": "TypeScript",
+  "stars": 83372,
   "card_content": {
-    "raw": "{\"core_point\": \"工具调用（tool calling）的参数解析要做“宽容归一化”：当模型输出 5.0 这类“整数值浮点数”时，应被接受为合法的 int 参数，而不是直接抛错。\", \"deep_understanding\": \"LLM 输出的是 token 序列而非严格类型的 JSON，模型经常给出 5.0、“5”或带空格的变体，但下游函数签名要求的是 int。Transformers 选择在 parse_response 阶段做类型归一化，把语义等价的表示映射到目标类型；同时新增的 chat 输入清洗则从入口挡住模板注入与异常字符。两者合起来就是“出口容错 + 入口设防”的工程思路——如今框架的竞争力，越来越多体现在这类不起眼却决定可用性的鲁棒性细节"
+    "core_point": "Vite 的「快」来自开发阶段的按需编译（基于原生 ESM 不打包源码）加上依赖预构建（optimizer 提前扫描并打包第三方依赖），而 HMR 则通过 WebSocket 长连接把更新推给浏览器。",
+    "deep_understanding": "在开发服务器中，源码以原生 ESM 形式逐个请求、按需转换，省去了整包构建的时间；但 node_modules 里的依赖往往模块碎片多、格式混杂（CJS/ESM），所以 Vite 会先用 optimizer 扫描入口（包括 jsxInject 这类自动注入的 import）把它们预打包成少量 ESM 文件并缓存。HMR 依赖一条独立的 WebSocket 通道，它挂在 HTTP server 的 upgrade 事件上，因此当连接异常（比如非 HMR 的升级请求、socket 出错）时必须显式兜底处理，否则未捕获的错误可能影响整个 dev server 的稳定性。",
+    "use_cases": "① 在大型项目或 monorepo 中通过 optimizeDeps.include/exclude 控制预构建范围，缩短冷启动与首屏加载；② 自研插件或用 jsxInject 注入全局依赖时，确认 optimizer 能正确扫描到这些隐式 import，避免运行时 404 或重复请求；③ 排查 HMR 连不上、页面不刷新或 dev server 崩溃问题时，从 WebSocket upgrade 与 socket 错误处理入手定位。",
+    "thinking_question": "既然 Vite 开发时不打包源码，为什么第三方依赖反而要被预构建打包？如果去掉这一步，浏览器端会发生什么？"
   }
 }
