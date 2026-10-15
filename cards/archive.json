@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-15",
+    "repo_name": "firstcontributions/first-contributions",
+    "repo_url": "https://github.com/firstcontributions/first-contributions",
+    "repo_description": "🚀✨ Help beginners to contribute to open source projects",
+    "language": "",
+    "stars": 56362,
+    "card_content": {
+      "core_point": "通过「把自己的名字加进贡献者名单」这一最小可行任务，完整走一遍开源协作的核心流程：Fork → Clone → 建分支 → 提交 → Push → 发起 Pull Request。",
+      "deep_understanding": "这个仓库本身几乎没有功能性代码，它的价值在于把开源贡献的技术门槛和心理门槛同时压到最低——你只需要会一点点 Git 和 Markdown，就能获得一次真实的、被合并的 PR 记录。从最近的提交看，每天有大量类似的「Add xxx to Contributors list」被快速合并，说明它依赖标准化的命名约定、PR 模板和自动化检查来支撑高吞吐、低风险的协作模式，这正是大型开源项目维护流程的缩影。理解了它的运作方式，你其实就理解了现代开源协作的骨架：分支隔离、变更最小化、可审查、可回滚。",
+      "use_cases": "1) 完全新手第一次练手，搞懂 Fork 与上游仓库、origin 与 upstream、PR 与 Merge 的关系；2) 企业或培训班用来做 Git/GitHub 实操教学与 CI 演练；3) 观察一个 5 万+ Star 仓库如何用模板、机器人和维护者分工处理海量低风险 PR；4) 为个人主页或简历积累第一个 merged PR 记录，建立参与开源的信心。",
+      "thinking_question": "如果一次贡献只是「加了行名字」，它算不算真正的开源贡献？如果把这种「极低门槛 + 高吞吐合并」的模式搬到你自己的项目里，你会得到哪些好处，又会被哪些噪音淹没？"
+    }
+  },
+  {
     "date": "2026-10-14",
     "repo_name": "vitejs/vite",
     "repo_url": "https://github.com/vitejs/vite",
@@ -397,20 +411,6 @@
       "deep_understanding": "developer-roadmap 用 TypeScript 构建了一套交互式学习路线图，把前端、后端、DevOps 等方向拆解成有依赖关系的节点网络，让学习者随时知道“我在哪、下一步学什么、哪些可以先跳过”。它的内容由独立内容源定期同步到仓库（提交记录里大量 chore: sync content to repo 就是自动化同步），说明路线图本身也是持续演进的活文档，而非一次性写死的清单。",
       "use_cases": "1) 转行或入门时，用路线图定位自己的起点，避免被无穷尽的教程淹没；2) 团队做技术培训或新人 onboarding 时，把路线图裁剪成岗位专属的学习地图；3) 准备面试前，对照目标岗位路线图做查漏补缺，识别知识盲区。",
       "thinking_question": "如果路线图上的每个节点你都能“看懂”，但让你从零实现一个完整项目时仍然卡壳——你该如何设计一套验证机制，来区分“知道”和“真的会用”？"
-    }
-  },
-  {
-    "date": "2026-09-15",
-    "repo_name": "fschutt/azul",
-    "repo_url": "https://github.com/fschutt/azul",
-    "repo_description": "Desktop GUI Framework",
-    "language": "Rust",
-    "stars": 6118,
-    "card_content": {
-      "core_point": "Azul 是一个用 Rust 实现的桌面 GUI 框架，它用类似 Web 的 DOM 布局模型来构建原生界面，并通过 C ABI 把同一套渲染与事件系统开放给 Go、Nim、Python 等多语言绑定。",
-      "deep_understanding": "Azul 把界面抽象成可增量 diff 的节点树，配合不可变数据与回调，让声明式 UI 在 Rust 中也能高效更新；同时核心逻辑保持 Rust 实现、以 C ABI 对外暴露，使各种宿主语言共享同一条渲染管线。正因如此，跨语言边界的所有权与生命周期管理就成了工程质量的关键，近期提交中反复出现的内存泄漏修复与 memtest/e2e 跑测正说明了这一点。",
-      "use_cases": "适合构建需要原生性能的跨平台桌面工具、嵌入式或轻量级界面程序；也适合希望用 Rust 甚至 Go、Python 快速搭建 GUI 的团队，以及想研究 FFI 边界内存管理与多语言绑定设计的开发者。",
-      "thinking_question": "当一个 GUI 框架要同时服务多种宿主语言时，应该如何在保持 Rust 内存安全的前提下设计所有权与生命周期模型，避免绑定层成为内存泄漏的高发区？"
     }
   }
 ]
