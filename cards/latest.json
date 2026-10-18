@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-17",
-  "repo_name": "spring-projects/spring-boot",
-  "repo_url": "https://github.com/spring-projects/spring-boot",
-  "repo_description": "Spring Boot helps you to create Spring-powered, production-grade applications and services with absolute minimum fuss.",
-  "language": "Java",
-  "stars": 81705,
+  "date": "2026-10-18",
+  "repo_name": "xournalpp/xournalpp",
+  "repo_url": "https://github.com/xournalpp/xournalpp",
+  "repo_description": "Xournal++ is a handwriting notetaking software with PDF annotation support. Written in C++ with GTK3, supporting Linux (e.g. Ubuntu, Debian, Arch, SUSE), macOS and Windows 10. Supports pen input from devices such as Wacom Tablets.",
+  "language": "C++",
+  "stars": 15533,
   "card_content": {
-    "core_point": "Spring Boot 通过多版本分支维护和持续依赖升级，在稳定性与生态兼容性之间保持平衡。",
-    "deep_understanding": "近期提交显示 4.0.x、4.1.x 等分支持续合并，并同步升级 Cassandra Driver 等第三方依赖。这说明 Spring Boot 不仅提供开箱即用的开发体验，也通过分支维护策略保障不同版本线的安全修复、兼容性和演进节奏。",
-    "use_cases": "适用于企业级微服务、云原生应用和需要长期维护的 Java 系统，尤其是使用 Cassandra 等外部组件时，需要跟随 Spring Boot 的依赖升级策略来降低兼容性风险。",
-    "thinking_question": "为什么 Spring Boot 需要将依赖升级同时维护到多个版本分支，而不是只在新版本中升级？"
+    "core_point": "跨平台C++桌面应用应把构建工具链迁移与配置回退机制一起设计，以提升可移植性和可维护性。",
+    "deep_understanding": "从最近提交看，Xournal++ 将 Windows 构建从 MINGW64 迁移到 UCRT64，并让应用在用户配置缺失时回退读取系统配置目录。前者改善 Windows 运行时与依赖兼容性，后者提供系统级默认配置，降低多环境部署成本；同时 out-of-source 构建和 include 清理体现了构建与模块边界的持续治理。",
+    "use_cases": "适用于跨平台笔记/绘图类桌面软件的 CI 打包、Linux RPM 与 Windows MSYS2 构建、企业或学校机房统一默认配置、以及用户配置损坏或缺失时的安全启动场景。",
+    "thinking_question": "如果系统配置目录和用户配置目录同时存在同一配置项，你会如何定义优先级、合并策略与可观测的冲突提示？"
   }
 }
