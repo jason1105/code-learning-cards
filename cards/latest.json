@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-18",
-  "repo_name": "xournalpp/xournalpp",
-  "repo_url": "https://github.com/xournalpp/xournalpp",
-  "repo_description": "Xournal++ is a handwriting notetaking software with PDF annotation support. Written in C++ with GTK3, supporting Linux (e.g. Ubuntu, Debian, Arch, SUSE), macOS and Windows 10. Supports pen input from devices such as Wacom Tablets.",
-  "language": "C++",
-  "stars": 15533,
+  "date": "2026-10-19",
+  "repo_name": "Stirling-Tools/Stirling-PDF",
+  "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
+  "repo_description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
+  "language": "TypeScript",
+  "stars": 94534,
   "card_content": {
-    "core_point": "跨平台C++桌面应用应把构建工具链迁移与配置回退机制一起设计，以提升可移植性和可维护性。",
-    "deep_understanding": "从最近提交看，Xournal++ 将 Windows 构建从 MINGW64 迁移到 UCRT64，并让应用在用户配置缺失时回退读取系统配置目录。前者改善 Windows 运行时与依赖兼容性，后者提供系统级默认配置，降低多环境部署成本；同时 out-of-source 构建和 include 清理体现了构建与模块边界的持续治理。",
-    "use_cases": "适用于跨平台笔记/绘图类桌面软件的 CI 打包、Linux RPM 与 Windows MSYS2 构建、企业或学校机房统一默认配置、以及用户配置损坏或缺失时的安全启动场景。",
-    "thinking_question": "如果系统配置目录和用户配置目录同时存在同一配置项，你会如何定义优先级、合并策略与可观测的冲突提示？"
+    "core_point": "成熟开源项目的长期可用性，取决于功能迭代、依赖更新、安全扫描与合规管理的持续协同。",
+    "deep_understanding": "Stirling-PDF 最近的提交同时包含 Markdown 转 PDF 的代码块换行修复、第三方许可证更新，以及 GitHub Actions、CodeQL 和 harden-runner 等依赖与安全组件升级。这说明高星开源项目不仅关注用户可见功能，也把格式正确性、供应链安全和合规信息纳入日常维护流水线。通过 dependabot、bot 与小步频繁合并，团队可以降低升级风险并保持项目健康度。",
+    "use_cases": "在维护 Web PDF 工具、内部文档平台或任意开源服务时，可配置依赖自动升级、CodeQL/SARIF 安全扫描、CI 运行器加固和第三方许可证清单生成，并为 Markdown 转 PDF 等格式转换边界场景补充回归测试。",
+    "thinking_question": "在你的项目中，如何平衡自动依赖升级的速度与回归验证成本？"
   }
 }

@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-19",
+    "repo_name": "Stirling-Tools/Stirling-PDF",
+    "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
+    "repo_description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
+    "language": "TypeScript",
+    "stars": 94534,
+    "card_content": {
+      "core_point": "成熟开源项目的长期可用性，取决于功能迭代、依赖更新、安全扫描与合规管理的持续协同。",
+      "deep_understanding": "Stirling-PDF 最近的提交同时包含 Markdown 转 PDF 的代码块换行修复、第三方许可证更新，以及 GitHub Actions、CodeQL 和 harden-runner 等依赖与安全组件升级。这说明高星开源项目不仅关注用户可见功能，也把格式正确性、供应链安全和合规信息纳入日常维护流水线。通过 dependabot、bot 与小步频繁合并，团队可以降低升级风险并保持项目健康度。",
+      "use_cases": "在维护 Web PDF 工具、内部文档平台或任意开源服务时，可配置依赖自动升级、CodeQL/SARIF 安全扫描、CI 运行器加固和第三方许可证清单生成，并为 Markdown 转 PDF 等格式转换边界场景补充回归测试。",
+      "thinking_question": "在你的项目中，如何平衡自动依赖升级的速度与回归验证成本？"
+    }
+  },
+  {
     "date": "2026-10-18",
     "repo_name": "xournalpp/xournalpp",
     "repo_url": "https://github.com/xournalpp/xournalpp",
@@ -397,20 +411,6 @@
       "deep_understanding": "从最近的提交可以看出它的设计重心是「共享能力」而非单点功能：README 明确把产品定位从口号转向共享能力叙事，同时通过 OMP（Oh My Pi）扩展运行器把生命周期钩子、资源同步等机制做成一等公民。这意味着 CLI 只是统一入口，真正的能力单元是可分发、可版本化的 skill 与扩展；连 GitHub 登录这类交互也被设计成由 AI 助手驱动，从而减少人工操作成本。",
       "use_cases": "适合需要统一 AI 工作流的研发团队：把代码评审、发布检查、CI 生命周期钩子封装进 CLI 让全员复用；把内部平台工具包装成 skill 分发给团队；在终端或 IDE 的 AI 助手中自动完成认证、资源同步与上下文准备，降低新人接入成本。",
       "thinking_question": "当 GitHub 登录这类敏感操作由 AI 助手而非人来驱动时，你会如何设计权限边界、凭据管理与审计日志，既保证自动化体验又不失控？"
-    }
-  },
-  {
-    "date": "2026-09-18",
-    "repo_name": "hesreallyhim/awesome-claude-code",
-    "repo_url": "https://github.com/hesreallyhim/awesome-claude-code",
-    "repo_description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC. A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
-    "language": "Python",
-    "stars": 54248,
-    "card_content": {
-      "core_point": "awesome-claude-code 是一份由社区策展的 Claude Code 生态资源索引，用「清单」这种最低成本的形式，把技能（Skills）、子代理（Agents）、状态栏、插件与开发工具串联成可检索的知识地图。",
-      "deep_understanding": "Awesome 列表的真正价值不在代码，而在信息组织与持续维护：它把分散在博客、Gist、个人仓库里的经验收敛成统一分类，降低了新人的探索成本。该仓库以 Python 脚本 + GitHub Actions 自动刷新 repo ticker 与 SVG，说明「策展」本身也需要工程化保鲜机制，否则清单会迅速腐化。它同时折射出一个趋势：AI 编码代理正从单一 CLI 工具演化为可插拔平台，围绕 Skills、Subagents、Plugins 形成了类似早期 npm / VS Code 扩展的生态雏形。",
-      "use_cases": "团队准备在工程中落地 Claude Code 时，可用它做技术选型与配置参考，直接借鉴成熟的 CLAUDE.md 模板、子代理分工方案和状态栏脚本；个人开发者可从中挖掘提效插件，快速搭建自己的编码工作流；技术负责人也可参照其分类方式，搭建团队内部的「AI 工具与规范索引」，沉淀最佳实践。",
-      "thinking_question": "当工具生态以周为单位快速迭代时，一份社区维护的清单该如何判断其资源是否仍然可用、可信？如果由你来设计它的「保鲜」机制，除了自动更新 star 数与提交记录，你还会引入哪些信号（如最后验证时间、兼容版本、真实使用反馈）？"
     }
   }
 ]
