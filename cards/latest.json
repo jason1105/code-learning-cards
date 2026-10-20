@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-19",
-  "repo_name": "Stirling-Tools/Stirling-PDF",
-  "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
-  "repo_description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
+  "date": "2026-10-20",
+  "repo_name": "grafana/grafana",
+  "repo_url": "https://github.com/grafana/grafana",
+  "repo_description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
   "language": "TypeScript",
-  "stars": 94534,
+  "stars": 77399,
   "card_content": {
-    "core_point": "成熟开源项目的长期可用性，取决于功能迭代、依赖更新、安全扫描与合规管理的持续协同。",
-    "deep_understanding": "Stirling-PDF 最近的提交同时包含 Markdown 转 PDF 的代码块换行修复、第三方许可证更新，以及 GitHub Actions、CodeQL 和 harden-runner 等依赖与安全组件升级。这说明高星开源项目不仅关注用户可见功能，也把格式正确性、供应链安全和合规信息纳入日常维护流水线。通过 dependabot、bot 与小步频繁合并，团队可以降低升级风险并保持项目健康度。",
-    "use_cases": "在维护 Web PDF 工具、内部文档平台或任意开源服务时，可配置依赖自动升级、CodeQL/SARIF 安全扫描、CI 运行器加固和第三方许可证清单生成，并为 Markdown 转 PDF 等格式转换边界场景补充回归测试。",
-    "thinking_question": "在你的项目中，如何平衡自动依赖升级的速度与回归验证成本？"
+    "core_point": "Grafana 近期提交的主线是「用 Feature Toggle 与 OpenFeature 标准做渐进式架构演进」：先解耦代码边界，再灰度切换默认行为，而不是一次性大改。",
+    "deep_understanding": "从 alerting.gmaOnlyListView 这类细粒度开关，到把 dashboard 逻辑迁到 OpenFeature，再到把 global-only 逻辑从共享搜索路径中剥离，套路是一致的：让新老路径并行存在、可灰度、可回滚。统一存储改为从 router 的 /apis/discovery 读取 search manifests，本质是把静态配置换成运行时协商，降低多后端环境下的耦合。代价是开关债务和双路径测试成本，因此必须为每个开关设定清理期限与责任人。",
+    "use_cases": "当你需要重构被多个模块共享的核心逻辑（搜索、鉴权、数据源路由）时，可照搬这套做法：加开关隔离新路径，按组织或租户灰度，观察错误率与延迟指标后再改默认值；在 Prometheus、Loki、Elasticsearch 等多后端场景下，用运行时服务发现替代硬编码配置，让新数据源接入无需发版。",
+    "thinking_question": "如果由你为团队的 Feature Toggle 制定一条「生命周期规则」，你会用哪些指标或时间点来判断某个开关应该被移除？"
   }
 }
