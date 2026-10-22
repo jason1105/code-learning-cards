@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-21",
-  "repo_name": "lysine-dev/okhttp",
-  "repo_url": "https://github.com/lysine-dev/okhttp",
-  "repo_description": "A meticulous HTTP client for the JVM, Android, and GraalVM.",
-  "language": "Kotlin",
-  "stars": 47091,
+  "date": "2026-10-22",
+  "repo_name": "rustsbi/rustsbi",
+  "repo_url": "https://github.com/rustsbi/rustsbi",
+  "repo_description": "RISC-V Supervisor Binary Interface (RISC-V SBI) library in Rust; runs on M or HS mode; good support for embedded Rust ecosystem. For binary download see firmware folder.",
+  "language": "Rust",
+  "stars": 1336,
   "card_content": {
-    "core_point": "OkHttp 在解析 MediaType 的带引号参数时拒绝 CR 与 LF，避免 HTTP 头注入和解析歧义。",
-    "deep_understanding": "MediaType 参数可能出现在 Content-Type 等头中，带引号的值若包含换行符，容易被错误解析或伪造额外头部。OkHttp 选择在解析入口直接拒绝 CR/LF，而不是静默清洗，体现对 HTTP 消息边界和安全性的严格校验。这也提醒我们：安全解析器应明确拒绝非法字符并保持行为可预测。",
-    "use_cases": "在网关、代理、服务端框架或客户端 SDK 中解析 Content-Type、上传文件类型、API 请求头时，可用同样策略校验媒体类型参数，防止换行注入、日志伪造和上下游解析不一致。",
-    "thinking_question": "如果你维护一个 HTTP 头解析库，面对带引号参数中的非法字符，你会选择直接拒绝、转义清洗还是保留原值？各自对兼容性和安全性有什么影响？"
+    "core_point": "RustSBI 是用 Rust 实现的 RISC-V SBI 库，运行在 M 模式或 HS 模式，为操作系统提供统一的引导与运行时服务接口。",
+    "deep_understanding": "SBI 是 RISC-V 平台固件与 Supervisor 操作系统之间的标准接口，RustSBI 将该接口工程化为可复用库，并覆盖 legacy 与现代扩展。它既能作为 M 模式固件的一部分，也能在 HS 模式支持虚拟化场景，同时受益于 Rust 的嵌入式生态和内存安全特性。仓库中的 firmware、sbi-rt、runtime 等模块分别承担固件集成、接口调用和运行时 CSR 恢复等职责。",
+    "use_cases": "可用于 RISC-V 开发板或 QEMU 上引导 Linux、rCore 等操作系统；也可用于嵌入式 Rust 项目、Hypervisor 开发、OS 移植以及需要统一 SBI 调用封装的固件和运行时环境。",
+    "thinking_question": "如果 RustSBI 同时需要支持 M 模式固件和 HS 模式虚拟化，你会如何设计异常委托、CSR 恢复和 SBI 扩展兼容策略，以兼顾安全性与可移植性？"
   }
 }

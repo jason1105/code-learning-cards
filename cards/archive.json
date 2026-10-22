@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-22",
+    "repo_name": "rustsbi/rustsbi",
+    "repo_url": "https://github.com/rustsbi/rustsbi",
+    "repo_description": "RISC-V Supervisor Binary Interface (RISC-V SBI) library in Rust; runs on M or HS mode; good support for embedded Rust ecosystem. For binary download see firmware folder.",
+    "language": "Rust",
+    "stars": 1336,
+    "card_content": {
+      "core_point": "RustSBI 是用 Rust 实现的 RISC-V SBI 库，运行在 M 模式或 HS 模式，为操作系统提供统一的引导与运行时服务接口。",
+      "deep_understanding": "SBI 是 RISC-V 平台固件与 Supervisor 操作系统之间的标准接口，RustSBI 将该接口工程化为可复用库，并覆盖 legacy 与现代扩展。它既能作为 M 模式固件的一部分，也能在 HS 模式支持虚拟化场景，同时受益于 Rust 的嵌入式生态和内存安全特性。仓库中的 firmware、sbi-rt、runtime 等模块分别承担固件集成、接口调用和运行时 CSR 恢复等职责。",
+      "use_cases": "可用于 RISC-V 开发板或 QEMU 上引导 Linux、rCore 等操作系统；也可用于嵌入式 Rust 项目、Hypervisor 开发、OS 移植以及需要统一 SBI 调用封装的固件和运行时环境。",
+      "thinking_question": "如果 RustSBI 同时需要支持 M 模式固件和 HS 模式虚拟化，你会如何设计异常委托、CSR 恢复和 SBI 扩展兼容策略，以兼顾安全性与可移植性？"
+    }
+  },
+  {
     "date": "2026-10-21",
     "repo_name": "lysine-dev/okhttp",
     "repo_url": "https://github.com/lysine-dev/okhttp",
@@ -397,20 +411,6 @@
     "stars": 82946,
     "card_content": {
       "raw": "{\"core_point\": \"Vite 的依赖优化器需要基于 TypeScript 语法准确识别类型导入，而不能仅凭绑定名是否以 type 开头来判断。\","
-    }
-  },
-  {
-    "date": "2026-09-21",
-    "repo_name": "dbeaver/dbeaver",
-    "repo_url": "https://github.com/dbeaver/dbeaver",
-    "repo_description": "Free universal database tool and SQL client",
-    "language": "Java",
-    "stars": 51818,
-    "card_content": {
-      "core_point": "成熟的开源项目靠「issue 驱动的小步迭代」演进：每个提交都绑定明确的问题编号，一次只解决一个问题。",
-      "deep_understanding": "从 DBeaver 最近的提交可以看到，即使是 5 万 Star 级别的成熟项目，日常提交也多是 UI 细节修复（SQL 编辑器工具栏配色、CSmartCombo 组件改进）、功能渐进式重设计（AI 引擎选择器）以及测试基础设施增强（自动化测试浏览器参数化），而不是大规模重构。用 issue 编号串联每一次改动，让变更可追溯、可回滚、可评审，同时把回归风险压到最小。测试代码与产品代码同步演进，正是这类长期维护项目保持稳定的关键。",
-      "use_cases": "适合参与大型开源项目的贡献者：先定位一个具体 issue，只改动与之相关的代码并补上对应测试，再通过 PR 关闭它。同样适用于企业团队日常开发——把需求拆成可独立验证的小任务，用 issue 编号把提交、PR、发布说明串成一条完整链路，方便回溯与责任归属。",
-      "thinking_question": "回顾你最近的一次代码提交：如果要求它必须绑定一个明确的问题编号，且只解决这一个问题，你会怎样把这次改动拆分成若干可独立验证的小步？"
     }
   }
 ]
