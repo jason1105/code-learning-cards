@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-24",
-  "repo_name": "nowledge-co/community",
-  "repo_url": "https://github.com/nowledge-co/community",
-  "repo_description": "Community Repo for Nowledge Labs Products",
-  "language": "Python",
-  "stars": 195,
+  "date": "2026-10-25",
+  "repo_name": "Snailclimb/JavaGuide",
+  "repo_url": "https://github.com/Snailclimb/JavaGuide",
+  "repo_description": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
+  "language": "JavaScript",
+  "stars": 159244,
   "card_content": {
-    "core_point": "在 AI 编程助手插件集成中，用稳健的会话键控隔离上下文注入，并保持恢复提示与版本兼容性一致，是避免重复注入和误报成功的关键。",
-    "deep_understanding": "最近提交显示团队在 OpenHands 中修复重复的 context bundle prompt injection，通过 robust session keying 让同一会话的上下文只注入一次；在 Claude Code 插件中则关注相对路径、恢复提示保留 CLI 配置以及成功前确认捕获。这类修复说明集成层要把会话身份、状态确认和兼容性验证当作一等公民。",
-    "use_cases": "当你为 IDE/CLI 开发 AI 助手插件或维护多版本适配时，可为每个会话生成稳定唯一键，持久化注入标记，恢复时沿用原 CLI 配置，并在报告成功前校验实际捕获结果；同时用兼容性测试矩阵覆盖不同 DSH/插件版本。",
-    "thinking_question": "如果你的会话键在重连或重启后发生变化，你会如何设计幂等注入与恢复机制，既避免重复上下文又保证不丢关键信息？"
+    "core_point": "RAG（检索增强生成）的本质是“先检索、后生成”：在模型作答前，从外部知识库中召回相关文档片段，作为上下文交给模型，从而缓解幻觉问题，并让回答可追溯。",
+    "deep_understanding": "RAG 的效果上限往往由文档处理环节决定，而不仅取决于模型本身：分块粒度、元数据设计、清洗与去重都会直接影响检索召回的覆盖率，进而决定模型能否看到正确信息。检索到的内容还需要经过重排、裁剪和提示词组装，才能真正转化为高质量上下文。要让系统持续变好，还必须建立可量化的评测体系，例如召回率、忠实度和答案相关性，用数据判断每一步改动是否有效。",
+    "use_cases": "适用于企业内部知识库问答、客服工单辅助、技术文档搜索、合规与合同审阅等场景；当知识频繁更新、且回答需要给出引用出处时，RAG 通常比微调更经济、更可控。",
+    "thinking_question": "如果你的 RAG 系统总是“答非所问”，你会先怀疑分块策略、检索召回，还是提示词组装？请设计一个最小评测集，用来快速定位问题出在哪一环。"
   }
 }

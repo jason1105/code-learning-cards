@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-25",
+    "repo_name": "Snailclimb/JavaGuide",
+    "repo_url": "https://github.com/Snailclimb/JavaGuide",
+    "repo_description": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
+    "language": "JavaScript",
+    "stars": 159244,
+    "card_content": {
+      "core_point": "RAG（检索增强生成）的本质是“先检索、后生成”：在模型作答前，从外部知识库中召回相关文档片段，作为上下文交给模型，从而缓解幻觉问题，并让回答可追溯。",
+      "deep_understanding": "RAG 的效果上限往往由文档处理环节决定，而不仅取决于模型本身：分块粒度、元数据设计、清洗与去重都会直接影响检索召回的覆盖率，进而决定模型能否看到正确信息。检索到的内容还需要经过重排、裁剪和提示词组装，才能真正转化为高质量上下文。要让系统持续变好，还必须建立可量化的评测体系，例如召回率、忠实度和答案相关性，用数据判断每一步改动是否有效。",
+      "use_cases": "适用于企业内部知识库问答、客服工单辅助、技术文档搜索、合规与合同审阅等场景；当知识频繁更新、且回答需要给出引用出处时，RAG 通常比微调更经济、更可控。",
+      "thinking_question": "如果你的 RAG 系统总是“答非所问”，你会先怀疑分块策略、检索召回，还是提示词组装？请设计一个最小评测集，用来快速定位问题出在哪一环。"
+    }
+  },
+  {
     "date": "2026-10-24",
     "repo_name": "nowledge-co/community",
     "repo_url": "https://github.com/nowledge-co/community",
@@ -400,20 +414,6 @@
       "deep_understanding": "它本身通常不负责存储所有可观测数据，而是通过数据源插件连接 Prometheus、Loki、Elasticsearch、InfluxDB、Postgres 等系统，再用 Dashboard、Explore、Alerting 等能力形成统一体验。近期提交涉及 Alerting 外部 Alertmanager、app-sdk logger、Scenes 版本升级等，说明 Grafana 在扩展生态的同时，也持续关注告警语义、日志上下文和可视化组件稳定性。",
       "use_cases": "适合 SRE、DevOps 和平台团队搭建统一监控大盘，在故障排查时关联指标、日志与链路追踪；也适合将 Grafana 作为可观测性入口嵌入内部平台，降低多系统切换成本。",
       "thinking_question": "如果你的团队同时使用 Prometheus 和 Loki，你会如何设计 Grafana 的数据源、Dashboard 与告警策略，才能既保持统一体验，又避免告警重复和碎片化？"
-    }
-  },
-  {
-    "date": "2026-09-24",
-    "repo_name": "grafana/grafana",
-    "repo_url": "https://github.com/grafana/grafana",
-    "repo_description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
-    "language": "TypeScript",
-    "stars": 76886,
-    "card_content": {
-      "core_point": "Grafana 的核心竞争力在于「可组合」：用统一的抽象层（数据源插件、存储注册表）把异构的指标、日志、链路数据接入同一套可视化与告警体系。",
-      "deep_understanding": "从最近的提交能看出这种抽象思想贯穿全局——IAM 模块通过 registered storage 读取内部角色资源，把业务逻辑与具体存储实现解耦，这与数据源插件屏蔽 Prometheus、Loki、Postgres 差异的做法如出一辙。前端同样在持续重构（如 FilterByName 函数组件化修复边界 bug），让可视化组件具备更强的复用与组合能力。正是这种「插件化后端 + 组件化前端」的双层可组合性，让 Grafana 能同时容纳上百种数据源而保持一致体验。",
-      "use_cases": "典型场景是构建统一可观测性大盘：用 Prometheus 看指标、Loki 查日志、Tempo 追链路，在同一 Dashboard 上通过 data link 从异常指标一路下钻到具体请求的 trace。也可用于跨团队的自定义插件开发，把内部自研监控系统以插件形式接入 Grafana，而不必改造其存储层。",
-      "thinking_question": "如果你要为团队接入一个自研的时序数据库，你会选择写一个 Grafana 数据源插件，还是先在中间做一层统一查询网关？这两种方案在可组合性、性能与长期维护成本上各有什么取舍？"
     }
   }
 ]
