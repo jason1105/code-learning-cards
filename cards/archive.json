@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-27",
+    "repo_name": "OpenHands/OpenHands",
+    "repo_url": "https://github.com/OpenHands/OpenHands",
+    "repo_description": "🙌 OpenHands: AI-Driven Development",
+    "language": "TypeScript",
+    "stars": 91994,
+    "card_content": {
+      "core_point": "在 WebSocket 重连场景下，必须让被替换的旧 socket 的“迟到事件”失效，否则它会改写新连接的共享状态，引发难以复现的断连与状态错乱。",
+      "deep_understanding": "重连时新 socket 会覆盖旧引用，但旧 socket 的 close/error 回调仍可能在新连接建立后才被触发；若回调里直接执行 this.connected = false 这类状态写入，就会把好端端的新连接“误杀”。稳妥做法是给每次连接分配一个递增的 generation 或 token，并在所有回调入口校验身份，确保只有当前活跃连接才有写状态的权利；同时配合移除监听器、把状态变更收敛到单一状态机，让迟到的回调天然成为无害的空操作。这类竞态的难点不在修复，而在于它依赖时序，测试时必须刻意构造“旧连接延迟关闭”的场景才能暴露。",
+      "use_cases": "典型如编程智能体（OpenHands）中会话事件的流式推送、IDE 与运行时的双向通道、在线协作编辑器的协同通道、实时行情或消息推送；任何“断线重连 + 共享连接状态”的长连接系统都需要这层防护，尤其移动端网络切换、弱网频繁重连时最容易命中。",
+      "thinking_question": "除了 socket 的 late close，你的代码里还有哪些“迟到的异步回调”（超时请求、定时器、订阅回调、Promise 竞态）可能写坏已被替换的旧状态？能否用一个统一的“世代 + 取消”机制一次性收口，而不是逐个打补丁？"
+    }
+  },
+  {
     "date": "2026-10-26",
     "repo_name": "nicoburns/blessed-rs",
     "repo_url": "https://github.com/nicoburns/blessed-rs",
@@ -400,20 +414,6 @@
       "deep_understanding": "近期提交显示，项目在 step-code 中加入 native memory package，在 skills 中让多个 agent 共享 focused memory graphs，并修复 flush snapshots 与 draining buffers 等一致性问题；同时维护 opencode 全局安装文档和 zcode 插件目录发布。这说明多代理开发工具正从单点插件走向共享记忆、版本化分发与宿主兼容的基础设施。",
       "use_cases": "适用于构建跨 opencode、zcode、alma 等宿主的编码助手：让不同 agent 复用项目知识、沉淀团队规范、通过插件目录分发技能，并确保记忆写入、刷新和排空在并发或故障下不丢失。",
       "thinking_question": "当多个 agent 共享记忆图时，哪些信息应全局共享、哪些必须按任务或用户隔离？你会如何设计权限、过期和冲突解决策略？"
-    }
-  },
-  {
-    "date": "2026-09-26",
-    "repo_name": "JasonGrass/auto-extension-manager",
-    "repo_url": "https://github.com/JasonGrass/auto-extension-manager",
-    "repo_description": "a chrome extension manager where you can add rules",
-    "language": "JavaScript",
-    "stars": 848,
-    "card_content": {
-      "core_point": "Chrome 扩展管理器通过 URL 规则在合适时机自动启用或禁用扩展，实现按场景管理浏览器能力。",
-      "deep_understanding": "该项目的核心不只是保存扩展开关，而是把 URL 匹配、规则优先级和浏览器事件时机结合起来，让扩展在需要时生效、不需要时关闭。最近对 URL 规则执行时机和 favicon 权限的调整说明：规则引擎越贴近浏览器生命周期，就越要关注性能、权限最小化和用户体验。",
-      "use_cases": "可为工作站点自动启用开发调试扩展，为银行或支付页面只保留安全扩展，或为视频、文档站点临时关闭广告拦截和密码管理等扩展，减少干扰与资源占用。",
-      "thinking_question": "当同一个页面同时命中多条 URL 规则，且它们要求的启用或禁用时机不同时，你会如何设计优先级、冲突解决和用户可解释性？"
     }
   }
 ]

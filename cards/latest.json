@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-26",
-  "repo_name": "nicoburns/blessed-rs",
-  "repo_url": "https://github.com/nicoburns/blessed-rs",
-  "repo_description": "A community guide to the Rust ecosystem",
-  "language": "Rust",
-  "stars": 1628,
+  "date": "2026-10-27",
+  "repo_name": "OpenHands/OpenHands",
+  "repo_url": "https://github.com/OpenHands/OpenHands",
+  "repo_description": "🙌 OpenHands: AI-Driven Development",
+  "language": "TypeScript",
+  "stars": 91994,
   "card_content": {
-    "core_point": "blessed-rs 是一份由社区维护的 Rust 生态导航清单，帮助开发者理解当前推荐使用的库、框架与工具。",
-    "deep_understanding": "它不直接教授 Rust 语法，而是聚合经过社区验证的生态资源，并通过持续提交反映技术演进，例如升级 Dioxus、用 pastey 替代 paste。学习时应关注推荐背后的选型标准、维护状态和替代关系，而不是只收藏依赖列表。",
-    "use_cases": "适用于新项目技术选型、评估 Rust 库的维护活跃度、制定团队依赖白名单，以及跟进 profiling、GUI、Java 互操作等生态方向的变化。",
-    "thinking_question": "当社区推荐清单更新某个库（例如用 pastey 替代 paste）时，你会依据哪些信号判断是否应立即迁移到自己的项目？"
+    "core_point": "在 WebSocket 重连场景下，必须让被替换的旧 socket 的“迟到事件”失效，否则它会改写新连接的共享状态，引发难以复现的断连与状态错乱。",
+    "deep_understanding": "重连时新 socket 会覆盖旧引用，但旧 socket 的 close/error 回调仍可能在新连接建立后才被触发；若回调里直接执行 this.connected = false 这类状态写入，就会把好端端的新连接“误杀”。稳妥做法是给每次连接分配一个递增的 generation 或 token，并在所有回调入口校验身份，确保只有当前活跃连接才有写状态的权利；同时配合移除监听器、把状态变更收敛到单一状态机，让迟到的回调天然成为无害的空操作。这类竞态的难点不在修复，而在于它依赖时序，测试时必须刻意构造“旧连接延迟关闭”的场景才能暴露。",
+    "use_cases": "典型如编程智能体（OpenHands）中会话事件的流式推送、IDE 与运行时的双向通道、在线协作编辑器的协同通道、实时行情或消息推送；任何“断线重连 + 共享连接状态”的长连接系统都需要这层防护，尤其移动端网络切换、弱网频繁重连时最容易命中。",
+    "thinking_question": "除了 socket 的 late close，你的代码里还有哪些“迟到的异步回调”（超时请求、定时器、订阅回调、Promise 竞态）可能写坏已被替换的旧状态？能否用一个统一的“世代 + 取消”机制一次性收口，而不是逐个打补丁？"
   }
 }
