@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-28",
+    "repo_name": "microsoft/PowerToys",
+    "repo_url": "https://github.com/microsoft/PowerToys",
+    "repo_description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
+    "language": "C",
+    "stars": 140127,
+    "card_content": {
+      "core_point": "PowerToys 是一个以 C/C++ 原生代码为主、按工具拆分的 Windows 效率工具集；它的核心工程思路是“模块化架构 + 依赖自动化 + 会话边界隔离”。",
+      "deep_understanding": "每个工具（如 FancyZones、PowerRename、CmdPal 等）都是独立模块，共用 PowerToys 的运行器、设置框架和更新机制，因此能并行开发、单独发布，并让故障影响不扩散。近期提交显示，Dependabot 批量升级 GitHub Actions 版本，体现了依赖治理自动化；而“将剪贴板 helper 的交接限制在活跃会话内”说明在涉及剪贴板、句柄等系统资源时，必须显式处理会话隔离。",
+      "use_cases": "想把 PowerToys 当作 Windows 原生桌面开发范例，学习 C++ 与 WinUI 混合架构和模块拆分；为企业或团队做一套可插拔的命令面板扩展工具；在 CI/CD 中引入 Dependabot 统一管理 Actions 版本；设计剪贴板、拖拽、跨进程助手时，参考它的会话隔离与资源交接方案。",
+      "thinking_question": "如果你的工具需要在多用户切换或 RDP 会话间共享剪贴板或进程句柄，你会怎样在“功能可用性”和“会话隔离安全”之间取舍，并设计验证方式？"
+    }
+  },
+  {
     "date": "2026-10-27",
     "repo_name": "OpenHands/OpenHands",
     "repo_url": "https://github.com/OpenHands/OpenHands",
@@ -400,20 +414,6 @@
       "deep_understanding": "Awesome 列表的核心价值不在\"收集\"，而在\"策展\"——用人工筛选和清晰分类，把庞杂生态压缩成可信的入门地图。该仓库近期提交全部来自 github-actions[bot] 自动更新 repo ticker 数据和 SVG，说明它把\"数据保鲜\"这类机械劳动交给了 CI，让维护者专注在内容取舍上。这种\"静态内容 + 动态指标\"的组合，是当下高质量开源文档的常见形态。",
       "use_cases": "1) 想快速上手 Claude Code 时，把它当作生态入口，按分类找到现成的 agent、插件或状态栏配置；2) 自己维护 awesome 列表或项目 README 时，可借鉴其用 GitHub Actions 定时拉取 star/fork 数据并渲染 SVG 徽章的做法，让文档自动保持最新；3) 做技术选型调研时，观察一个活跃生态的资源分布，判断哪些方向最受关注。",
       "thinking_question": "当资源条目从几百增长到几千，人工策展必然失效——你会设计怎样的分类、准入标准或社区投票机制，来防止 awesome list 退化成\"链接垃圾场\"？"
-    }
-  },
-  {
-    "date": "2026-09-27",
-    "repo_name": "nowledge-co/community",
-    "repo_url": "https://github.com/nowledge-co/community",
-    "repo_description": "Community Repo for Nowledge Labs Products",
-    "language": "Python",
-    "stars": 178,
-    "card_content": {
-      "core_point": "Nowledge 社区正把 AI 代理的记忆能力产品化为可共享、可隔离的原生模块与聚焦记忆图。",
-      "deep_understanding": "近期提交显示，项目在 step-code 中加入 native memory package，在 skills 中让多个 agent 共享 focused memory graphs，并修复 flush snapshots 与 draining buffers 等一致性问题；同时维护 opencode 全局安装文档和 zcode 插件目录发布。这说明多代理开发工具正从单点插件走向共享记忆、版本化分发与宿主兼容的基础设施。",
-      "use_cases": "适用于构建跨 opencode、zcode、alma 等宿主的编码助手：让不同 agent 复用项目知识、沉淀团队规范、通过插件目录分发技能，并确保记忆写入、刷新和排空在并发或故障下不丢失。",
-      "thinking_question": "当多个 agent 共享记忆图时，哪些信息应全局共享、哪些必须按任务或用户隔离？你会如何设计权限、过期和冲突解决策略？"
     }
   }
 ]
