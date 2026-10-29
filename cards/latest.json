@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-28",
-  "repo_name": "microsoft/PowerToys",
-  "repo_url": "https://github.com/microsoft/PowerToys",
-  "repo_description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
-  "language": "C",
-  "stars": 140127,
+  "date": "2026-10-29",
+  "repo_name": "grafana/grafana",
+  "repo_url": "https://github.com/grafana/grafana",
+  "repo_description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
+  "language": "TypeScript",
+  "stars": 77583,
   "card_content": {
-    "core_point": "PowerToys 是一个以 C/C++ 原生代码为主、按工具拆分的 Windows 效率工具集；它的核心工程思路是“模块化架构 + 依赖自动化 + 会话边界隔离”。",
-    "deep_understanding": "每个工具（如 FancyZones、PowerRename、CmdPal 等）都是独立模块，共用 PowerToys 的运行器、设置框架和更新机制，因此能并行开发、单独发布，并让故障影响不扩散。近期提交显示，Dependabot 批量升级 GitHub Actions 版本，体现了依赖治理自动化；而“将剪贴板 helper 的交接限制在活跃会话内”说明在涉及剪贴板、句柄等系统资源时，必须显式处理会话隔离。",
-    "use_cases": "想把 PowerToys 当作 Windows 原生桌面开发范例，学习 C++ 与 WinUI 混合架构和模块拆分；为企业或团队做一套可插拔的命令面板扩展工具；在 CI/CD 中引入 Dependabot 统一管理 Actions 版本；设计剪贴板、拖拽、跨进程助手时，参考它的会话隔离与资源交接方案。",
-    "thinking_question": "如果你的工具需要在多用户切换或 RDP 会话间共享剪贴板或进程句柄，你会怎样在“功能可用性”和“会话隔离安全”之间取舍，并设计验证方式？"
+    "core_point": "把“筛选”从交互行为提升为显式类型接口，是通用数据表格组件可扩展的关键。Grafana 最新提交为 Table 增加了数值与日期范围筛选接口。",
+    "deep_understanding": "在 TypeScript 中，将筛选条件定义为结构化接口（如数值区间、日期区间），组件只依赖接口约定，而不依赖具体数据源或 UI 实现，从而让不同插件、面板共享同一套筛选语义。这样做还能利用类型系统明确边界值、开闭区间与空值等细节，把大量运行时判断提前到编译期。其本质是把“可组合”落到 API 约定上，而不是堆叠 if-else。",
+    "use_cases": "在日志或指标表格中按耗时区间、时间窗口过滤数据；插件开发者复用同一筛选接口，保证自研面板与原生 Table 的交互和类型行为一致；多数据源（Prometheus、Loki、Postgres）用统一的区间语义表达查询条件。",
+    "thinking_question": "如果筛选条件需要支持多个区间的并集、动态增删与跨字段组合，接口该如何设计，才能既保持类型安全，又避免把具体数据源的实现细节耦合进来？"
   }
 }
