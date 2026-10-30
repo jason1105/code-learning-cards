@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-29",
-  "repo_name": "grafana/grafana",
-  "repo_url": "https://github.com/grafana/grafana",
-  "repo_description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
-  "language": "TypeScript",
-  "stars": 77583,
+  "date": "2026-10-30",
+  "repo_name": "firstcontributions/first-contributions",
+  "repo_url": "https://github.com/firstcontributions/first-contributions",
+  "repo_description": "🚀✨ Help beginners to contribute to open source projects",
+  "language": "",
+  "stars": 56624,
   "card_content": {
-    "core_point": "把“筛选”从交互行为提升为显式类型接口，是通用数据表格组件可扩展的关键。Grafana 最新提交为 Table 增加了数值与日期范围筛选接口。",
-    "deep_understanding": "在 TypeScript 中，将筛选条件定义为结构化接口（如数值区间、日期区间），组件只依赖接口约定，而不依赖具体数据源或 UI 实现，从而让不同插件、面板共享同一套筛选语义。这样做还能利用类型系统明确边界值、开闭区间与空值等细节，把大量运行时判断提前到编译期。其本质是把“可组合”落到 API 约定上，而不是堆叠 if-else。",
-    "use_cases": "在日志或指标表格中按耗时区间、时间窗口过滤数据；插件开发者复用同一筛选接口，保证自研面板与原生 Table 的交互和类型行为一致；多数据源（Prometheus、Loki、Postgres）用统一的区间语义表达查询条件。",
-    "thinking_question": "如果筛选条件需要支持多个区间的并集、动态增删与跨字段组合，接口该如何设计，才能既保持类型安全，又避免把具体数据源的实现细节耦合进来？"
+    "core_point": "开源入门的关键不是先写复杂代码，而是完整走通一次可评审、可合并的GitHub协作流程。",
+    "deep_understanding": "first-contributions 通过让初学者把自己的名字加入贡献者列表，把 fork、clone、创建分支、提交、push 和发起 PR 串联成一个低风险练习。每次提交和 PR 都会形成可追溯的协作记录，帮助新人理解版本控制、提交信息和代码评审的基本规范。",
+    "use_cases": "适合个人开源入门训练、高校或训练营的Git/GitHub实践课，以及团队新人熟悉分支管理、PR评审和贡献者名单维护流程。",
+    "thinking_question": "如果让你为一个开源社区设计“第一次贡献”任务，你会如何做到风险足够低、反馈足够快，又能让新人真正理解分支、提交信息和PR评审？"
   }
 }
