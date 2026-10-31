@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-30",
-  "repo_name": "firstcontributions/first-contributions",
-  "repo_url": "https://github.com/firstcontributions/first-contributions",
-  "repo_description": "🚀✨ Help beginners to contribute to open source projects",
-  "language": "",
-  "stars": 56624,
+  "date": "2026-10-31",
+  "repo_name": "farion1231/cc-switch",
+  "repo_url": "https://github.com/farion1231/cc-switch",
+  "repo_description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io",
+  "language": "Rust",
+  "stars": 150575,
   "card_content": {
-    "core_point": "开源入门的关键不是先写复杂代码，而是完整走通一次可评审、可合并的GitHub协作流程。",
-    "deep_understanding": "first-contributions 通过让初学者把自己的名字加入贡献者列表，把 fork、clone、创建分支、提交、push 和发起 PR 串联成一个低风险练习。每次提交和 PR 都会形成可追溯的协作记录，帮助新人理解版本控制、提交信息和代码评审的基本规范。",
-    "use_cases": "适合个人开源入门训练、高校或训练营的Git/GitHub实践课，以及团队新人熟悉分支管理、PR评审和贡献者名单维护流程。",
-    "thinking_question": "如果让你为一个开源社区设计“第一次贡献”任务，你会如何做到风险足够低、反馈足够快，又能让新人真正理解分支、提交信息和PR评审？"
+    "core_point": "在桌面应用中，凡是可能阻塞的数据库锁等待，都必须移出 UI 线程，否则界面会直接“假死”。",
+    "deep_understanding": "像 cc-switch 这种要同时管理 Claude Code、Codex、OpenCode 等多个提供方配置的 All-in-One 工具，启动时要频繁读写本地数据库；如果主线程上直接等锁，窗口就会卡住、无响应。正确做法是把阻塞操作（如获取 DB 锁或执行迁移）交给后台线程或线程池，UI 线程只负责发命令和接收事件回调，再刷新界面状态。这本质上是用“命令—事件”的异步边界，把不可控的等待时长与用户可感知的响应性解耦。",
+    "use_cases": "适用于多账号、多 Provider 切换器的启动初始化与配置迁移，后台同步用量统计（usage）与任务恢复，以及设置页环境检查、Provider 表单并发保存等场景：这些操作都可能触发磁盘 IO 或锁竞争，需要保持界面即时可交互，并给出加载状态。",
+    "thinking_question": "把锁等待挪到后台线程后，UI 仍需拿到结果才能渲染；你会如何设计加载态、超时与取消机制，避免“等结果”这一步又把阻塞悄悄带回主线程？"
   }
 }
