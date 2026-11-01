@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-31",
-  "repo_name": "farion1231/cc-switch",
-  "repo_url": "https://github.com/farion1231/cc-switch",
-  "repo_description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io",
-  "language": "Rust",
-  "stars": 150575,
+  "date": "2026-11-01",
+  "repo_name": "OpenHands/OpenHands",
+  "repo_url": "https://github.com/OpenHands/OpenHands",
+  "repo_description": "🙌 OpenHands: AI-Driven Development",
+  "language": "TypeScript",
+  "stars": 92415,
   "card_content": {
-    "core_point": "在桌面应用中，凡是可能阻塞的数据库锁等待，都必须移出 UI 线程，否则界面会直接“假死”。",
-    "deep_understanding": "像 cc-switch 这种要同时管理 Claude Code、Codex、OpenCode 等多个提供方配置的 All-in-One 工具，启动时要频繁读写本地数据库；如果主线程上直接等锁，窗口就会卡住、无响应。正确做法是把阻塞操作（如获取 DB 锁或执行迁移）交给后台线程或线程池，UI 线程只负责发命令和接收事件回调，再刷新界面状态。这本质上是用“命令—事件”的异步边界，把不可控的等待时长与用户可感知的响应性解耦。",
-    "use_cases": "适用于多账号、多 Provider 切换器的启动初始化与配置迁移，后台同步用量统计（usage）与任务恢复，以及设置页环境检查、Provider 表单并发保存等场景：这些操作都可能触发磁盘 IO 或锁竞争，需要保持界面即时可交互，并给出加载状态。",
-    "thinking_question": "把锁等待挪到后台线程后，UI 仍需拿到结果才能渲染；你会如何设计加载态、超时与取消机制，避免“等结果”这一步又把阻塞悄悄带回主线程？"
+    "core_point": "渐进式重构的关键方法是：先把散落的魔法值（颜色、尺寸、菜单几何）统一改为有语义的共享常量，再用 lint 规则在“已迁移模块”内禁止原始值，形成可逐步扩大的安全网。",
+    "deep_understanding": "最近的几个提交展示了同一思路：将 dialog 视口约束、菜单几何和 label 配方提取为共享命名，把隐含的设计约定显式化，使后续调整只需改一处就能全局生效。随后，lint 规则在三个已迁移的 owner 中拒绝 raw colors，把“约定”变成“机器可检查的约束”，避免代码审查遗漏和新人误用。这种“先命名、再约束、后扩围”的做法让大规模 TypeScript 仓库的 UI 一致性可以随着模块迁移增量推进，而不必停机重写；同类思想也体现在稳定性修复上，例如用去重和幂等恢复瞬时失败，避免重复报错打扰用户。",
+    "use_cases": "适用于落地设计系统、对多人协作的大型 React/TypeScript 前端仓库做样式收敛、在遗留代码中渐进迁移并防止回退，也可用于把团队 Code Review 中的口头规范沉淀为 ESLint 规则。",
+    "thinking_question": "如果让“已迁移模块”的范围像棘轮一样只能扩大、不能缩小，你会用什么机制来防止开发者绕过 lint 规则、或通过豁免注释继续使用裸颜色值？"
   }
 }
