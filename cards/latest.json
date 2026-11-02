@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-01",
-  "repo_name": "OpenHands/OpenHands",
-  "repo_url": "https://github.com/OpenHands/OpenHands",
-  "repo_description": "🙌 OpenHands: AI-Driven Development",
-  "language": "TypeScript",
-  "stars": 92415,
+  "date": "2026-11-02",
+  "repo_name": "nikitabobko/AeroSpace",
+  "repo_url": "https://github.com/nikitabobko/AeroSpace",
+  "repo_description": "AeroSpace is an i3-like tiling window manager for macOS",
+  "language": "Swift",
+  "stars": 23718,
   "card_content": {
-    "core_point": "渐进式重构的关键方法是：先把散落的魔法值（颜色、尺寸、菜单几何）统一改为有语义的共享常量，再用 lint 规则在“已迁移模块”内禁止原始值，形成可逐步扩大的安全网。",
-    "deep_understanding": "最近的几个提交展示了同一思路：将 dialog 视口约束、菜单几何和 label 配方提取为共享命名，把隐含的设计约定显式化，使后续调整只需改一处就能全局生效。随后，lint 规则在三个已迁移的 owner 中拒绝 raw colors，把“约定”变成“机器可检查的约束”，避免代码审查遗漏和新人误用。这种“先命名、再约束、后扩围”的做法让大规模 TypeScript 仓库的 UI 一致性可以随着模块迁移增量推进，而不必停机重写；同类思想也体现在稳定性修复上，例如用去重和幂等恢复瞬时失败，避免重复报错打扰用户。",
-    "use_cases": "适用于落地设计系统、对多人协作的大型 React/TypeScript 前端仓库做样式收敛、在遗留代码中渐进迁移并防止回退，也可用于把团队 Code Review 中的口头规范沉淀为 ESLint 规则。",
-    "thinking_question": "如果让“已迁移模块”的范围像棘轮一样只能扩大、不能缩小，你会用什么机制来防止开发者绕过 lint 规则、或通过豁免注释继续使用裸颜色值？"
+    "core_point": "Swift 中可通过 Mach-O section 注入版本与 git hash，替代自动生成的源码文件。",
+    "deep_understanding": "把构建元数据（版本号、提交哈希）写入二进制的 Mach-O section，让运行时可读取这些信息，而无需生成并编译额外的 Swift 文件。这样构建流程更干净，避免生成源文件带来的编译依赖与缓存失效问题，同时保留可追溯性。AeroSpace 的提交还展示了围绕 Swift 编译器 bug 的规避手段，例如将 StrictContinuation 重写为包装 UnsafeContinuation 的不可复制 struct。",
+    "use_cases": "适用于需要精确追踪发布版本与 CI 构建来源的 macOS 应用；也适合希望减少生成代码、简化构建脚本、提升增量编译速度的 Swift 项目。调试线上问题时，可直接从二进制读取 git hash 定位对应提交。",
+    "thinking_question": "如果版本信息不再通过生成源码注入，你会在应用启动时还是崩溃报告时读取 Mach-O section？如何设计读取逻辑，才能兼顾性能与可测试性？"
   }
 }
