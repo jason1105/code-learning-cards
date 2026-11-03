@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-02",
-  "repo_name": "nikitabobko/AeroSpace",
-  "repo_url": "https://github.com/nikitabobko/AeroSpace",
-  "repo_description": "AeroSpace is an i3-like tiling window manager for macOS",
-  "language": "Swift",
-  "stars": 23718,
+  "date": "2026-11-03",
+  "repo_name": "JetBrains/intellij-platform-gradle-plugin",
+  "repo_url": "https://github.com/JetBrains/intellij-platform-gradle-plugin",
+  "repo_description": "Gradle plugin for building plugins for JetBrains IDEs",
+  "language": "Kotlin",
+  "stars": 1533,
   "card_content": {
-    "core_point": "Swift 中可通过 Mach-O section 注入版本与 git hash，替代自动生成的源码文件。",
-    "deep_understanding": "把构建元数据（版本号、提交哈希）写入二进制的 Mach-O section，让运行时可读取这些信息，而无需生成并编译额外的 Swift 文件。这样构建流程更干净，避免生成源文件带来的编译依赖与缓存失效问题，同时保留可追溯性。AeroSpace 的提交还展示了围绕 Swift 编译器 bug 的规避手段，例如将 StrictContinuation 重写为包装 UnsafeContinuation 的不可复制 struct。",
-    "use_cases": "适用于需要精确追踪发布版本与 CI 构建来源的 macOS 应用；也适合希望减少生成代码、简化构建脚本、提升增量编译速度的 Swift 项目。调试线上问题时，可直接从二进制读取 git hash 定位对应提交。",
-    "thinking_question": "如果版本信息不再通过生成源码注入，你会在应用启动时还是崩溃报告时读取 Mach-O section？如何设计读取逻辑，才能兼顾性能与可测试性？"
+    "core_point": "intellij-platform-gradle-plugin 用于构建 JetBrains IDE 插件，其工程实践强调跨平台构建产物的路径安全、失败清理与可诊断性。",
+    "deep_understanding": "从近期提交看，该插件不仅要完成编译打包，还需处理 macOS DMG 挂载与复制异常、Windows 长路径导致 JVM 定位失败、JetBrains Runtime 归档目录嵌套等平台差异。通过缩短或扁平化路径、拒绝失败复制并保留原始错误、增强测试失败诊断，可以提升构建可靠性和问题定位效率。",
+    "use_cases": "在开发 IntelliJ 插件时，可用该插件配置目标 IDE 与 JetBrains Runtime，并在 CI 中构建 ZIP、DMG 等分发包；遇到 Windows 长路径或 macOS 打包失败时，可借鉴其清理部分产物、保留根因和调整归档路径的做法；其测试夹具清理与 VFS 缓存处理也适合用于增强插件测试稳定性。",
+    "thinking_question": "如果你的插件构建在某个平台因长路径或归档失败，你会如何设计任务级清理与错误上报，做到既不留下半成品又能快速定位根因？"
   }
 }
