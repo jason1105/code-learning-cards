@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-03",
-  "repo_name": "JetBrains/intellij-platform-gradle-plugin",
-  "repo_url": "https://github.com/JetBrains/intellij-platform-gradle-plugin",
-  "repo_description": "Gradle plugin for building plugins for JetBrains IDEs",
-  "language": "Kotlin",
-  "stars": 1533,
+  "date": "2026-11-04",
+  "repo_name": "farion1231/cc-switch",
+  "repo_url": "https://github.com/farion1231/cc-switch",
+  "repo_description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io",
+  "language": "Rust",
+  "stars": 151795,
   "card_content": {
-    "core_point": "intellij-platform-gradle-plugin 用于构建 JetBrains IDE 插件，其工程实践强调跨平台构建产物的路径安全、失败清理与可诊断性。",
-    "deep_understanding": "从近期提交看，该插件不仅要完成编译打包，还需处理 macOS DMG 挂载与复制异常、Windows 长路径导致 JVM 定位失败、JetBrains Runtime 归档目录嵌套等平台差异。通过缩短或扁平化路径、拒绝失败复制并保留原始错误、增强测试失败诊断，可以提升构建可靠性和问题定位效率。",
-    "use_cases": "在开发 IntelliJ 插件时，可用该插件配置目标 IDE 与 JetBrains Runtime，并在 CI 中构建 ZIP、DMG 等分发包；遇到 Windows 长路径或 macOS 打包失败时，可借鉴其清理部分产物、保留根因和调整归档路径的做法；其测试夹具清理与 VFS 缓存处理也适合用于增强插件测试稳定性。",
-    "thinking_question": "如果你的插件构建在某个平台因长路径或归档失败，你会如何设计任务级清理与错误上报，做到既不留下半成品又能快速定位根因？"
+    "core_point": "桌面应用要保持界面流畅，核心做法是把数据库加锁等待这类阻塞操作彻底移出 UI 线程，同时用懒加载和批量读取砍掉不必要的 IO。",
+    "deep_understanding": "Tauri 应用的前端运行在 WebView 中，主线程一旦被同步命令或锁等待占住，渲染与交互就会立即卡顿；因此即使业务逻辑写在 Rust 里，也要区分「异步命令」「阻塞任务交给专用线程池」「纯 CPU 计算」三类执行通道，避免阻塞事件循环和共享线程池。懒加载次要页面与编辑器能缩短首屏渲染路径，而批量读取 provider endpoint、跳过未变更的保存，则是从源头减少数据库往返次数和锁竞争——优化不只是「让代码跑得更快」，更是「让不该发生的读写不发生」。",
+    "use_cases": "适用于本地优先的桌面工具（如配置管理、笔记/知识库、IDE 插件式工具）：设置页里几十个 provider 的配置表单按需挂载；同步命令批量拉取多个 provider 端点而不是循环单查；保存时先做脏值比对再落库；Linux 打包时替换 CLI 版本，避免 AppImage 把 libwayland-client 等系统库一起捆进去，从而减少发行体积和环境冲突。",
+    "thinking_question": "在 Tauri 这类架构里，你如何判断一个命令应该写成纯 async command、放进 spawn_blocking 线程池，还是干脆合并成一次批量调用？另外，如果一个数据库查询单次只要 5ms，但每秒被调用几百次，你会优先优化它，还是先优化调用它的那段代码？"
   }
 }
