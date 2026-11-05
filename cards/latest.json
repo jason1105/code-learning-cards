@@ -1,14 +1,11 @@
 {
-  "date": "2026-11-04",
-  "repo_name": "farion1231/cc-switch",
-  "repo_url": "https://github.com/farion1231/cc-switch",
-  "repo_description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io",
-  "language": "Rust",
-  "stars": 151795,
+  "date": "2026-11-05",
+  "repo_name": "PurpleI2P/i2pd",
+  "repo_url": "https://github.com/PurpleI2P/i2pd",
+  "repo_description": " 🛡 I2P: End-to-End encrypted and anonymous Internet",
+  "language": "C++",
+  "stars": 4256,
   "card_content": {
-    "core_point": "桌面应用要保持界面流畅，核心做法是把数据库加锁等待这类阻塞操作彻底移出 UI 线程，同时用懒加载和批量读取砍掉不必要的 IO。",
-    "deep_understanding": "Tauri 应用的前端运行在 WebView 中，主线程一旦被同步命令或锁等待占住，渲染与交互就会立即卡顿；因此即使业务逻辑写在 Rust 里，也要区分「异步命令」「阻塞任务交给专用线程池」「纯 CPU 计算」三类执行通道，避免阻塞事件循环和共享线程池。懒加载次要页面与编辑器能缩短首屏渲染路径，而批量读取 provider endpoint、跳过未变更的保存，则是从源头减少数据库往返次数和锁竞争——优化不只是「让代码跑得更快」，更是「让不该发生的读写不发生」。",
-    "use_cases": "适用于本地优先的桌面工具（如配置管理、笔记/知识库、IDE 插件式工具）：设置页里几十个 provider 的配置表单按需挂载；同步命令批量拉取多个 provider 端点而不是循环单查；保存时先做脏值比对再落库；Linux 打包时替换 CLI 版本，避免 AppImage 把 libwayland-client 等系统库一起捆进去，从而减少发行体积和环境冲突。",
-    "thinking_question": "在 Tauri 这类架构里，你如何判断一个命令应该写成纯 async command、放进 spawn_blocking 线程池，还是干脆合并成一次批量调用？另外，如果一个数据库查询单次只要 5ms，但每秒被调用几百次，你会优先优化它，还是先优化调用它的那段代码？"
+    "raw": "{\"core_point\": \"i2pd 不只是一个 I2P 路由器，它还把 BitTorrent 客户端和 DHT 能力集成在一起；最近的提交主要优化了 peer 状态管理和 torrent 加入时的 DHT 查询时机。\", \"deep_understanding\": \"在 I2P 上运行 BitTorrent 时，peer 不再用 IP:port 标识，而是用 destination 标识；因此 peer 发现必须依赖 I2P 内部的 DHT，而无法依赖公网 tracker 或公网 DHT。所谓“远端已经没有所需分片时就立刻发送 not interested”，以及“添加 torrent 时立即向 DHT 发请求”，本质上是想减少经过多跳隧道传输的无效上行流量，并缩短首次拿到 peer 列表的延迟。由于 I2P 本身延迟高、带宽有限，这两个优化带来的收益要明显大于在普通公网上这么做。至于“不把 transient（临时）密钥的 destination 写入 DHT”，是为了避免发布无法长期解析的 LeaseSet，从而污染网络。\", \"use_cases\": \"在受审查或受限网络中进行匿名文件分发和内容共享；为 I2P 上的自建站点或服务提供去中心化的种子发现；也适合作为研究匿名网络如何改造 P2P 协议的样本，例如把 tracker 改为去中心化、实现 peer 发现和"
   }
 }
