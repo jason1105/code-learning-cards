@@ -1,11 +1,14 @@
 {
-  "date": "2026-11-05",
-  "repo_name": "PurpleI2P/i2pd",
-  "repo_url": "https://github.com/PurpleI2P/i2pd",
-  "repo_description": " 🛡 I2P: End-to-End encrypted and anonymous Internet",
-  "language": "C++",
-  "stars": 4256,
+  "date": "2026-11-06",
+  "repo_name": "github/spec-kit",
+  "repo_url": "https://github.com/github/spec-kit",
+  "repo_description": "💫 Toolkit to help you get started with SDD or any other process!",
+  "language": "Python",
+  "stars": 148108,
   "card_content": {
-    "raw": "{\"core_point\": \"i2pd 不只是一个 I2P 路由器，它还把 BitTorrent 客户端和 DHT 能力集成在一起；最近的提交主要优化了 peer 状态管理和 torrent 加入时的 DHT 查询时机。\", \"deep_understanding\": \"在 I2P 上运行 BitTorrent 时，peer 不再用 IP:port 标识，而是用 destination 标识；因此 peer 发现必须依赖 I2P 内部的 DHT，而无法依赖公网 tracker 或公网 DHT。所谓“远端已经没有所需分片时就立刻发送 not interested”，以及“添加 torrent 时立即向 DHT 发请求”，本质上是想减少经过多跳隧道传输的无效上行流量，并缩短首次拿到 peer 列表的延迟。由于 I2P 本身延迟高、带宽有限，这两个优化带来的收益要明显大于在普通公网上这么做。至于“不把 transient（临时）密钥的 destination 写入 DHT”，是为了避免发布无法长期解析的 LeaseSet，从而污染网络。\", \"use_cases\": \"在受审查或受限网络中进行匿名文件分发和内容共享；为 I2P 上的自建站点或服务提供去中心化的种子发现；也适合作为研究匿名网络如何改造 P2P 协议的样本，例如把 tracker 改为去中心化、实现 peer 发现和"
+    "core_point": "Spec-Kit 是帮助团队落地规范驱动开发（SDD）的 Python 工具包，强调先写清规格再进入实现。",
+    "deep_understanding": "它通过模板、命令和集成目录，把需求规格、开发计划和任务执行串联成可复用的工作流。近期提交集中在安装先决条件文档、依赖升级和模型路由治理，说明该项目不仅关注流程理念，也重视工程可维护性与团队协作规范。",
+    "use_cases": "适合在新项目启动、功能迭代或引入 AI 编码代理前，先用 Spec-Kit 编写规格与计划；也适合团队统一 SDD 流程，或在 Windows PowerShell 离线环境中按集成文档完成前置配置。",
+    "thinking_question": "在实际项目中，如何判断一份规格已经足够清晰、可以安全进入实现阶段？"
   }
 }
