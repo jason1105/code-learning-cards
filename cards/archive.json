@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-07",
+    "repo_name": "garrytan/gstack",
+    "repo_url": "https://github.com/garrytan/gstack",
+    "repo_description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+    "language": "TypeScript",
+    "stars": 140583,
+    "card_content": {
+      "core_point": "gstack 把 Claude Code 从“单点代码补全工具”升级为了一支有明确角色分工的虚拟工程团队，用 23 个带有明确倾向的工具分别承担 CEO、设计师、工程经理、发布经理、文档工程师和 QA 的职责。",
+      "deep_understanding": "这里的“opinionated（有明确倾向）”是关键设计：每个工具都预设了清晰的角色边界和判断标准，从而压缩模型自由发挥的空间，让输出更稳定、更可复用。从最近的提交看，工程重心已从“生成代码”转向“治理 AI 参与开发的全流程”，例如 changelog 分片折叠、crew PR 携带 brief 的 Plan 行、ship-queue 的 ready、land 双重校验，以及为 design、iOS QA daemon 强制要求 secret 与 loopback Host/Origin 校验，本质上都是把 AI 协作纳入可审计、可回滚的发布体系。",
+      "use_cases": "适合希望用 Claude Code 建立标准化研发流程的小团队：把需求拆解交给“CEO、工程经理”角色，把 UI 产出校验交给“设计师”角色，把版本发布、变更日志与文档同步交给“发布经理、文档工程师”角色，把回归检查交给“QA”角色；同时可借鉴其 daemon 鉴权设计，为本地 AI 服务加上 secret 与来源校验，避免端口暴露带来的安全风险。",
+      "thinking_question": "如果要给你的团队也配一套“AI 角色团队”，你会先为哪一个角色写下可量化的验收标准？为什么是它，而不是别的角色？"
+    }
+  },
+  {
     "date": "2026-11-06",
     "repo_name": "github/spec-kit",
     "repo_url": "https://github.com/github/spec-kit",
@@ -397,20 +411,6 @@
       "deep_understanding": "从最近提交可以看到三种典型工作并存：重绘图标、重构添加文件入口这类体验打磨，修复 SaaS OAuth 重连时丢弃授权 code 这类状态恢复缺陷，以及通过去掉层缓存和冗余 host 构建来加速 /deploypr 流水线。这说明项目成熟后，真正的竞争力来自「用户感受 + 可靠性 + 工程吞吐」的组合，而不是单纯堆功能。以 TypeScript 为主语言也让前后端与工具链统一，便于这类高频、小颗粒度的持续迭代。",
       "use_cases": "一是自建或二次开发 PDF / 文档处理工具时，可借鉴它「小步优化 UI + 同步修边界 bug + 定期体检 CI」的迭代节奏；二是接入 OAuth / SSO 时，要专门设计重连、回调中断后的状态恢复与幂等处理，避免授权码被静默丢弃；三是维护 CI 时，应定期审视缓存与构建步骤是否「帮倒忙」，用构建耗时数据而非直觉来决定保留或删除。",
       "thinking_question": "当产品功能已经足够丰富时，你会把下一份工程资源优先投给体验细节、认证与数据一致性等边界缺陷，还是 CI / 交付效率？你打算用什么指标来证明这个优先级是对的？"
-    }
-  },
-  {
-    "date": "2026-10-07",
-    "repo_name": "OpenHands/OpenHands",
-    "repo_url": "https://github.com/OpenHands/OpenHands",
-    "repo_description": "🙌 OpenHands: AI-Driven Development",
-    "language": "TypeScript",
-    "stars": 90172,
-    "card_content": {
-      "core_point": "OpenHands 的近期演进重点，是把 AI Agent 从「能跑通」推向「可稳定交付」——用工程化手段保障 AI 驱动开发在企业环境中的可靠性。",
-      "deep_understanding": "从最近提交看，大量工作集中在 E2E 测试（同模型 profile 对照、实时 Agent Server 任务、从标签页面板菜单打开 Commits）以及企业后端体验（Super Admin 引导、工作区挂起说明与切换）。这说明一个 AI 开发平台的成熟标志，不在于单次生成有多惊艳，而在于非确定性的 Agent 行为能否被持续集成验证、被诊断、被恢复。TypeScript 作为主语言，也反映出这类产品更偏向后端服务 + 前端交互的完整工程体系，而非单纯的模型封装。",
-      "use_cases": "1）把编码 Agent 接入团队 CI/CD，用 E2E 用例守护 Agent 的关键行为不回归；2）企业内网部署时，为管理员提供初始化引导、为开发者提供工作区异常时的明确提示与一键切换；3）做 Agent 产品的团队可参考其「同模型多配置对照测试」思路，隔离模型因素、定位工程问题。",
-      "thinking_question": "Agent 的行为天然带有非确定性——如果让你为它设计一套 E2E 测试，你会如何在「容忍合理的输出波动」与「捕捉真实的行为回归」之间划出那条判定线？"
     }
   }
 ]

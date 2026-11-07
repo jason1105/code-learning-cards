@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-06",
-  "repo_name": "github/spec-kit",
-  "repo_url": "https://github.com/github/spec-kit",
-  "repo_description": "💫 Toolkit to help you get started with SDD or any other process!",
-  "language": "Python",
-  "stars": 148108,
+  "date": "2026-11-07",
+  "repo_name": "garrytan/gstack",
+  "repo_url": "https://github.com/garrytan/gstack",
+  "repo_description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+  "language": "TypeScript",
+  "stars": 140583,
   "card_content": {
-    "core_point": "Spec-Kit 是帮助团队落地规范驱动开发（SDD）的 Python 工具包，强调先写清规格再进入实现。",
-    "deep_understanding": "它通过模板、命令和集成目录，把需求规格、开发计划和任务执行串联成可复用的工作流。近期提交集中在安装先决条件文档、依赖升级和模型路由治理，说明该项目不仅关注流程理念，也重视工程可维护性与团队协作规范。",
-    "use_cases": "适合在新项目启动、功能迭代或引入 AI 编码代理前，先用 Spec-Kit 编写规格与计划；也适合团队统一 SDD 流程，或在 Windows PowerShell 离线环境中按集成文档完成前置配置。",
-    "thinking_question": "在实际项目中，如何判断一份规格已经足够清晰、可以安全进入实现阶段？"
+    "core_point": "gstack 把 Claude Code 从“单点代码补全工具”升级为了一支有明确角色分工的虚拟工程团队，用 23 个带有明确倾向的工具分别承担 CEO、设计师、工程经理、发布经理、文档工程师和 QA 的职责。",
+    "deep_understanding": "这里的“opinionated（有明确倾向）”是关键设计：每个工具都预设了清晰的角色边界和判断标准，从而压缩模型自由发挥的空间，让输出更稳定、更可复用。从最近的提交看，工程重心已从“生成代码”转向“治理 AI 参与开发的全流程”，例如 changelog 分片折叠、crew PR 携带 brief 的 Plan 行、ship-queue 的 ready、land 双重校验，以及为 design、iOS QA daemon 强制要求 secret 与 loopback Host/Origin 校验，本质上都是把 AI 协作纳入可审计、可回滚的发布体系。",
+    "use_cases": "适合希望用 Claude Code 建立标准化研发流程的小团队：把需求拆解交给“CEO、工程经理”角色，把 UI 产出校验交给“设计师”角色，把版本发布、变更日志与文档同步交给“发布经理、文档工程师”角色，把回归检查交给“QA”角色；同时可借鉴其 daemon 鉴权设计，为本地 AI 服务加上 secret 与来源校验，避免端口暴露带来的安全风险。",
+    "thinking_question": "如果要给你的团队也配一套“AI 角色团队”，你会先为哪一个角色写下可量化的验收标准？为什么是它，而不是别的角色？"
   }
 }
