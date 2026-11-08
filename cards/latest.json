@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-07",
-  "repo_name": "garrytan/gstack",
-  "repo_url": "https://github.com/garrytan/gstack",
-  "repo_description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
-  "language": "TypeScript",
-  "stars": 140583,
+  "date": "2026-11-08",
+  "repo_name": "hesreallyhim/awesome-claude-code",
+  "repo_url": "https://github.com/hesreallyhim/awesome-claude-code",
+  "repo_description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC (no affiliation). A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
+  "language": "Python",
+  "stars": 57522,
   "card_content": {
-    "core_point": "gstack 把 Claude Code 从“单点代码补全工具”升级为了一支有明确角色分工的虚拟工程团队，用 23 个带有明确倾向的工具分别承担 CEO、设计师、工程经理、发布经理、文档工程师和 QA 的职责。",
-    "deep_understanding": "这里的“opinionated（有明确倾向）”是关键设计：每个工具都预设了清晰的角色边界和判断标准，从而压缩模型自由发挥的空间，让输出更稳定、更可复用。从最近的提交看，工程重心已从“生成代码”转向“治理 AI 参与开发的全流程”，例如 changelog 分片折叠、crew PR 携带 brief 的 Plan 行、ship-queue 的 ready、land 双重校验，以及为 design、iOS QA daemon 强制要求 secret 与 loopback Host/Origin 校验，本质上都是把 AI 协作纳入可审计、可回滚的发布体系。",
-    "use_cases": "适合希望用 Claude Code 建立标准化研发流程的小团队：把需求拆解交给“CEO、工程经理”角色，把 UI 产出校验交给“设计师”角色，把版本发布、变更日志与文档同步交给“发布经理、文档工程师”角色，把回归检查交给“QA”角色；同时可借鉴其 daemon 鉴权设计，为本地 AI 服务加上 secret 与来源校验，避免端口暴露带来的安全风险。",
-    "thinking_question": "如果要给你的团队也配一套“AI 角色团队”，你会先为哪一个角色写下可量化的验收标准？为什么是它，而不是别的角色？"
+    "core_point": "awesome-claude-code 的核心价值不在代码本身，而在于“人工精选 + 自动化维护”的资源策展机制。",
+    "deep_understanding": "这类仓库虽然主要语言标为 Python，但本质是内容型项目——Python 脚本只是用来支撑数据抓取与渲染的辅助工具。从最近的提交可以看到，全部是 github-actions[bot] 自动更新 ticker 数据和 SVG 并带 [skip ci] 标记，说明它把“数据新鲜度”外包给了 CI 流水线，形成一种低成本、可持续的维护闭环。也正因如此，5.7 万 star 实际上是在为“可信的筛选结果”投票，而不是为代码投票。",
+    "use_cases": "需要快速了解 Claude Code 生态时，可以把它当作入口索引，按分类找 skills、agents、状态栏、插件等资源；团队做工具选型时可以借鉴它的分类维度和收录标准；工程上还可以把它的“定时任务 + 自动生成 SVG 数据看板”模式，迁移到自己项目的 README 活跃度展示中。",
+    "thinking_question": "如果让你维护一个同类清单，你会用什么标准决定一个资源“收录还是剔除”，又该如何防止清单随时间逐渐腐化，出现链接失效、排名被赞助影响等问题？"
   }
 }
