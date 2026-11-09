@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-08",
-  "repo_name": "hesreallyhim/awesome-claude-code",
-  "repo_url": "https://github.com/hesreallyhim/awesome-claude-code",
-  "repo_description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC (no affiliation). A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
+  "date": "2026-11-09",
+  "repo_name": "huggingface/transformers",
+  "repo_url": "https://github.com/huggingface/transformers",
+  "repo_description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
   "language": "Python",
-  "stars": 57522,
+  "stars": 168690,
   "card_content": {
-    "core_point": "awesome-claude-code 的核心价值不在代码本身，而在于“人工精选 + 自动化维护”的资源策展机制。",
-    "deep_understanding": "这类仓库虽然主要语言标为 Python，但本质是内容型项目——Python 脚本只是用来支撑数据抓取与渲染的辅助工具。从最近的提交可以看到，全部是 github-actions[bot] 自动更新 ticker 数据和 SVG 并带 [skip ci] 标记，说明它把“数据新鲜度”外包给了 CI 流水线，形成一种低成本、可持续的维护闭环。也正因如此，5.7 万 star 实际上是在为“可信的筛选结果”投票，而不是为代码投票。",
-    "use_cases": "需要快速了解 Claude Code 生态时，可以把它当作入口索引，按分类找 skills、agents、状态栏、插件等资源；团队做工具选型时可以借鉴它的分类维度和收录标准；工程上还可以把它的“定时任务 + 自动生成 SVG 数据看板”模式，迁移到自己项目的 README 活跃度展示中。",
-    "thinking_question": "如果让你维护一个同类清单，你会用什么标准决定一个资源“收录还是剔除”，又该如何防止清单随时间逐渐腐化，出现链接失效、排名被赞助影响等问题？"
+    "core_point": "今日知识点：在 Transformers 的打包序列训练中，要保证任意形式的注意力 mask 与 packed sequence 语义一致，避免跨样本注意力泄漏。",
+    "deep_understanding": "打包序列把多条变长样本拼成一条序列以减少 padding，但不同任务会使用二维、四维或因果/填充等不同 mask 形式，必须统一映射到样本边界。近期修复强调：mask 处理不仅要支持任意形式，还要通过测试保证 eager、batched、grouped 推理结果一致。这体现了模型定义框架对训练效率和注意力正确性的双重关注。",
+    "use_cases": "适用于长文本、多轮对话、多文档的打包训练与推理，例如将多条短样本拼批以降低 padding 浪费，或在微调中混合不同长度样本并保持注意力隔离。",
+    "thinking_question": "如果你要在一个 packed batch 中混合不同长度样本，你会如何设计 mask 与位置编码，既提升吞吐又确保模型不会跨样本注意力？"
   }
 }
