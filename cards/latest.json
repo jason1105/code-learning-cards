@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-10",
-  "repo_name": "milind-soni/OpenMausBot",
-  "repo_url": "https://github.com/milind-soni/OpenMausBot",
-  "repo_description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
-  "language": "TypeScript",
-  "stars": 20480,
+  "date": "2026-11-11",
+  "repo_name": "pbakaus/impeccable",
+  "repo_url": "https://github.com/pbakaus/impeccable",
+  "repo_description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+  "language": "Rust",
+  "stars": 108061,
   "card_content": {
-    "core_point": "OpenMausBot 通过“自带密钥/关闭托管代理”和统一连接策略，把第三方应用流量与托管服务解耦，并用独立云资源与时钟一致性保障 Bot 端到端测试可靠。",
-    "deep_understanding": "近期提交显示两条主线：连接治理上支持 own key 或 OMB_COMPOSIO_BROKER=off，让 connected-app 流量不经过托管服务；测试与运行环境上把 e2e 放到内存充足的 Cloud home，而不是测试 runner 的空闲内存，并处理同一时钟 tick 内的可见性问题。这体现了 Bot + VM 架构中安全边界、资源边界与时间边界的一致设计。",
-    "use_cases": "适用于企业私有化/合规部署、BYOK 接入第三方 SaaS、隔离外部集成流量、在 CI 中用云上独立环境跑 Bot 端到端测试，以及需要可复现时序的 VM 工具调用场景。",
-    "thinking_question": "当 Bot 同时调用外部 SaaS 和本地 VM 工具时，你会如何设计连接策略与资源/时钟隔离，既保证敏感流量不经过托管服务，又让端到端测试稳定可复现？"
+    "core_point": "impeccable 的核心是给编码智能体装上一套「设计词汇」——用 polish、bolder、critique、audit 这类短指令，把模糊的审美要求变成 Agent 可执行、可复用的操作。",
+    "deep_understanding": "它并不是又一个 UI 组件库，而是工作在 Agent 的技能/提示层：Rust 写的 CLI 负责把一组 skill 文件安装并同步到 .claude/skills、.codex/skills 等目录（最近的提交正是在处理多 Agent 目录的命名与更新归属问题）。真正的价值在于把「设计品味」从资深设计师的脑子里抽出来，固化成一套团队共享、Agent 可调用的评审语言，从而在代码提交之前就拦住千篇一律的「AI 味」界面。",
+    "use_cases": "典型用法是：让 Claude Code 或 Codex 生成页面骨架后，先用 critique 做设计评审、再 polish 做细节打磨、必要时 bolder 强化视觉层级；上线前用 audit 扫一遍可访问性、对比度和间距一致性。也适合团队把它写进开发规范，统一前后端与 AI 协作时的设计沟通口径，减少「再好看一点」这类无效反馈。",
+    "thinking_question": "如果把「设计品味」拆成一组 Agent 可调用的动词，你们团队里那些只存在于资深设计师脑中、从未被写下来的隐性标准，哪三条最值得优先变成命令？"
   }
 }
