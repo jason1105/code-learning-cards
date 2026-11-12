@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-11",
-  "repo_name": "pbakaus/impeccable",
-  "repo_url": "https://github.com/pbakaus/impeccable",
-  "repo_description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
-  "language": "Rust",
-  "stars": 108061,
+  "date": "2026-11-12",
+  "repo_name": "Stirling-Tools/Stirling-PDF",
+  "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
+  "repo_description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
+  "language": "TypeScript",
+  "stars": 96424,
   "card_content": {
-    "core_point": "impeccable 的核心是给编码智能体装上一套「设计词汇」——用 polish、bolder、critique、audit 这类短指令，把模糊的审美要求变成 Agent 可执行、可复用的操作。",
-    "deep_understanding": "它并不是又一个 UI 组件库，而是工作在 Agent 的技能/提示层：Rust 写的 CLI 负责把一组 skill 文件安装并同步到 .claude/skills、.codex/skills 等目录（最近的提交正是在处理多 Agent 目录的命名与更新归属问题）。真正的价值在于把「设计品味」从资深设计师的脑子里抽出来，固化成一套团队共享、Agent 可调用的评审语言，从而在代码提交之前就拦住千篇一律的「AI 味」界面。",
-    "use_cases": "典型用法是：让 Claude Code 或 Codex 生成页面骨架后，先用 critique 做设计评审、再 polish 做细节打磨、必要时 bolder 强化视觉层级；上线前用 audit 扫一遍可访问性、对比度和间距一致性。也适合团队把它写进开发规范，统一前后端与 AI 协作时的设计沟通口径，减少「再好看一点」这类无效反馈。",
-    "thinking_question": "如果把「设计品味」拆成一组 Agent 可调用的动词，你们团队里那些只存在于资深设计师脑中、从未被写下来的隐性标准，哪三条最值得优先变成命令？"
+    "core_point": "在 PDF 文本编辑器中为链接和页面附属元素添加无障碍标签，是提升 PDF 可访问性与语义化程度的关键能力。",
+    "deep_understanding": "PDF 可访问性不仅要求正文可读，还需要让屏幕阅读器正确识别链接、页码、水印等元素的语义和导航作用。Stirling-PDF 近期提交显示其正在 Text Editor 中支持链接与 page furniture 的 accessibility tagging，说明 PDF 编辑正从“视觉排版”走向“语义结构与合规”并重。",
+    "use_cases": "适用于政府、教育、企业等需要无障碍合规的文档场景，例如为报告中的超链接补充标签、为页码和水印添加可识别语义，或批量整理需供屏幕阅读器使用的 PDF 材料。",
+    "thinking_question": "在 PDF 编辑器中，如何平衡自动推断无障碍标签与用户手动校正，才能既提高效率又避免错误语义？"
   }
 }
