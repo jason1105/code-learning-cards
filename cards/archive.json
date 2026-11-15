@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-15",
+    "repo_name": "microsoft/PowerToys",
+    "repo_url": "https://github.com/microsoft/PowerToys",
+    "repo_description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
+    "language": "C",
+    "stars": 141001,
+    "card_content": {
+      "core_point": "PowerToys 的持续演进依靠两件事：一是把功能拆成可独立迭代的模块（Shortcut Guide、CmdPal 等），二是借助 Dependabot 和 CI 自动管理依赖升级，把维护成本交给自动化流水线。",
+      "deep_understanding": "从最近的提交可以看出两条并行的主线：一条是针对真实使用场景的细节修复，比如任务栏自动隐藏时，Shortcut Guide 的浮层会遮挡任务栏图标，需要在运行时读取任务栏状态并动态调整窗口边界；另一条是大量由 dependabot 自动提交的 GitHub Actions 依赖升级，如 download-artifact、setup-dotnet 等。前者保证用户体验，后者保证工程基础持续更新；两者结合，让一个拥有 14 万 Star 的大型项目仍能保持高频、低风险的交付节奏。",
+      "use_cases": "维护自己的开源项目或公司内部工具集时，可以沿用这套模式：按功能拆分模块，为每个模块建立回归测试和清晰的 Issue 模板，并开启 Dependabot 与 CI 自动验证依赖升级；开发 Windows 桌面浮层、工具栏类功能时，务必覆盖任务栏自动隐藏、多显示器与 DPI 缩放等边界场景，避免遮挡系统 UI。",
+      "thinking_question": "如果你的项目接入自动化依赖升级，你会用什么标准判断哪些依赖升级可以自动合并，哪些必须人工 review？"
+    }
+  },
+  {
     "date": "2026-11-14",
     "repo_name": "BEPb/BEPb",
     "repo_url": "https://github.com/BEPb/BEPb",
@@ -400,20 +414,6 @@
       "deep_understanding": "近期提交显示 4.0.x、4.1.x 等分支持续合并，并同步升级 Cassandra Driver 等第三方依赖。这说明 Spring Boot 不仅提供开箱即用的开发体验，也通过分支维护策略保障不同版本线的安全修复、兼容性和演进节奏。",
       "use_cases": "适用于企业级微服务、云原生应用和需要长期维护的 Java 系统，尤其是使用 Cassandra 等外部组件时，需要跟随 Spring Boot 的依赖升级策略来降低兼容性风险。",
       "thinking_question": "为什么 Spring Boot 需要将依赖升级同时维护到多个版本分支，而不是只在新版本中升级？"
-    }
-  },
-  {
-    "date": "2026-10-15",
-    "repo_name": "firstcontributions/first-contributions",
-    "repo_url": "https://github.com/firstcontributions/first-contributions",
-    "repo_description": "🚀✨ Help beginners to contribute to open source projects",
-    "language": "",
-    "stars": 56362,
-    "card_content": {
-      "core_point": "通过「把自己的名字加进贡献者名单」这一最小可行任务，完整走一遍开源协作的核心流程：Fork → Clone → 建分支 → 提交 → Push → 发起 Pull Request。",
-      "deep_understanding": "这个仓库本身几乎没有功能性代码，它的价值在于把开源贡献的技术门槛和心理门槛同时压到最低——你只需要会一点点 Git 和 Markdown，就能获得一次真实的、被合并的 PR 记录。从最近的提交看，每天有大量类似的「Add xxx to Contributors list」被快速合并，说明它依赖标准化的命名约定、PR 模板和自动化检查来支撑高吞吐、低风险的协作模式，这正是大型开源项目维护流程的缩影。理解了它的运作方式，你其实就理解了现代开源协作的骨架：分支隔离、变更最小化、可审查、可回滚。",
-      "use_cases": "1) 完全新手第一次练手，搞懂 Fork 与上游仓库、origin 与 upstream、PR 与 Merge 的关系；2) 企业或培训班用来做 Git/GitHub 实操教学与 CI 演练；3) 观察一个 5 万+ Star 仓库如何用模板、机器人和维护者分工处理海量低风险 PR；4) 为个人主页或简历积累第一个 merged PR 记录，建立参与开源的信心。",
-      "thinking_question": "如果一次贡献只是「加了行名字」，它算不算真正的开源贡献？如果把这种「极低门槛 + 高吞吐合并」的模式搬到你自己的项目里，你会得到哪些好处，又会被哪些噪音淹没？"
     }
   }
 ]
