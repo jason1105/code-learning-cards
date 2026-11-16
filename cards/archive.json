@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-16",
+    "repo_name": "makeplane/plane",
+    "repo_url": "https://github.com/makeplane/plane",
+    "repo_description": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
+    "language": "TypeScript",
+    "stars": 62529,
+    "card_content": {
+      "core_point": "在多人协作的项目管理平台里，权限边界不是单独外加的功能，而是会出现在每个查询和每个字段上的基础设计约束。",
+      "deep_understanding": "Plane 这类产品的数据模型天然有 workspace → project → issue 的层级，最近的几个修复（对工作区访客隐藏成员邮箱、把 project metadata 和 intake 的 duplicate_to 限制到调用者可访问的范围）都在处理同一个问题：对象级授权必须在后端的数据查询环节完成校验，而不能只靠前端隐藏。同时，富文本筛选标签和命令面板占位符的国际化、页面系统字段改为只读这类改动说明，平台型产品的成熟度往往体现在这些容易被忽略的一致性细节上。",
+      "use_cases": "设计或重构协作类 SaaS 时，可以借鉴把权限校验集中在统一的 queryset 或序列化层：默认拒绝，并让每个入口都必须显式声明作用域。做 Code Review 时，把“传入的 id 是否已被限制到当前用户可访问的集合”和“返回字段是否会泄露他人信息”列为固定检查项。上线前针对访客、跨项目成员等角色做越权测试，比只测试正常流程更能发现真实风险。",
+      "thinking_question": "如果团队里总有人忘记加作用域过滤，你会怎样从架构层面让越权代码“难以写出”（比如默认拒绝的查询封装、类型约束或自动化测试），而不是每次都靠 Code Review 来保底？"
+    }
+  },
+  {
     "date": "2026-11-15",
     "repo_name": "microsoft/PowerToys",
     "repo_url": "https://github.com/microsoft/PowerToys",
@@ -400,20 +414,6 @@
       "deep_understanding": "从最近提交看，Xournal++ 将 Windows 构建从 MINGW64 迁移到 UCRT64，并让应用在用户配置缺失时回退读取系统配置目录。前者改善 Windows 运行时与依赖兼容性，后者提供系统级默认配置，降低多环境部署成本；同时 out-of-source 构建和 include 清理体现了构建与模块边界的持续治理。",
       "use_cases": "适用于跨平台笔记/绘图类桌面软件的 CI 打包、Linux RPM 与 Windows MSYS2 构建、企业或学校机房统一默认配置、以及用户配置损坏或缺失时的安全启动场景。",
       "thinking_question": "如果系统配置目录和用户配置目录同时存在同一配置项，你会如何定义优先级、合并策略与可观测的冲突提示？"
-    }
-  },
-  {
-    "date": "2026-10-17",
-    "repo_name": "spring-projects/spring-boot",
-    "repo_url": "https://github.com/spring-projects/spring-boot",
-    "repo_description": "Spring Boot helps you to create Spring-powered, production-grade applications and services with absolute minimum fuss.",
-    "language": "Java",
-    "stars": 81705,
-    "card_content": {
-      "core_point": "Spring Boot 通过多版本分支维护和持续依赖升级，在稳定性与生态兼容性之间保持平衡。",
-      "deep_understanding": "近期提交显示 4.0.x、4.1.x 等分支持续合并，并同步升级 Cassandra Driver 等第三方依赖。这说明 Spring Boot 不仅提供开箱即用的开发体验，也通过分支维护策略保障不同版本线的安全修复、兼容性和演进节奏。",
-      "use_cases": "适用于企业级微服务、云原生应用和需要长期维护的 Java 系统，尤其是使用 Cassandra 等外部组件时，需要跟随 Spring Boot 的依赖升级策略来降低兼容性风险。",
-      "thinking_question": "为什么 Spring Boot 需要将依赖升级同时维护到多个版本分支，而不是只在新版本中升级？"
     }
   }
 ]
