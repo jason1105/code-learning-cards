@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-15",
-  "repo_name": "microsoft/PowerToys",
-  "repo_url": "https://github.com/microsoft/PowerToys",
-  "repo_description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
-  "language": "C",
-  "stars": 141001,
+  "date": "2026-11-16",
+  "repo_name": "makeplane/plane",
+  "repo_url": "https://github.com/makeplane/plane",
+  "repo_description": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
+  "language": "TypeScript",
+  "stars": 62529,
   "card_content": {
-    "core_point": "PowerToys 的持续演进依靠两件事：一是把功能拆成可独立迭代的模块（Shortcut Guide、CmdPal 等），二是借助 Dependabot 和 CI 自动管理依赖升级，把维护成本交给自动化流水线。",
-    "deep_understanding": "从最近的提交可以看出两条并行的主线：一条是针对真实使用场景的细节修复，比如任务栏自动隐藏时，Shortcut Guide 的浮层会遮挡任务栏图标，需要在运行时读取任务栏状态并动态调整窗口边界；另一条是大量由 dependabot 自动提交的 GitHub Actions 依赖升级，如 download-artifact、setup-dotnet 等。前者保证用户体验，后者保证工程基础持续更新；两者结合，让一个拥有 14 万 Star 的大型项目仍能保持高频、低风险的交付节奏。",
-    "use_cases": "维护自己的开源项目或公司内部工具集时，可以沿用这套模式：按功能拆分模块，为每个模块建立回归测试和清晰的 Issue 模板，并开启 Dependabot 与 CI 自动验证依赖升级；开发 Windows 桌面浮层、工具栏类功能时，务必覆盖任务栏自动隐藏、多显示器与 DPI 缩放等边界场景，避免遮挡系统 UI。",
-    "thinking_question": "如果你的项目接入自动化依赖升级，你会用什么标准判断哪些依赖升级可以自动合并，哪些必须人工 review？"
+    "core_point": "在多人协作的项目管理平台里，权限边界不是单独外加的功能，而是会出现在每个查询和每个字段上的基础设计约束。",
+    "deep_understanding": "Plane 这类产品的数据模型天然有 workspace → project → issue 的层级，最近的几个修复（对工作区访客隐藏成员邮箱、把 project metadata 和 intake 的 duplicate_to 限制到调用者可访问的范围）都在处理同一个问题：对象级授权必须在后端的数据查询环节完成校验，而不能只靠前端隐藏。同时，富文本筛选标签和命令面板占位符的国际化、页面系统字段改为只读这类改动说明，平台型产品的成熟度往往体现在这些容易被忽略的一致性细节上。",
+    "use_cases": "设计或重构协作类 SaaS 时，可以借鉴把权限校验集中在统一的 queryset 或序列化层：默认拒绝，并让每个入口都必须显式声明作用域。做 Code Review 时，把“传入的 id 是否已被限制到当前用户可访问的集合”和“返回字段是否会泄露他人信息”列为固定检查项。上线前针对访客、跨项目成员等角色做越权测试，比只测试正常流程更能发现真实风险。",
+    "thinking_question": "如果团队里总有人忘记加作用域过滤，你会怎样从架构层面让越权代码“难以写出”（比如默认拒绝的查询封装、类型约束或自动化测试），而不是每次都靠 Code Review 来保底？"
   }
 }
