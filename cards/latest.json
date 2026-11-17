@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-16",
-  "repo_name": "makeplane/plane",
-  "repo_url": "https://github.com/makeplane/plane",
-  "repo_description": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
-  "language": "TypeScript",
-  "stars": 62529,
+  "date": "2026-11-17",
+  "repo_name": "dbeaver/dbeaver",
+  "repo_url": "https://github.com/dbeaver/dbeaver",
+  "repo_description": "Free universal database tool and SQL client",
+  "language": "Java",
+  "stars": 52457,
   "card_content": {
-    "core_point": "在多人协作的项目管理平台里，权限边界不是单独外加的功能，而是会出现在每个查询和每个字段上的基础设计约束。",
-    "deep_understanding": "Plane 这类产品的数据模型天然有 workspace → project → issue 的层级，最近的几个修复（对工作区访客隐藏成员邮箱、把 project metadata 和 intake 的 duplicate_to 限制到调用者可访问的范围）都在处理同一个问题：对象级授权必须在后端的数据查询环节完成校验，而不能只靠前端隐藏。同时，富文本筛选标签和命令面板占位符的国际化、页面系统字段改为只读这类改动说明，平台型产品的成熟度往往体现在这些容易被忽略的一致性细节上。",
-    "use_cases": "设计或重构协作类 SaaS 时，可以借鉴把权限校验集中在统一的 queryset 或序列化层：默认拒绝，并让每个入口都必须显式声明作用域。做 Code Review 时，把“传入的 id 是否已被限制到当前用户可访问的集合”和“返回字段是否会泄露他人信息”列为固定检查项。上线前针对访客、跨项目成员等角色做越权测试，比只测试正常流程更能发现真实风险。",
-    "thinking_question": "如果团队里总有人忘记加作用域过滤，你会怎样从架构层面让越权代码“难以写出”（比如默认拒绝的查询封装、类型约束或自动化测试），而不是每次都靠 Code Review 来保底？"
+    "core_point": "数据库客户端的核心竞争力在于对多数据库元数据、方言差异和用户偏好进行稳定抽象与兼容处理。",
+    "deep_understanding": "DBeaver 近期提交同时涉及 Oracle 23 元数据优化器默认值、Greenplum 聚合源生成、ERD 默认偏好初始化以及 AI 函数描述的 MCP 注解，说明通用数据库工具需要把“跨库一致性”和“方言兼容性”作为持续维护的重点。元数据与偏好设置看似底层，却直接影响 SQL 生成、可视化建模和 AI 辅助功能的正确性与可扩展性。",
+    "use_cases": "企业同时在 Oracle、Greenplum、PostgreSQL 等数据库间开发和运维时，使用 DBeaver 进行元数据浏览、SQL 生成、ERD 建模和 AI 辅助查询；工具若不能正确处理版本差异和默认偏好，就可能导致生成 SQL 错误或团队体验不一致。",
+    "thinking_question": "当统一体验与数据库方言差异发生冲突时，数据库工具应优先构建兼容抽象层，还是更充分地暴露方言特性让用户自行选择？"
   }
 }
