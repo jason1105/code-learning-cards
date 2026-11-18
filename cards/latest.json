@@ -1,14 +1,11 @@
 {
-  "date": "2026-11-17",
-  "repo_name": "dbeaver/dbeaver",
-  "repo_url": "https://github.com/dbeaver/dbeaver",
-  "repo_description": "Free universal database tool and SQL client",
-  "language": "Java",
-  "stars": 52457,
+  "date": "2026-11-18",
+  "repo_name": "makeplane/plane",
+  "repo_url": "https://github.com/makeplane/plane",
+  "repo_description": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
+  "language": "TypeScript",
+  "stars": 62698,
   "card_content": {
-    "core_point": "数据库客户端的核心竞争力在于对多数据库元数据、方言差异和用户偏好进行稳定抽象与兼容处理。",
-    "deep_understanding": "DBeaver 近期提交同时涉及 Oracle 23 元数据优化器默认值、Greenplum 聚合源生成、ERD 默认偏好初始化以及 AI 函数描述的 MCP 注解，说明通用数据库工具需要把“跨库一致性”和“方言兼容性”作为持续维护的重点。元数据与偏好设置看似底层，却直接影响 SQL 生成、可视化建模和 AI 辅助功能的正确性与可扩展性。",
-    "use_cases": "企业同时在 Oracle、Greenplum、PostgreSQL 等数据库间开发和运维时，使用 DBeaver 进行元数据浏览、SQL 生成、ERD 建模和 AI 辅助查询；工具若不能正确处理版本差异和默认偏好，就可能导致生成 SQL 错误或团队体验不一致。",
-    "thinking_question": "当统一体验与数据库方言差异发生冲突时，数据库工具应优先构建兼容抽象层，还是更充分地暴露方言特性让用户自行选择？"
+    "raw": "{\"core_point\": \"子类重写构造函数时，必须显式调用父类的 super().__init__()，否则父类初始化中建立的状态（如存储的 location）会静默缺失。\", \"deep_understanding\": \"Python 不会自动调用父类构造函数，而父类通常会在 __init__ 里把配置、连接、路径等保存为实例属性。子类一旦跳过 super()，这些属性就会处于未定义状态，bug 常常要等到真正发起请求时才暴露。Plane 的 S3Storage 就因为缺少这一行而丢掉了 location。TypeScript 里同理：派生类构造函数必须先调用 super() 才能访问 this，这类问题的共同特征是“不报错但语义错误”。\", \"use_cases\": \"接入自定义对象存储（S3、OSS、本地磁盘）并继承统一 Storage 基类时；为 ORM 模型、框架插件或前端类组件编写子类"
   }
 }
