@@ -1,11 +1,14 @@
 {
-  "date": "2026-11-18",
-  "repo_name": "makeplane/plane",
-  "repo_url": "https://github.com/makeplane/plane",
-  "repo_description": "🔥🔥🔥 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
-  "language": "TypeScript",
-  "stars": 62698,
+  "date": "2026-11-19",
+  "repo_name": "tokio-rs/tokio",
+  "repo_url": "https://github.com/tokio-rs/tokio",
+  "repo_description": "A runtime for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...",
+  "language": "Rust",
+  "stars": 33734,
   "card_content": {
-    "raw": "{\"core_point\": \"子类重写构造函数时，必须显式调用父类的 super().__init__()，否则父类初始化中建立的状态（如存储的 location）会静默缺失。\", \"deep_understanding\": \"Python 不会自动调用父类构造函数，而父类通常会在 __init__ 里把配置、连接、路径等保存为实例属性。子类一旦跳过 super()，这些属性就会处于未定义状态，bug 常常要等到真正发起请求时才暴露。Plane 的 S3Storage 就因为缺少这一行而丢掉了 location。TypeScript 里同理：派生类构造函数必须先调用 super() 才能访问 this，这类问题的共同特征是“不报错但语义错误”。\", \"use_cases\": \"接入自定义对象存储（S3、OSS、本地磁盘）并继承统一 Storage 基类时；为 ORM 模型、框架插件或前端类组件编写子类"
+    "core_point": "LengthDelimitedCodec 应拒绝短于其长度字段所声明长度的帧，以保证帧边界解析的健壮性。",
+    "deep_understanding": "长度分隔协议依赖帧头中的长度字段来确定消息边界；若实际帧短于声明长度，继续解析可能造成错位、阻塞或错误地拼接后续数据。因此在编解码层尽早校验并拒绝非法帧，是保护上层协议和资源安全的重要防线。",
+    "use_cases": "适用于基于 TCP/Unix Socket 的自定义二进制协议、RPC 框架、消息队列和日志传输等场景，尤其需要按长度字段切分消息并防御畸形输入的流式服务。",
+    "thinking_question": "在流式解码中，你会如何区分“数据尚未到齐”和“帧长度字段非法/过短”？超时、最大帧长和错误恢复策略应如何配合设计？"
   }
 }
