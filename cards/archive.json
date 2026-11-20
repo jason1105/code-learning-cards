@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-20",
+    "repo_name": "fschutt/azul",
+    "repo_url": "https://github.com/fschutt/azul",
+    "repo_description": "Desktop GUI Framework",
+    "language": "Rust",
+    "stars": 6141,
+    "card_content": {
+      "core_point": "Azul 作为 Rust 桌面 GUI 框架，新增流式分页入口点，核心思想是让大数据集按需分批加载与渲染，而不是一次性载入全部内容。",
+      "deep_understanding": "流式分页把数据获取和 UI 展示拆成可增量推进的流程：先展示首批内容，再根据滚动或交互继续加载后续数据。对于桌面 GUI 框架而言，这有助于降低首屏延迟、减少内存峰值，并让长列表类界面保持更顺畅的响应。",
+      "use_cases": "适用于日志查看器、大型数据表格、文件浏览器、聊天记录、图片列表等需要展示大量条目并支持边滚动边加载的桌面应用场景。",
+      "thinking_question": "在流式分页场景下，如果用户快速滚动导致多个加载请求乱序返回，应该如何设计状态管理和 UI 更新策略来保证数据顺序与界面一致性？"
+    }
+  },
+  {
     "date": "2026-11-19",
     "repo_name": "tokio-rs/tokio",
     "repo_url": "https://github.com/tokio-rs/tokio",
@@ -397,20 +411,6 @@
       "deep_understanding": "SBI 是 RISC-V 平台固件与 Supervisor 操作系统之间的标准接口，RustSBI 将该接口工程化为可复用库，并覆盖 legacy 与现代扩展。它既能作为 M 模式固件的一部分，也能在 HS 模式支持虚拟化场景，同时受益于 Rust 的嵌入式生态和内存安全特性。仓库中的 firmware、sbi-rt、runtime 等模块分别承担固件集成、接口调用和运行时 CSR 恢复等职责。",
       "use_cases": "可用于 RISC-V 开发板或 QEMU 上引导 Linux、rCore 等操作系统；也可用于嵌入式 Rust 项目、Hypervisor 开发、OS 移植以及需要统一 SBI 调用封装的固件和运行时环境。",
       "thinking_question": "如果 RustSBI 同时需要支持 M 模式固件和 HS 模式虚拟化，你会如何设计异常委托、CSR 恢复和 SBI 扩展兼容策略，以兼顾安全性与可移植性？"
-    }
-  },
-  {
-    "date": "2026-10-21",
-    "repo_name": "lysine-dev/okhttp",
-    "repo_url": "https://github.com/lysine-dev/okhttp",
-    "repo_description": "A meticulous HTTP client for the JVM, Android, and GraalVM.",
-    "language": "Kotlin",
-    "stars": 47091,
-    "card_content": {
-      "core_point": "OkHttp 在解析 MediaType 的带引号参数时拒绝 CR 与 LF，避免 HTTP 头注入和解析歧义。",
-      "deep_understanding": "MediaType 参数可能出现在 Content-Type 等头中，带引号的值若包含换行符，容易被错误解析或伪造额外头部。OkHttp 选择在解析入口直接拒绝 CR/LF，而不是静默清洗，体现对 HTTP 消息边界和安全性的严格校验。这也提醒我们：安全解析器应明确拒绝非法字符并保持行为可预测。",
-      "use_cases": "在网关、代理、服务端框架或客户端 SDK 中解析 Content-Type、上传文件类型、API 请求头时，可用同样策略校验媒体类型参数，防止换行注入、日志伪造和上下游解析不一致。",
-      "thinking_question": "如果你维护一个 HTTP 头解析库，面对带引号参数中的非法字符，你会选择直接拒绝、转义清洗还是保留原值？各自对兼容性和安全性有什么影响？"
     }
   }
 ]
