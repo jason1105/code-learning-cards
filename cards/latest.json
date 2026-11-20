@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-19",
-  "repo_name": "tokio-rs/tokio",
-  "repo_url": "https://github.com/tokio-rs/tokio",
-  "repo_description": "A runtime for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...",
+  "date": "2026-11-20",
+  "repo_name": "fschutt/azul",
+  "repo_url": "https://github.com/fschutt/azul",
+  "repo_description": "Desktop GUI Framework",
   "language": "Rust",
-  "stars": 33734,
+  "stars": 6141,
   "card_content": {
-    "core_point": "LengthDelimitedCodec 应拒绝短于其长度字段所声明长度的帧，以保证帧边界解析的健壮性。",
-    "deep_understanding": "长度分隔协议依赖帧头中的长度字段来确定消息边界；若实际帧短于声明长度，继续解析可能造成错位、阻塞或错误地拼接后续数据。因此在编解码层尽早校验并拒绝非法帧，是保护上层协议和资源安全的重要防线。",
-    "use_cases": "适用于基于 TCP/Unix Socket 的自定义二进制协议、RPC 框架、消息队列和日志传输等场景，尤其需要按长度字段切分消息并防御畸形输入的流式服务。",
-    "thinking_question": "在流式解码中，你会如何区分“数据尚未到齐”和“帧长度字段非法/过短”？超时、最大帧长和错误恢复策略应如何配合设计？"
+    "core_point": "Azul 作为 Rust 桌面 GUI 框架，新增流式分页入口点，核心思想是让大数据集按需分批加载与渲染，而不是一次性载入全部内容。",
+    "deep_understanding": "流式分页把数据获取和 UI 展示拆成可增量推进的流程：先展示首批内容，再根据滚动或交互继续加载后续数据。对于桌面 GUI 框架而言，这有助于降低首屏延迟、减少内存峰值，并让长列表类界面保持更顺畅的响应。",
+    "use_cases": "适用于日志查看器、大型数据表格、文件浏览器、聊天记录、图片列表等需要展示大量条目并支持边滚动边加载的桌面应用场景。",
+    "thinking_question": "在流式分页场景下，如果用户快速滚动导致多个加载请求乱序返回，应该如何设计状态管理和 UI 更新策略来保证数据顺序与界面一致性？"
   }
 }
