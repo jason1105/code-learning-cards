@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-20",
-  "repo_name": "fschutt/azul",
-  "repo_url": "https://github.com/fschutt/azul",
-  "repo_description": "Desktop GUI Framework",
-  "language": "Rust",
-  "stars": 6141,
+  "date": "2026-11-21",
+  "repo_name": "hesreallyhim/awesome-claude-code",
+  "repo_url": "https://github.com/hesreallyhim/awesome-claude-code",
+  "repo_description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC (no affiliation). A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
+  "language": "Python",
+  "stars": 58511,
   "card_content": {
-    "core_point": "Azul 作为 Rust 桌面 GUI 框架，新增流式分页入口点，核心思想是让大数据集按需分批加载与渲染，而不是一次性载入全部内容。",
-    "deep_understanding": "流式分页把数据获取和 UI 展示拆成可增量推进的流程：先展示首批内容，再根据滚动或交互继续加载后续数据。对于桌面 GUI 框架而言，这有助于降低首屏延迟、减少内存峰值，并让长列表类界面保持更顺畅的响应。",
-    "use_cases": "适用于日志查看器、大型数据表格、文件浏览器、聊天记录、图片列表等需要展示大量条目并支持边滚动边加载的桌面应用场景。",
-    "thinking_question": "在流式分页场景下，如果用户快速滚动导致多个加载请求乱序返回，应该如何设计状态管理和 UI 更新策略来保证数据顺序与界面一致性？"
+    "core_point": "awesome-claude-code 是一个围绕 Claude Code 精选 skills、agents、状态栏、开发工具与插件的高质量资源导航库。",
+    "deep_understanding": "它通过人工筛选和分类整理，帮助开发者快速发现 Claude Code 生态中的优质扩展与实践资源，降低信息检索和评估成本。近期由机器人自动更新 ticker 数据和 SVG，说明此类资源库不仅依赖内容策展，也需要自动化维护来保持活跃度与可读性。",
+    "use_cases": "开发者可用它查找 Claude Code 插件、代理和开发工具；团队可参考其分类方式建设内部 AI 编码资源库；开源维护者可借鉴其自动化更新机制提升仓库运营效率。",
+    "thinking_question": "当 Claude Code 生态资源快速增长时，如何设计一套可持续的筛选、分类与更新机制，确保 awesome 列表重质量而非数量？"
   }
 }
