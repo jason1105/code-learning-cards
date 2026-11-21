@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-21",
+    "repo_name": "hesreallyhim/awesome-claude-code",
+    "repo_url": "https://github.com/hesreallyhim/awesome-claude-code",
+    "repo_description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC (no affiliation). A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
+    "language": "Python",
+    "stars": 58511,
+    "card_content": {
+      "core_point": "awesome-claude-code 是一个围绕 Claude Code 精选 skills、agents、状态栏、开发工具与插件的高质量资源导航库。",
+      "deep_understanding": "它通过人工筛选和分类整理，帮助开发者快速发现 Claude Code 生态中的优质扩展与实践资源，降低信息检索和评估成本。近期由机器人自动更新 ticker 数据和 SVG，说明此类资源库不仅依赖内容策展，也需要自动化维护来保持活跃度与可读性。",
+      "use_cases": "开发者可用它查找 Claude Code 插件、代理和开发工具；团队可参考其分类方式建设内部 AI 编码资源库；开源维护者可借鉴其自动化更新机制提升仓库运营效率。",
+      "thinking_question": "当 Claude Code 生态资源快速增长时，如何设计一套可持续的筛选、分类与更新机制，确保 awesome 列表重质量而非数量？"
+    }
+  },
+  {
     "date": "2026-11-20",
     "repo_name": "fschutt/azul",
     "repo_url": "https://github.com/fschutt/azul",
@@ -397,20 +411,6 @@
       "deep_understanding": "PowerToys 的 runner 会动态加载各功能模块 DLL，而进程退出时 CRT 会按 atexit 与静态析构顺序回收堆、锁、TLS 等资源。如果模块卸载发生在 CRT teardown 之后（或期间），模块中的静态对象析构就可能落到已失效的堆和同步原语上，表现为退出时崩溃或异常退出码。这次修复把模块卸载显式提前到 CRT 拆解之前，确保每个模块的清理都在其依赖的运行时仍有效时完成。",
       "use_cases": "适用于任何插件化/宿主-扩展架构的 Windows 桌面程序：如 PowerToys、IDE 插件宿主、带热插拔模块的客户端；也用于排查“关闭就崩”“退出码异常”“FreeLibrary 后 0xC0000005”这类只在进程收尾阶段出现的问题，并为模块热更新设计安全的卸载顺序。",
       "thinking_question": "如果模块与主程序使用了不同版本甚至静态链接的 CRT，仅靠“先卸载模块、再 teardown”这个顺序还能保证安全吗？你会如何设计一套可验证的模块卸载契约？"
-    }
-  },
-  {
-    "date": "2026-10-22",
-    "repo_name": "rustsbi/rustsbi",
-    "repo_url": "https://github.com/rustsbi/rustsbi",
-    "repo_description": "RISC-V Supervisor Binary Interface (RISC-V SBI) library in Rust; runs on M or HS mode; good support for embedded Rust ecosystem. For binary download see firmware folder.",
-    "language": "Rust",
-    "stars": 1336,
-    "card_content": {
-      "core_point": "RustSBI 是用 Rust 实现的 RISC-V SBI 库，运行在 M 模式或 HS 模式，为操作系统提供统一的引导与运行时服务接口。",
-      "deep_understanding": "SBI 是 RISC-V 平台固件与 Supervisor 操作系统之间的标准接口，RustSBI 将该接口工程化为可复用库，并覆盖 legacy 与现代扩展。它既能作为 M 模式固件的一部分，也能在 HS 模式支持虚拟化场景，同时受益于 Rust 的嵌入式生态和内存安全特性。仓库中的 firmware、sbi-rt、runtime 等模块分别承担固件集成、接口调用和运行时 CSR 恢复等职责。",
-      "use_cases": "可用于 RISC-V 开发板或 QEMU 上引导 Linux、rCore 等操作系统；也可用于嵌入式 Rust 项目、Hypervisor 开发、OS 移植以及需要统一 SBI 调用封装的固件和运行时环境。",
-      "thinking_question": "如果 RustSBI 同时需要支持 M 模式固件和 HS 模式虚拟化，你会如何设计异常委托、CSR 恢复和 SBI 扩展兼容策略，以兼顾安全性与可移植性？"
     }
   }
 ]
