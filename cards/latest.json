@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-21",
-  "repo_name": "hesreallyhim/awesome-claude-code",
-  "repo_url": "https://github.com/hesreallyhim/awesome-claude-code",
-  "repo_description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC (no affiliation). A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
+  "date": "2026-11-22",
+  "repo_name": "huggingface/transformers",
+  "repo_url": "https://github.com/huggingface/transformers",
+  "repo_description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
   "language": "Python",
-  "stars": 58511,
+  "stars": 169380,
   "card_content": {
-    "core_point": "awesome-claude-code 是一个围绕 Claude Code 精选 skills、agents、状态栏、开发工具与插件的高质量资源导航库。",
-    "deep_understanding": "它通过人工筛选和分类整理，帮助开发者快速发现 Claude Code 生态中的优质扩展与实践资源，降低信息检索和评估成本。近期由机器人自动更新 ticker 数据和 SVG，说明此类资源库不仅依赖内容策展，也需要自动化维护来保持活跃度与可读性。",
-    "use_cases": "开发者可用它查找 Claude Code 插件、代理和开发工具；团队可参考其分类方式建设内部 AI 编码资源库；开源维护者可借鉴其自动化更新机制提升仓库运营效率。",
-    "thinking_question": "当 Claude Code 生态资源快速增长时，如何设计一套可持续的筛选、分类与更新机制，确保 awesome 列表重质量而非数量？"
+    "core_point": "Hugging Face Transformers 是一个统一的模型定义框架，用一致接口覆盖文本、视觉、音频和多模态模型的推理与训练。",
+    "deep_understanding": "它的核心价值不只是提供预训练权重，而是把模型结构、配置、Tokenizer/Processor 与训练/推理流程解耦，让开发者能组合式地使用不同模型。近期提交也体现了工程化维护重点：CI 验证 main 分支、修复硬件后端测试期望、接入新模型并固定容器依赖，说明框架在模型覆盖广度和工程稳定性之间持续平衡。",
+    "use_cases": "可用于快速加载和微调 BERT、GPT、ViT、Whisper 等模型，构建文本分类、生成、图像识别、语音转写和多模态问答应用；也适合企业做原型验证、推理服务部署和训练流水线搭建。",
+    "thinking_question": "当框架同时追求模型覆盖广度、硬件后端兼容性和 CI 稳定性时，应如何设计抽象边界，避免新增模型与工程维护互相拖累？"
   }
 }
