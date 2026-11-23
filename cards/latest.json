@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-22",
-  "repo_name": "huggingface/transformers",
-  "repo_url": "https://github.com/huggingface/transformers",
-  "repo_description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
-  "language": "Python",
-  "stars": 169380,
+  "date": "2026-11-23",
+  "repo_name": "1c7/chinese-independent-developer",
+  "repo_url": "https://github.com/1c7/chinese-independent-developer",
+  "repo_description": "👩🏿‍💻👨🏾‍💻👩🏼‍💻👨🏽‍💻👩🏻‍💻中国独立开发者项目列表 -- 分享大家都在做什么",
+  "language": "",
+  "stars": 62275,
   "card_content": {
-    "core_point": "Hugging Face Transformers 是一个统一的模型定义框架，用一致接口覆盖文本、视觉、音频和多模态模型的推理与训练。",
-    "deep_understanding": "它的核心价值不只是提供预训练权重，而是把模型结构、配置、Tokenizer/Processor 与训练/推理流程解耦，让开发者能组合式地使用不同模型。近期提交也体现了工程化维护重点：CI 验证 main 分支、修复硬件后端测试期望、接入新模型并固定容器依赖，说明框架在模型覆盖广度和工程稳定性之间持续平衡。",
-    "use_cases": "可用于快速加载和微调 BERT、GPT、ViT、Whisper 等模型，构建文本分类、生成、图像识别、语音转写和多模态问答应用；也适合企业做原型验证、推理服务部署和训练流水线搭建。",
-    "thinking_question": "当框架同时追求模型覆盖广度、硬件后端兼容性和 CI 稳定性时，应如何设计抽象边界，避免新增模型与工程维护互相拖累？"
+    "core_point": "开源项目列表通过社区众包协作持续收录、校验和更新独立开发者项目，形成动态的生态观察窗口。",
+    "deep_understanding": "该仓库以社区贡献为核心，近期提交展示了收录新项目、移除失效链接、修复重复条目等典型维护动作，体现了开源列表的持续治理机制。它不仅是项目索引，也反映了独立开发者的活跃方向和产品趋势，具有生态观察与学习参考价值。",
+    "use_cases": "开发者可从中发现灵感、潜在竞品或合作机会；学习者可观察项目收录标准与社区协作流程；社区运营者可借鉴众包维护、去重和链接校验的实践模式。",
+    "thinking_question": "如果你要维护一个类似的中国独立开发者项目列表，你会如何设计收录标准与审核流程，以兼顾信息质量、更新效率和社区贡献积极性？"
   }
 }
