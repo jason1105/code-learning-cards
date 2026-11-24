@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-24",
+    "repo_name": "Graphify-Labs/graphify",
+    "repo_url": "https://github.com/Graphify-Labs/graphify",
+    "repo_description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+    "language": "Python",
+    "stars": 152919,
+    "card_content": {
+      "core_point": "Graphify 用本地确定性 AST 解析，把代码库连同文档、SQL schema、配置和 PDF 编织成一张可查询的知识图谱，并让每条边都有出处解释，全程不依赖向量库。",
+      "deep_understanding": "它与主流 RAG 的根本差异在于：检索对象不是模糊的向量相似度，而是结构化关系，例如谁调用了谁、哪个字段来自哪张表、哪段文档描述了这个模块；因此答案可溯源、可审计。解析在本地确定性执行，同一份代码重复运行会得到同一张图，便于在 CI 和团队协作中复现与评审。它以 /graphify 技能的形式接入 Claude Code、Cursor、Codex、Gemini CLI，让编程 Agent 直接以图查询代替“猜相似片段”。",
+      "use_cases": "适合接手大型遗留仓库时做调用链与影响面分析：改动某个函数前，先查清上下游依赖；也适合跨代码、SQL schema 与设计文档的溯源问答，如“这个 API 字段落到哪张表的哪一列、需求文档怎么定义”；在金融、医疗等数据不便外发的离线环境中尤其实用，因为不需要嵌入模型或向量数据库；还可放进 CI，检测代码变更后文档与 schema 是否发生漂移。",
+      "thinking_question": "当仓库每天都有大量提交时，“确定性全量解析 + 每条边可解释”这套设计要如何在增量更新与查询新鲜度之间取舍？在哪些场景下，图查询反而会不如向量检索灵活？"
+    }
+  },
+  {
     "date": "2026-11-23",
     "repo_name": "1c7/chinese-independent-developer",
     "repo_url": "https://github.com/1c7/chinese-independent-developer",
@@ -397,20 +411,6 @@
       "deep_understanding": "它不直接教授 Rust 语法，而是聚合经过社区验证的生态资源，并通过持续提交反映技术演进，例如升级 Dioxus、用 pastey 替代 paste。学习时应关注推荐背后的选型标准、维护状态和替代关系，而不是只收藏依赖列表。",
       "use_cases": "适用于新项目技术选型、评估 Rust 库的维护活跃度、制定团队依赖白名单，以及跟进 profiling、GUI、Java 互操作等生态方向的变化。",
       "thinking_question": "当社区推荐清单更新某个库（例如用 pastey 替代 paste）时，你会依据哪些信号判断是否应立即迁移到自己的项目？"
-    }
-  },
-  {
-    "date": "2026-10-25",
-    "repo_name": "Snailclimb/JavaGuide",
-    "repo_url": "https://github.com/Snailclimb/JavaGuide",
-    "repo_description": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
-    "language": "JavaScript",
-    "stars": 159244,
-    "card_content": {
-      "core_point": "RAG（检索增强生成）的本质是“先检索、后生成”：在模型作答前，从外部知识库中召回相关文档片段，作为上下文交给模型，从而缓解幻觉问题，并让回答可追溯。",
-      "deep_understanding": "RAG 的效果上限往往由文档处理环节决定，而不仅取决于模型本身：分块粒度、元数据设计、清洗与去重都会直接影响检索召回的覆盖率，进而决定模型能否看到正确信息。检索到的内容还需要经过重排、裁剪和提示词组装，才能真正转化为高质量上下文。要让系统持续变好，还必须建立可量化的评测体系，例如召回率、忠实度和答案相关性，用数据判断每一步改动是否有效。",
-      "use_cases": "适用于企业内部知识库问答、客服工单辅助、技术文档搜索、合规与合同审阅等场景；当知识频繁更新、且回答需要给出引用出处时，RAG 通常比微调更经济、更可控。",
-      "thinking_question": "如果你的 RAG 系统总是“答非所问”，你会先怀疑分块策略、检索召回，还是提示词组装？请设计一个最小评测集，用来快速定位问题出在哪一环。"
     }
   }
 ]

@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-23",
-  "repo_name": "1c7/chinese-independent-developer",
-  "repo_url": "https://github.com/1c7/chinese-independent-developer",
-  "repo_description": "👩🏿‍💻👨🏾‍💻👩🏼‍💻👨🏽‍💻👩🏻‍💻中国独立开发者项目列表 -- 分享大家都在做什么",
-  "language": "",
-  "stars": 62275,
+  "date": "2026-11-24",
+  "repo_name": "Graphify-Labs/graphify",
+  "repo_url": "https://github.com/Graphify-Labs/graphify",
+  "repo_description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+  "language": "Python",
+  "stars": 152919,
   "card_content": {
-    "core_point": "开源项目列表通过社区众包协作持续收录、校验和更新独立开发者项目，形成动态的生态观察窗口。",
-    "deep_understanding": "该仓库以社区贡献为核心，近期提交展示了收录新项目、移除失效链接、修复重复条目等典型维护动作，体现了开源列表的持续治理机制。它不仅是项目索引，也反映了独立开发者的活跃方向和产品趋势，具有生态观察与学习参考价值。",
-    "use_cases": "开发者可从中发现灵感、潜在竞品或合作机会；学习者可观察项目收录标准与社区协作流程；社区运营者可借鉴众包维护、去重和链接校验的实践模式。",
-    "thinking_question": "如果你要维护一个类似的中国独立开发者项目列表，你会如何设计收录标准与审核流程，以兼顾信息质量、更新效率和社区贡献积极性？"
+    "core_point": "Graphify 用本地确定性 AST 解析，把代码库连同文档、SQL schema、配置和 PDF 编织成一张可查询的知识图谱，并让每条边都有出处解释，全程不依赖向量库。",
+    "deep_understanding": "它与主流 RAG 的根本差异在于：检索对象不是模糊的向量相似度，而是结构化关系，例如谁调用了谁、哪个字段来自哪张表、哪段文档描述了这个模块；因此答案可溯源、可审计。解析在本地确定性执行，同一份代码重复运行会得到同一张图，便于在 CI 和团队协作中复现与评审。它以 /graphify 技能的形式接入 Claude Code、Cursor、Codex、Gemini CLI，让编程 Agent 直接以图查询代替“猜相似片段”。",
+    "use_cases": "适合接手大型遗留仓库时做调用链与影响面分析：改动某个函数前，先查清上下游依赖；也适合跨代码、SQL schema 与设计文档的溯源问答，如“这个 API 字段落到哪张表的哪一列、需求文档怎么定义”；在金融、医疗等数据不便外发的离线环境中尤其实用，因为不需要嵌入模型或向量数据库；还可放进 CI，检测代码变更后文档与 schema 是否发生漂移。",
+    "thinking_question": "当仓库每天都有大量提交时，“确定性全量解析 + 每条边可解释”这套设计要如何在增量更新与查询新鲜度之间取舍？在哪些场景下，图查询反而会不如向量检索灵活？"
   }
 }
