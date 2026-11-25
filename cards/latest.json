@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-24",
-  "repo_name": "Graphify-Labs/graphify",
-  "repo_url": "https://github.com/Graphify-Labs/graphify",
-  "repo_description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
-  "language": "Python",
-  "stars": 152919,
+  "date": "2026-11-25",
+  "repo_name": "OpenHands/OpenHands",
+  "repo_url": "https://github.com/OpenHands/OpenHands",
+  "repo_description": "🙌 OpenHands: AI-Driven Development",
+  "language": "TypeScript",
+  "stars": 94324,
   "card_content": {
-    "core_point": "Graphify 用本地确定性 AST 解析，把代码库连同文档、SQL schema、配置和 PDF 编织成一张可查询的知识图谱，并让每条边都有出处解释，全程不依赖向量库。",
-    "deep_understanding": "它与主流 RAG 的根本差异在于：检索对象不是模糊的向量相似度，而是结构化关系，例如谁调用了谁、哪个字段来自哪张表、哪段文档描述了这个模块；因此答案可溯源、可审计。解析在本地确定性执行，同一份代码重复运行会得到同一张图，便于在 CI 和团队协作中复现与评审。它以 /graphify 技能的形式接入 Claude Code、Cursor、Codex、Gemini CLI，让编程 Agent 直接以图查询代替“猜相似片段”。",
-    "use_cases": "适合接手大型遗留仓库时做调用链与影响面分析：改动某个函数前，先查清上下游依赖；也适合跨代码、SQL schema 与设计文档的溯源问答，如“这个 API 字段落到哪张表的哪一列、需求文档怎么定义”；在金融、医疗等数据不便外发的离线环境中尤其实用，因为不需要嵌入模型或向量数据库；还可放进 CI，检测代码变更后文档与 schema 是否发生漂移。",
-    "thinking_question": "当仓库每天都有大量提交时，“确定性全量解析 + 每条边可解释”这套设计要如何在增量更新与查询新鲜度之间取舍？在哪些场景下，图查询反而会不如向量检索灵活？"
+    "core_point": "OpenHands 的近期迭代体现了 AI 开发平台在故障隔离、配置本地化与依赖治理上的工程化实践。",
+    "deep_understanding": "从隔离损坏会话来保护历史记录，到为自动化增加 Git Sync 开关以保留本地激活状态，系统通过清晰的边界控制降低单点异常与团队协作冲突的影响。同时持续升级 agent-server、automation、extensions 并维护 i18next 依赖，说明快速迭代的 AI 平台也需要重视可维护性、可回滚性和国际化基础。",
+    "use_cases": "适用于多用户 AI 编码助手、自动化工作流平台和国际化 SaaS 产品：当会话数据可能损坏时隔离异常记录；当团队需要保留本地配置时提供同步开关；当依赖频繁更新时通过版本化升级降低兼容性风险。",
+    "thinking_question": "在你的系统中，哪些状态应默认本地保存，哪些应同步到远端？你会如何设计隔离机制，让单个损坏会话不影响整体历史与协作流程？"
   }
 }
