@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-25",
-  "repo_name": "OpenHands/OpenHands",
-  "repo_url": "https://github.com/OpenHands/OpenHands",
-  "repo_description": "🙌 OpenHands: AI-Driven Development",
-  "language": "TypeScript",
-  "stars": 94324,
+  "date": "2026-11-26",
+  "repo_name": "nowledge-co/community",
+  "repo_url": "https://github.com/nowledge-co/community",
+  "repo_description": "Community Repo for Nowledge Labs Products",
+  "language": "Python",
+  "stars": 204,
   "card_content": {
-    "core_point": "OpenHands 的近期迭代体现了 AI 开发平台在故障隔离、配置本地化与依赖治理上的工程化实践。",
-    "deep_understanding": "从隔离损坏会话来保护历史记录，到为自动化增加 Git Sync 开关以保留本地激活状态，系统通过清晰的边界控制降低单点异常与团队协作冲突的影响。同时持续升级 agent-server、automation、extensions 并维护 i18next 依赖，说明快速迭代的 AI 平台也需要重视可维护性、可回滚性和国际化基础。",
-    "use_cases": "适用于多用户 AI 编码助手、自动化工作流平台和国际化 SaaS 产品：当会话数据可能损坏时隔离异常记录；当团队需要保留本地配置时提供同步开关；当依赖频繁更新时通过版本化升级降低兼容性风险。",
-    "thinking_question": "在你的系统中，哪些状态应默认本地保存，哪些应同步到远端？你会如何设计隔离机制，让单个损坏会话不影响整体历史与协作流程？"
+    "core_point": "在 AI Agent 协作中，handoff（任务交接）不仅要转交工作，还要携带回复路由提示，让结果准确回到发起会话。",
+    "deep_understanding": "Nowledge Bridge 的最近提交体现了“交接 + 回传”的协作模式：Pi 将任务移交给 Bridge，Bridge 再根据 reply hints 把回复送回原会话。这样能减少跨会话、跨代理协作中的上下文断裂和结果丢失。与此同时，独立 hook 依赖与发布源同步也说明，扩展能力需要可追踪、可复现的工程化管理。",
+    "use_cases": "适用于多 Agent 工作流编排、IDE/聊天助手之间的任务转交、跨会话代码审查或文档生成，以及 Bridge/Gemini 等扩展发布与依赖治理场景。",
+    "thinking_question": "设计 handoff 协议时，应如何平衡上下文传递的完整性、用户隐私与不同会话/代理之间的权限边界？"
   }
 }
