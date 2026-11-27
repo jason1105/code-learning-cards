@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-26",
-  "repo_name": "nowledge-co/community",
-  "repo_url": "https://github.com/nowledge-co/community",
-  "repo_description": "Community Repo for Nowledge Labs Products",
-  "language": "Python",
-  "stars": 204,
+  "date": "2026-11-27",
+  "repo_name": "t8y2/dbx",
+  "repo_url": "https://github.com/t8y2/dbx",
+  "repo_description": "25 MB lightweight cross-platform database client for 100+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 100+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP。",
+  "language": "Rust",
+  "stars": 31699,
   "card_content": {
-    "core_point": "在 AI Agent 协作中，handoff（任务交接）不仅要转交工作，还要携带回复路由提示，让结果准确回到发起会话。",
-    "deep_understanding": "Nowledge Bridge 的最近提交体现了“交接 + 回传”的协作模式：Pi 将任务移交给 Bridge，Bridge 再根据 reply hints 把回复送回原会话。这样能减少跨会话、跨代理协作中的上下文断裂和结果丢失。与此同时，独立 hook 依赖与发布源同步也说明，扩展能力需要可追踪、可复现的工程化管理。",
-    "use_cases": "适用于多 Agent 工作流编排、IDE/聊天助手之间的任务转交、跨会话代码审查或文档生成，以及 Bridge/Gemini 等扩展发布与依赖治理场景。",
-    "thinking_question": "设计 handoff 协议时，应如何平衡上下文传递的完整性、用户隐私与不同会话/代理之间的权限边界？"
+    "core_point": "现代数据库客户端可通过 MCP 将数据库查询能力标准化暴露给 AI/外部工具，并用只读查询工具控制访问风险。",
+    "deep_understanding": "MCP 为 AI 助手或 Agent 提供统一的工具调用协议，使客户端能把“查询数据库”封装成可发现、可调用的能力。dbx 新增 dbx_query 只读查询工具，说明其重点不是开放任意 SQL 执行，而是在可用性与安全性之间取平衡，降低误写、误删风险。",
+    "use_cases": "可用于让 AI 助手读取表结构并做只读数据分析、帮助研发排查线上数据问题、为内部工具提供受控的数据查询入口，同时避免直接暴露数据库账号和高危写操作。",
+    "thinking_question": "如果只读查询仍可能通过复杂 SQL、函数或大结果集造成资源消耗或敏感数据泄露，应如何设计更细粒度的权限、审计与限流机制？"
   }
 }
