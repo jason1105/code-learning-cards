@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-28",
+    "repo_name": "firstcontributions/first-contributions",
+    "repo_url": "https://github.com/firstcontributions/first-contributions",
+    "repo_description": "🚀✨ Help beginners to contribute to open source projects",
+    "language": "",
+    "stars": 57022,
+    "card_content": {
+      "core_point": "first-contributions 用一个「只需在贡献者名单里加一行名字」的最小任务，把 Fork → Clone → Branch → Commit → Push → Pull Request 的完整开源协作流程跑通一遍。",
+      "deep_understanding": "这个仓库本身几乎没有代码，核心价值在于它把 GitHub 协作中容易被文档讲得抽象的部分（远端与本地、upstream 与 origin、分支与主干的关系）变成了一次可亲手完成的动作。正因为改动足够小、合并足够快，学习者可以把注意力全部放在流程与心智模型上，而不是业务逻辑上。它本质上是「流程的可执行文档」，也是理解 PR 审核、冲突解决和同步上游的入门沙盒。",
+      "use_cases": "适合新员工入职时熟悉团队 Git 规范与 PR 模板；适合课堂教学或训练营作为第一次提交的实操练习；也适合在内部搭建一个「练习仓库」，让新人先在这里走通 Fork、分支命名、Commit 信息规范和 Review 流程，再进入真实业务仓库，从而降低误操作风险。",
+      "thinking_question": "一个只要求「加一行名字」的仓库能获得 5.7 万 Star——这说明降低首次贡献的门槛有多重要？如果让你为团队设计一个「零风险的第一课」练习仓库，你会保留哪些环节、简化哪些环节？"
+    }
+  },
+  {
     "date": "2026-11-27",
     "repo_name": "t8y2/dbx",
     "repo_url": "https://github.com/t8y2/dbx",
@@ -397,20 +411,6 @@
       "deep_understanding": "first-contributions 通过让初学者把自己的名字加入贡献者列表，把 fork、clone、创建分支、提交、push 和发起 PR 串联成一个低风险练习。每次提交和 PR 都会形成可追溯的协作记录，帮助新人理解版本控制、提交信息和代码评审的基本规范。",
       "use_cases": "适合个人开源入门训练、高校或训练营的Git/GitHub实践课，以及团队新人熟悉分支管理、PR评审和贡献者名单维护流程。",
       "thinking_question": "如果让你为一个开源社区设计“第一次贡献”任务，你会如何做到风险足够低、反馈足够快，又能让新人真正理解分支、提交信息和PR评审？"
-    }
-  },
-  {
-    "date": "2026-10-29",
-    "repo_name": "grafana/grafana",
-    "repo_url": "https://github.com/grafana/grafana",
-    "repo_description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
-    "language": "TypeScript",
-    "stars": 77583,
-    "card_content": {
-      "core_point": "把“筛选”从交互行为提升为显式类型接口，是通用数据表格组件可扩展的关键。Grafana 最新提交为 Table 增加了数值与日期范围筛选接口。",
-      "deep_understanding": "在 TypeScript 中，将筛选条件定义为结构化接口（如数值区间、日期区间），组件只依赖接口约定，而不依赖具体数据源或 UI 实现，从而让不同插件、面板共享同一套筛选语义。这样做还能利用类型系统明确边界值、开闭区间与空值等细节，把大量运行时判断提前到编译期。其本质是把“可组合”落到 API 约定上，而不是堆叠 if-else。",
-      "use_cases": "在日志或指标表格中按耗时区间、时间窗口过滤数据；插件开发者复用同一筛选接口，保证自研面板与原生 Table 的交互和类型行为一致；多数据源（Prometheus、Loki、Postgres）用统一的区间语义表达查询条件。",
-      "thinking_question": "如果筛选条件需要支持多个区间的并集、动态增删与跨字段组合，接口该如何设计，才能既保持类型安全，又避免把具体数据源的实现细节耦合进来？"
     }
   }
 ]
